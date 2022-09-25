@@ -2,7 +2,7 @@
 
 \usepackage{tabularx}
 \usepackage{booktabs}
-
+\usepackage{amssymb}
 \title{Problem Statement and Goals\\\progname}
 
 \author{\authname}
@@ -22,7 +22,7 @@
 \toprule
 \textbf{Date} & \textbf{Developer(s)} & \textbf{Change}\\
 \midrule
-2020-09-24 & Edward He & Adding author information\\
+2020-09-24 & Edward He & Problem Statement Vision 0\\
 Date2 & Name(s) & Description of changes\\
 ... & ... & ...\\
 \bottomrule
@@ -31,23 +31,38 @@ Date2 & Name(s) & Description of changes\\
 
 \section{Problem Statement}
 
-\wss{You should check your problem statement with the
-\href{https://github.com/smiths/capTemplate/blob/main/docs/Checklists/ProbState-Checklist.pdf}
-{problem statement checklist}.}
-\wss{You can change the section headings, as long as you include the required information.}
 
 \subsection{Problem}
-
+Ever having an occasion when you are desperately trying to find something and despite you scratching your head and searching for hours, that specific item is nowhere to be found? It can be a very frustrating experience, especially if that item appears out of nowhere when you no longer need it and once again gone missing when you are looking for it. Although there has been different technology employed for digital devices that can help identify where the device is located, it does not help with small items that are not digital. Our team's proposed solution will be able to assist the user to remember where his/her belongings are and the most recent time the user had used or placed their belongings. The proposed system is capable of tracking and following human activities to position itself best for capturing any moving objects caused by the user. The system will identify each item that is being moved and record/update their corresponding positions. The user then has the ability to interact with our system through an interface and select which item the user is looking for. Given this information, our system would identify where that specific item is and assist the user to locate their belongings in a short time. 
 \subsection{Inputs and Outputs}
-
-\wss{Characterize the problem in terms of ``high level'' inputs and outputs.  
-Use abstraction so that you can avoid details.}
-
+Input:
+\begin{itemize}
+    \item Live video feed from camera capturing human and object activities. 
+    \item Frames of start and end position of a complete movement of an object.
+    \item User inputs of description of the missing items or the items to be found.
+\end{itemize}
+Output:
+\begin{itemize}
+    \item Based on the position of the human detected by the camera, camera will be repositioned itself to keep human in the center of the frames.
+    \item Based on the frames detecting moving object, record the end position and update to the database its new position.
+    \item Upon receiving user input, scan over the database and match the item that fits user's description and outputs its most recent position to the user.
+\end{itemize}
 \subsection{Stakeholders}
-
+Anyone who has struggled in their daily life trying to find some of their belongings and people who has bad memories.
 \subsection{Environment}
 
-\wss{Hardware and software}
+Hardware:
+\begin{itemize}
+    \item A camera capable of recording live video with high resolution and sending live video to the software.
+    \item A mount that is attached to the camera, capable of rotating 360 degrees and be stationary to a wall or ceiling. 
+\end{itemize}
+Software:
+\begin{itemize}
+    \item Object detection algorithm capable of detecting multiple different objects at the same time at minimal resources. Able to identify which item has changed position and accurately update new positions. 
+    \item Human detection algorithm that can accurately detect human from live video.
+    \item Control system for moving and repositioning the camera based on the position of detected human both accurately and smoothing.
+    \item An user friendly user interface for the user to input what item is to be found. 
+\end{itemize}
 
 \section{Goals}
 
