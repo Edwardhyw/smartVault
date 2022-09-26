@@ -63,8 +63,27 @@ Software:
 
 \end{itemize}
 
-\section{Goals}
-
+\section{Project Goals}
+The goal of the project is divided into three parts: Hardware Part, Software Part, User Interface Part, and Stretch Goals Part. The following paragraph will discuss those three parts in detail. 
+\subsection{Hardware Goals}
+\subsubsection{Movable Mechnical Structure}
+To identify each object that exists in the room, the camera should be able to have a whole view of the room. As a result, the camera should be supported by arms that can rotate both horizontally and vertically. What’s more, the main pole may also be able to move up and down so that the camera can always find the best position for scanning the room.
+\subsubsection{Reliable Embedded System Communication}
+The embedded system of the product should make a strong communication between the peripheral elements and the software part. It should also be able to show good controllability and stability in manipulating those components.
+\subsection{Software Goals}
+\subsubsection{Accurate Data Manipulation}
+The project should have a good performance on machine learning and project detection. It should first be able to recognize the movement of the object, either artificially or passively (e.g., colliding with other objects and falling). What’s more, the final position of the object should be recorded and stored well in a file with details of the movement like the time of the final movement or the screenshot of that object. All of the data will be used for the object tracking system.
+\subsubsection{Good Image Analyzing Method}
+When the system receives images from the camera, it should be able to identify humans and can always adjust the position of the camera so that the user always stands in the center of the image. When half of the image is covered by objects, which may cause the dysfunction of the object manipulation method. The system is able to handle this situation either by making sounds or using portable arms to move to a suitable position. 
+\subsection{User Interface (UI) Goals}
+\subsubsection{Clean and Easy-to-use UI Design}
+A qualified UI design should actively guide users to understand the operation logic by themselves. It should keep the design simple to use, easy to play with. Once entered in the UI, users shall comfortably be able to make use of its functionality. SmartVault will conduct surveys with potential customers during the development of the system to get feedbacks and use them to improve the end user’s experience.
 \section{Stretch Goals}
+\subsection{Accurate Data Processing}
+Additional cameras should be placed at different locations in the space other than the main camera location to achieve multiple observation from different angles. The position of an item can be recorded more accurately, thereby avoiding the situation that the item cannot be identified when it is covered by other objects. According to the long-term learning of the user’s habit, the system ought to predict the next possible position of items, thus obtaining more accurate and predictable location of different items. At the same time, the amount of calculation and the burden of the system would be reduced.
+\subsection{Real Time Data Updating}
+Real-time data collection and uploading them to a database where updates the positions of the tracked items. This would allow the system to collect a considerable amount of data with confidence and consistency. Sequentially, users can clearly know the time when the position of the item changes.
+\subsection{Minimizing User Costs}
+In the case of insufficient light such as at night, the camera or the system automatically enters the sleep mode, so as to save the cost of the user. In future, solar panel could be added to the main camera port, therefore acting as the secondary energy source for the system. Also, pricing the system cost lower than the competition without effecting the overall experience is the key.
 
 \end{document}
