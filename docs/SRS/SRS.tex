@@ -30,8 +30,8 @@
     urlcolor=cyan           % color of external links
 }
 
-\input{../Comments}
-\input{../Common}
+
+
 
 % For easy change of table widths
 \newcommand{\colZwidth}{1.0\textwidth}
@@ -1092,19 +1092,20 @@ be covered in the Verification and Validation document.}
 
 \noindent \begin{itemize}
 
-\item[LC\refstepcounter{lcnum}\thelcnum\label{LC_meaningfulLabel}:] \plt{Give
-    the likely changes, with a reference to the related assumption (aref), as appropriate.}
-
+\item[LC\refstepcounter{lcnum}\thelcnum\label{LC_meaningfulLabel}:] \plt{Single Chip Board will be implemented if the real-time communication between laptop, camera and motor controller have issues.}
+\item[LC\refstepcounter{lcnum}\thelcnum\label{LC_meaningfulLabel}:] \plt{Servo might be replaced by DC motor with decoder or FOC, due to the 180 degree limit of Servo motor}
+\item[LC\refstepcounter{lcnum}\thelcnum\label{LC_meaningfulLabel}:] \plt{Modification will be implemented on object detection algorithm if issues appear}
 \end{itemize}
-
+\item[LC\refstepcounter{lcnum}\thelcnum\label{LC_meaningfulLabel}:] \plt{ IDE and Libraries of the Python development will be changed according to further requirement}
+\item[LC\refstepcounter{lcnum}\thelcnum\label{LC_meaningfulLabel}:] \plt{Movement tracking algorithm might be embedded into the hardware controller board if the serial communication between laptop and controller board cause problem}
 \section{Unlikely Changes}    
 
 \noindent \begin{itemize}
 
-\item[LC\refstepcounter{lcnum}\thelcnum\label{LC_meaningfulLabel}:] \plt{Give
-    the unlikely changes.  The design can assume that the changes listed will
-    not occur.}
-
+\item[LC\refstepcounter{lcnum}\thelcnum\label{LC_meaningfulLabel}:] \plt{Coding language will be Python}
+\item[LC\refstepcounter{lcnum}\thelcnum\label{LC_meaningfulLabel}:] \plt{Camera will not be likely changed as the video format will stay consistent}
+\item[LC\refstepcounter{lcnum}\thelcnum\label{LC_meaningfulLabel}:] \plt{Hardware control system will keep using C language}
+\item[LC\refstepcounter{lcnum}\thelcnum\label{LC_meaningfulLabel}:] \plt{Arduino will be used for hardware control}
 \end{itemize}
 
 \section{Traceability Matrices and Graphs}
