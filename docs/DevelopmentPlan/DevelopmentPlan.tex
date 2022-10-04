@@ -7,12 +7,12 @@
 \doublespacing
 \pagestyle{fancy}
 \fancyhead{} % clear all header fields
-\fancyhead[C]{\textbf{Revision 0}}
+\fancyhead[C]{\textbf{Revision 1}}
 \title{Development Plan\\\progname}
 
 \author{\authname{Peng Cui&Yiwei He&Peihua Jin&Guangwei Tang&Erping Zhang}}
 
-\date{09-24-2022}
+\date{2022-09-26}
 
 
 
@@ -25,7 +25,10 @@
 \toprule
 \textbf{Date} & \textbf{Developer(s)} & \textbf{Change}\\
 \midrule
-Sept 24th 2022 & All & Revision 0\\
+2022-09-24 & All & Revision 0\\
+2022-09-26 & Edward He, Erping Zhang & Revision 1\\
+& Guangwei Tang, Peng Cui & \\
+& Peihua Jin & \\
 %Date2 & Name(s) & Description of changes\\
 
 \bottomrule
@@ -63,7 +66,28 @@ Sept 24th 2022 & All & Revision 0\\
 	\item Optimize algorithm performance on the firmware
 	\item Design the communication between software, camera and servo
 
-\end{itemize}	
+\end{itemize}
+\subsection{General Roles}
+\subsubsection{Erping Zhang}
+\begin{itemize}
+    \item Responsible for the integration of hardware and software, solve the communication and protocol issue
+\end{itemize}
+\subsubsection{Guangwei Tang}
+\begin{itemize}
+    \item Responsible for the hardware deliverable to be finished no time
+\end{itemize}
+\subsubsection{Peng Cui}
+\begin{itemize}
+    \item Responsible for the software deliverable to be finished on time
+\end{itemize}
+\subsubsection{Peihua Jin}
+\begin{itemize}
+    \item Hold the team meetings and make sure each meeting runs as planned
+\end{itemize}
+\subsubsection{Yiwei He}
+\begin{itemize}
+    \item Manage deliverable resources on Github and make sure the resources and breaches have no conflict with each other
+\end{itemize}
 	
 
 
@@ -77,6 +101,7 @@ Sept 24th 2022 & All & Revision 0\\
 \section{Workflow Plan}
 
 \begin{itemize}
+    \item Create a new issue on Github for the task
 	\item Design the new requirement and function of new module
 	\item Design the test cases according to the requirements
 	\item Pull the latest version from master repository
@@ -84,6 +109,7 @@ Sept 24th 2022 & All & Revision 0\\
 	\item Implement the module which is independent from other module or only use the finished/stable module
 	\item Test the module according to test cases
 	\item Check if there is any changes to the old finished module which the developing module calls during the development period(if yes, changes may be applied to the developing module)
+	\item Create the Pull request and assign the issue to the task 
 	\item Merge the branch to the master repository after all members permission
 
 \end{itemize}
