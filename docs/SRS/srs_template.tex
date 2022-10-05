@@ -69,10 +69,7 @@
 
 \pagenumbering{arabic}
 
-This document describes the requirements for \progname. The template for the Software
-Requirements Specification (SRS) is a subset of the Volere
-template~\cite{RobertsonAndRobertson2012}. If you make further modifications
-to the template, you should explicitly state what modifications were made.
+
 
 \begin{table}
 
@@ -100,7 +97,23 @@ This document is intended to provide detailed set of requirements project SmartV
 N/A
 \section{Project Constraints}
 \subsection{Mandated Constraints}
-
+\begin{center}
+    \begin{tabular}{|| p{3cm} || p{8cm} ||}
+    \hline
+    MC1 & The cost of purchasing components and parts should not exceed \$750  \\
+    \hline
+    Description & Cost are restricted as a hard requirement in project designing stage \\
+    \hline\hline
+    MC2  & The submission date of the complete project design is by the end of academic year\\
+    \hline
+    Description & Based on course requirement, project has a solid deadline\\
+    \hline\hline
+    MC3 & The design should an integration of hardware and software\\
+    \hline
+    Description & As part of the project hard requirement for Mechatronics group, the design can not be all software based \\
+    \hline\hline
+    \end{tabular}
+\end{center}
 \subsection{Naming Conventions and Terminology}
 	\subsubsection{Definitions of All Terms}
 		\begin{itemize}
@@ -130,18 +143,6 @@ N/A
 The users of SmartVault are people who have trouble finding their belongings in their daily lives. It is preferred that the user to have general knowledge of what is presented in the designated area. Users should be familiar and comfortable with technology. At minimum, the users should be able to read, type and navigate on a webpage. 
 \subsubsection{Reader Characteristics}
 The intended readers for this document are the developers responsible for developing SmartVault. Dr.Smith, a professor at McMaster University and his teaching team will also be the intended reader of this document. The document is written in a technical manner and requires the reader to possess both software and hardware knowledge. The reader should be familiar with image processing and the ability to understand the basic logic of object detection. The reader should also understand the software design cycle and the steps taken to develop a complete software program. In order to fully understand the document, it is suggested that the reader has the ability to read and comprehend the communication and control system between a software program and hardware device. 
-\section{Functional Requirements}
-
-
-\subsection{The Scope of the Work and the Product}
-
-\subsubsection{The Context of the Work}
-
-\subsubsection{Work Partitioning}
-
-\subsubsection{Individual Product Use Cases}
-
-\section{Behavior Description}
 \subsection{Assumptions and Dependencies}
 \textbf{AD1:} The user can perform simple computer opertions.\\
 \textbf{Rationale:} The user can type, moving mouse and clicking on the window.\\\\
@@ -149,8 +150,37 @@ The intended readers for this document are the developers responsible for develo
 \textbf{AD3:} The operation of the project should take place indoors with adequate lighting.\\\\
 \textbf{AD4:} All objects can be seen by the product without hiding.\\\\
 \textbf{AD5:} Every motion of the user can be seen by the device. 
+\section{Functional Requirements}
 
-\subsection{Finite State Machine Description}
+
+\subsection{The Scope of the Work}
+
+\subsubsection{The Context of the Work}
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.7]{work_context.png}
+    \caption{context of work}
+\end{figure}
+\subsubsection{Work Partitioning}
+
+\begin{table}[H]
+\caption{Business Event List} 
+\begin{tabularx}{\textwidth}{XXX}
+\toprule
+\textbf{Event Name} & \textbf{Input and Output} & \textbf{Summary of BUC}\\
+\midrule
+User input & Item description(in) & User inputs on webpage on which item to be found.\\
+Displace item position & Item position (output) & Displace item position on webpage for the desired item.\\
+Live feed from camera & live frames(in) & Sending frames for human and object detection.\\
+Motor Control& Degree and direction of rotation (out) & Controlling motor to reposition.\\
+Update database & New item position(out) & Replace or add position data for an item in the database.\\
+Acquire position & Item position(in) & Select corresponding item position from the database.\\
+
+\bottomrule
+\end{tabularx}
+\end{table}
+\subsection{The Scope of Product}
+\subsubsection{Finite State Machine Description}
 To make the behaviour of the product to achieve the target task, the Finite State Machine is created to describe the behaviour with detailed description provided after the picture. 
 \begin{figure}[H]
     \centering
@@ -169,7 +199,8 @@ To make the behaviour of the product to achieve the target task, the Finite Stat
 \textbf{Object Taken Out:} If the object is still not found, the system will think that the object is taken out of the room or is hidden behind another object. \\\\
 \textbf{Rotate Camera:} If the device found the human body detected is not in thhe center of the screen or the camera is covered by something else, it will send signals to the motor to rotate the camera until problem sloved. 
 
-\subsection{Use Case Diagram}
+
+\subsubsection{Individual Product Use Cases}
 \begin{figure}[H]
     \centering
     \includegraphics[scale=0.8]{Use.png}
@@ -177,10 +208,25 @@ To make the behaviour of the product to achieve the target task, the Finite Stat
 \end{figure}
 The Use Case Diagram shown above describes some actions that the user can interact with teh system. The line in the middle shows the boundaries between user and the internal program. The outmost large box shows the boundary for the whole system. All user can do is just to start and shut down the program. Th user can also find the target object by typing the information about the object and verify if the object is found. The system will interact with the environment by rotating its camera and detecting the movement of the object in the room. It will also ba able to update its database when the position of the object is changed. 
 
-\section{Functional Requirements}
-The following are the functional requirements of the project. They are separated into 2 main parts: Image Processing and Storage, and UI Interface Menu.
-\subsection{Image Processing and Storage Requirements}
+\subsection{Monitor and Control Variables}
+\subsubsection{Monitor Variable}
+\begin{itemize}
+    \item Detected object position
+    \item Detected Object Characteristic 
+    \item Detected Object last seen time
+    \item Human activity and position in the camera frame
+\end{itemize}
+\subsubsection{Control Variable}
+\begin{itemize}
+    \item Degree of movement of the motor
+    \item Direction of movement of the motor
+    \item Speed of turning of the motor
+\end{itemize}
 
+\subsection{Functional Requirements}
+The following are the functional requirements of the project. They are separated into 2 main parts: Image Processing and Storage, and UI Interface Menu.
+
+\subsubsection{Image Processing and Storage Requirements}
 \textbf{IPR1:} The system should be able to identify human's body.\\\\
 \textbf{Rationale:} To ensure that the movement of human’s body can be captured.\\\\
 \textbf{IPR2:} The system must be able to identify human's hand.\\\\
@@ -193,13 +239,16 @@ The following are the functional requirements of the project. They are separated
 \textbf{IPR8:} The system should be able to arrange the photos stored in the file in ascending or descending order according to the time it was taken.\\\\
 \textbf{IPR9:} The system should be able to arrange the photos stored in the file in ascending or descending order according to their IDs.
 
-\subsection{UI Interface Menu Functional Requirements}
+\subsubsection{UI Interface Menu Functional Requirements}
 \textbf{UIR1:} The UI should be able to let user to choose whether to highlight a certain item or not.\\\\
 \textbf{UIR2:} The UI should be able to let user to switch the ordering method.\\\\
 \textbf{UIR3:} The UI must be able to notify the user when the WIFI signal is weak or unstable.\\\\
-
 \textbf{UIR4:} The UI must be able to allow the user to view the system’s status at any given point in time.\\\\
 \textbf{Rationale:} To ensure that the system will remain operational.
+
+
+
+
 
 
 \section{Nonfunctional Requirements}
