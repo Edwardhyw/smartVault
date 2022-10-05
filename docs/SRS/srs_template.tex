@@ -105,11 +105,15 @@ N/A
 
 \subsection{Relevant Facts and Assumptions}
 
+
+
+
 \subsubsection{User Characteristics}
 The users of SmartVault are people who have trouble finding their belongings in their daily lives. It is preferred that the user to have general knowledge of what is presented in the designated area. Users should be familiar and comfortable with technology. At minimum, the users should be able to read, type and navigate on a webpage. 
 \subsubsection{Reader Characteristics}
 The intended readers for this document are the developers responsible for developing SmartVault. Dr.Smith, a professor at McMaster University and his teaching team will also be the intended reader of this document. The document is written in a technical manner and requires the reader to possess both software and hardware knowledge. The reader should be familiar with image processing and the ability to understand the basic logic of object detection. The reader should also understand the software design cycle and the steps taken to develop a complete software program. In order to fully understand the document, it is suggested that the reader has the ability to read and comprehend the communication and control system between a software program and hardware device. 
 \section{Functional Requirements}
+
 
 \subsection{The Scope of the Work and the Product}
 
@@ -119,52 +123,256 @@ The intended readers for this document are the developers responsible for develo
 
 \subsubsection{Individual Product Use Cases}
 
-\subsection{Functional Requirements}
+\section{Behavior Description}
+\subsection{Assumptions and Dependencies}
+\textbf{AD1:} The user can perform simple computer opertions.\\
+\textbf{Rationale:} The user can type, moving mouse and clicking on the window.\\\\
+\textbf{AD2:} The user can understand English.\\\\
+\textbf{AD3:} The operation of the project should take place indoors with adequate lighting.\\\\
+\textbf{AD4:} All objects can be seen by the product without hiding.\\\\
+\textbf{AD5:} Every motion of the user can be seen by the device. 
 
-\section{Non-functional Requirements}
+\subsection{Finite State Machine Description}
+To make the behaviour of the product to achieve the target task, the Finite State Machine is created to describe the behaviour with detailed description provided after the picture. 
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.7]{FSM.png}
+    \caption{The Picture of Finite  State Machine}
+\end{figure}
+\textbf{Record Initial Condition:} The device will take a picture of the room as the initial position information for each object and save it to the database. \\\\
+\textbf{Waiting for New Changes:} The device will wait for future operations made by human or changes of objects detected by the camera. \\\\
+\textbf{Detect Object Movement:} When the device detects the movement of an object that is made by another object (for example, colliding with another object and fall), it will trace the new location oof the object. \\\\
+\textbf{Detect Hand Movement:} When the device detects the movement of the user, it will track the movement of the hand to identify which object is being moved and remember its final location. \\\\
+\textbf{Updating:} The device will record the updated information (including time, Location, picture of object, and so on) of the object into the database.\\\\
+\textbf{Input Object Information} When the user want to find one object in the room, the user interface will ask the user to input information of the object (like size, color, last time saw it, and so on).\\\\
+\textbf{Providing List and Wait Response:} After the user has input the information, the system will provide a list of objects with pictures that satisfy the input information.\\\\
+\textbf{Provide Detailed Information:} WHen the user find the target object, the device will display the detailed information about the object like showing the current location on the screen. \\\\
+\textbf{Pull Out Initial Picture:} When the object is not found in the list, the devide will display the picture taken just after the program starts to let the user find the object.\\\\
+\textbf{Object Taken Out:} If the object is still not found, the system will think that the object is taken out of the room or is hidden behind another object. \\\\
+\textbf{Rotate Camera:} If the device found the human body detected is not in thhe center of the screen or the camera is covered by something else, it will send signals to the motor to rotate the camera until problem sloved. 
 
+\subsection{Use Case Diagram}
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.8]{Use.png}
+    \caption{The Picture of Use Case Diagram}
+\end{figure}
+The Use Case Diagram shown above describes some actions that the user can interact with teh system. The line in the middle shows the boundaries between user and the internal program. The outmost large box shows the boundary for the whole system. All user can do is just to start and shut down the program. Th user can also find the target object by typing the information about the object and verify if the object is found. The system will interact with the environment by rotating its camera and detecting the movement of the object in the room. It will also ba able to update its database when the position of the object is changed. 
+
+\section{Functional Requirements}
+The following are the functional requirements of the project. They are separated into 2 main parts: Image Processing and Storage, and UI Interface Menu.
+\subsection{Image Processing and Storage Requirements}
+\textbf{IPR1:} The device should be able to identify human's body.\\\\
+\textbf{IPR2:} The device must be able to identify human's hand.\\\\
+\textbf{IPR3:} The device must be able to take a photo automatically when required.\\\\
+\textbf{IPR4:} The device should be able to identify all the small items being exposed to the camera.\\\\
+\textbf{IPR5:} The device should be able to take a photo once the change of the location of an item is captured.\\\\
+\textbf{IPR6:} The device should be able to differentiate one item from another items which are identified by the system through 3 main parameters,item\_shape, item\_color and item\_size.\\\\
+\textbf{IPR7:} The device must be able to store all the photos into a file, and indicate the time when it was taken.\\\\
+\textbf{IPR8:} The device must be able to name each item with a unique ID.\\\\
+\textbf{IPR9:} The device should be able to arrange the photos stored in the file in ascending or descending order according to the time it was taken.\\\\
+\textbf{IPR10:} The device should be able to arrange the photos stored in the file in ascending or descending order according to their IDs.
+\subsection{UI Interface Menu Functional Requirements}
+\textbf{UIR1:} The UI should be able to let user to choose whether to highlight a certain item or not.\\\\
+\textbf{UIR2:} The UI should be able to let user to switch the ordering method.\\\\
+\textbf{UIR3:} The UI must be able to notify the user when the WIFI signal is weak or unstable.\\\\
+\textbf{UIR4:} The UI must be able to allow the user to view the system’s status at any given point in time.
+
+\section{Nonfunctional Requirements}
+The next paragraphs will talk about about nonfunctional requirements in the designing of the smartVault, which will be discussed in several different parts. 
 \subsection{Look and Feel Requirements}
-
+\subsubsection{Appearance Requirements}
+\textbf{APR1:} The device should not have exposed internal electronic wiring.\\\\
+\textbf{APR2:} The sharp corners should not be exposed to the users annd should be covered by some soft materials.
+\subsubsection{style}
+Not Applicable.
 \subsection{Usability and Humanity Requirements}
-
+\subsubsection{Easy of Use Requirements}
+\textbf{EUR1:} The device should be easy to installed in the room.\\\\
+\textbf{EUR2:} Fonts, blanks and graphics shown on the screen should be big and visiable enough for the user to use without inserting wrong information.
+\subsubsection{Personalization and Internationalization Requirements}
+Not applicable.
+\subsubsection{Learning Requirements}
+\textbf{LR1:} The software part of the product should be easy to install.\\\\
+\textbf{LR2:} The product should be easy to set up in its working environment.\\
+\textbf{Rationale:} The device can identify objjects in the room in a short tiime after powering up.
+\subsubsection{Understandability and Politeness Requirements}
+\textbf{UPR1:} The graphics used should be readeable and visiable to the user.\\
+\textbf{Rationale:} Easy for clients to find objects that wish to find in the room.
+\subsection{Accessibility Requirements}
+\textbf{AR1:} The display window should be concise enough for user to understand
 \subsection{Performance Requirements}
-
+\subsubsection{Speed and Latency Requirements}
+\textbf{SLR1:} The response time of the product to show the location of the object should be less than 5 seconds.
+\subsubsection{Safety-Critical Requirements}
+\textbf{SCR1:} The base of the device should be strong enough without falling from the floor.\\\\
+\textbf{SCR2:} The device should not infringe on user's privacy.\\\\
+\textbf{SCR3:} The rotating speed of the motor should be slow enough without hurting people.
+\subsubsection{Precision and Accuracy Requirements}
+\textbf{PAR1:} The time based value used in the device should be precised to minute.\\\\
+\textbf{PAR2:} The location value used in the devce should be precised to whole number.\\\\
+\textbf{PAR3:} Other numatic values used in the device should be rounded to one decimal place.
+\subsubsection{Reliability and Avaliability Requirements}
+\textbf{RAR1:} The device should not over-rotate to an unexpected angle.\\\\
+\textbf{RAR2:} The device should be avaliable to work for the whole time of except for maintaince or updating time.
+\subsubsection{Robustness or Fault-Tolerance Requirements}
+\textbf{RFR1:} The data stored in the file should not be deleted or changed even after the program shuts down.\\\\
+\textbf{RFR2:} The device should be able to notify user for an error occurs in the program.\\
+\textbf{Rationale:} The user should be notified if he or she has a wrong input or havin inappropriate actions.
+\subsubsection{Capacity Requirements}
+\textbf{CR1:} The device sould be able to store the any information about the location of each object detected from the camera.
+\subsubsection{Scalability or extensibility Requirements}
+Not applicable.
+\subsubsection{Longevity Requirements}
+\textbf{LR1:} The device should store the information about the objects until it is changed into a different environment.
 \subsection{Operational and Environmental Requirements}
-
+\subsubsection{Expected Physical Environment}
+\textbf{EPE1:} The device is supposed to work in any indoor space.
+\subsubsection{Requirements for Interfacing with Adjacent Systems}
+Not applicable.
+\subsubsection{Productization Requirements}
+Not applicable.
+\subsubsection{Release Requirements}
+No applicable.
 \subsection{Maintainability and Support Requirements}
-
+\subsubsection{Maintenance Requirements}
+\textbf{MR1:} The maintenance for the device should be done by the developers.
+\subsubsection{Supportability Requirements}
+\textbf{SR1:} The device is supported by any computers supports both C and python programming languages.
+\subsubsection{Adaptability Requirements}
+Not Applicable.
 \subsection{Security Requirements}
-
-\subsection{Cultural Requirements}
-
+\subsubsection{Access Requirements}
+\textbf{AR1:} Any one except for the users is not allowed to access the any file that stores the information about the objects in the room.
+\textbf{AR1:} Any one except for the users is not allowed to access the any file that stores the information about the objects in the room.
+\subsubsection{Integrity Requirements}
+\textbf{IR1:} Data in teh files should not be changed unnecessarily.\\\\
+\textbf{IR2:} The files are locked whhen teh device shuts down.
+\subsubsection{Privacy Requirements}
+\textbf{PR1:} Other users are not allowed to access any file in the computer.\\
+\textbf{PR2:} The camera should only work for a specific user.
+\subsubsection{Audit Requirements}
+Not applicable.
+\subsubsection{Immunity Requirements}
+Not applicable.
+\subsection{Cultural and Political Requirements}
+\subsubsection{Cultural Requirements}
+Not applicable.
+\subsubsection{Plitical Requirements}
+Not applicable.
 \subsection{Legal Requirements}
-
-\subsection{Health and Safety Requirements}
-
-This section is not in the original Volere template, but health and safety are
-issues that should be considered for every engineering project.
+\subsubsection{Compliance Requirements}
+\textbf{CR1:} The performance of the product should not violate the laws that protect the privacy of thee user.
+\subsubsection{Standards Requirements}
+Not applicable.
 
 \section{Project Issues}
 
 \subsection{Open Issues}
 
+\begin{itemize}
+    \item Limit of 180 rotation degree of servo motor
+    \item Accuracy of object detection 
+    \item How to distinguish two objects with very limited resources
+    \item How to recognize the same object in different angles
+    \item How to guarantee the stability of the serial communication
+\end{itemize}
+
+
 \subsection{Off-the-Shelf Solutions}
+\begin{itemize}
+
+    \item Huskylens - is a AI camera which can learn new objects and recognize them. It has the machine learning technology enables projects to interact with people and environments which allows many kinds of system control.
+    \item NVIDIA Jetson TX2 - is an embedded AI computer device. It has 8GB memory and 59.7GB/s of memory bandwidth which provides a high quality AI performance to build efficient AI models including computer vision.
+\end{itemize}
+
 
 \subsection{New Problems}
+    \subsubsection{Effects on the Current Environment}
+       \hspace{0.5cm} Any changes to the exist database may cause the data related to each object missing
+    \subsubsection{Effect on the Installed Systems}
+        \hspace{0.5cm} Changes to the motorized camera mount will affect the algorithm or logic of the controller board
+    \subsubsection{Potential User Problems}
+        \hspace{0.5cm} Changes to the user interface may change the way that user used to search the object
+    
+    \subsubsection{Limitations in the Anticipated Implementation Environment}
+        \hspace{0.5cm}NA
+    \subsubsection{Follow-Up Problems}
+        \hspace{0.5cm} The changes in computer vision algorithm may cause the whole system malfunction
 
 \subsection{Tasks}
-
+    \subsubsection{Project Planning}
+    NA
+    
+    \subsubsection{Planning of the Development Phases}
+    NA
 \subsection{Migration to the New Product}
+    \subsubsection{Requirements for Migration to the New Product}
+        \begin{itemize}
+            \item All the objects data should be stored 
+            \item Motorized camera mount should be calibrated before using
+            \item The spec of camera should be kept in same as possible
+        \end{itemize}
+    \subsubsection{Data that Has to be Modified or translated for the new system}
+        \begin{itemize}
+            \item Objects data need to be transfer ed into the new system
+        \end{itemize}
 
 \subsection{Risks}
-
+\begin{itemize}
+    \item Connection lost between the board and camera during the motor movement.
+    \item Inappropriate distance measure and control between the object and the motor which furthermore cause damage or stuck.
+    \item Physical damage from collision with objects .
+    \item Physical damage from wire twisting during rotation.
+    \item Unexpected movement caused by the delay of data transfer
+\end{itemize}
 \subsection{Costs}
-
+\begin{large}
+\begin{center}
+    \begin{tabular}{|| c || c ||}
+    \hline
+    Product & Price\\
+    \hline\hline
+    USB Camera & \$30\\
+    \hline
+    PTZ Mount & \$25\\
+    \hline
+    Arduino & \$30\\
+    \hline
+    Motors & \$15\\
+    \hline
+    Total & \$100\\
+    \hline
+    \end{tabular}
+\end{center}
+\end{large}
 \subsection{User Documentation and Training}
-
+    \subsubsection{User Documentation Requirements}
+    \begin{itemize}
+        \item User manuals
+        \item Installation manuals
+        \item Technical specifications to accompany the product
+    \end{itemize}
+    
+    \subsubsection{Training Requirements}
+    NA
 \subsection{Waiting Room}
-
+\begin{itemize}
+    \item Expanding chassis's activity area including rotation angle and planar movement.
+    \item Developing new algorithm regarding data transfer to enable faster real-time reaction.
+    \item Adding alarm in case that object not found in the assigned area as an application of storage security.
+\end{itemize}
 \subsection{Ideas for Solutions}
+\begin{itemize}
+    \item Use DC motor with decoder to implement the unlimited rotation degree of camera mount
+    \item Use Field Oriented Control algorithm to implement the unlimited rotation degree of camera mount
+    \item Use frame-to-frame compassion to detect the relocation of objects
+    \item Predict the possible location of objects by tracking the users path in the room
+    \item Beeper alert when the camera view is not cleared
+\end{itemize}
+
+
+
 
 \newpage
 
