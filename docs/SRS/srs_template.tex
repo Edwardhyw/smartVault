@@ -102,6 +102,24 @@ N/A
 \subsubsection{Budget Constraints}
 For this project, the total budget is limited to \$750\
 \subsection{Naming Conventions and Terminology}
+	\subsubsection{Definitions of All Terms}
+		\begin{itemize}
+			\item Object: The physical objects need to be tracked and searched in the room
+			\item Camera Mount: The motorized mount that hold the camera and adjust the angle of the camera view
+			\item Servo: An electromagnetic device that converts electricity into precise controlled motion by use of negative feedback mechanisms
+			\item Field Oriented Control(FOC): A variable-frequency drive control method in which the stator currents of a three-phase AC or brushless DC electric motor are identified as two orthogonal components that can be visualized with a vector.
+			\item Relocation: The change of the position or location of an object in the room
+			\item Controller Board: A hardware chip set with General Purpose Input and Output ports, which send data from camera to laptop and control the rotation of camera mount.
+			\item Serial Communication: A communication method that uses one or two transmission lines to send and receive data, and that data is continuously sent and received one bit at a time.
+			\item User Interface: A embedded software program that allow user to interact with the searching system
+			\item Camera: The device that collect video data and send the data to rest of the system
+			\item Object Detection: The action that system can recognize a object and distinguish different objects
+			\item Database: The physical space in system which record informations about each object
+
+			
+		\end{itemize}
+
+
 
 \subsection{Relevant Facts and Assumptions}
 
@@ -194,6 +212,7 @@ The Use Case Diagram shown above describes some actions that the user can intera
 
 \subsection{Functional Requirements}
 The following are the functional requirements of the project. They are separated into 2 main parts: Image Processing and Storage, and UI Interface Menu.
+<<<<<<< HEAD
 \subsubsection{Image Processing and Storage Requirements}
 \textbf{IPR1:} The device should be able to identify human's body.\\\\
 \textbf{IPR2:} The device must be able to identify human's hand.\\\\
@@ -206,10 +225,30 @@ The following are the functional requirements of the project. They are separated
 \textbf{IPR9:} The device should be able to arrange the photos stored in the file in ascending or descending order according to the time it was taken.\\\\
 \textbf{IPR10:} The device should be able to arrange the photos stored in the file in ascending or descending order according to their IDs.
 \subsubsection{UI Interface Menu Functional Requirements}
+=======
+\subsection{Image Processing and Storage Requirements}
+
+\textbf{IPR1:} The system should be able to identify human's body.\\\\
+\textbf{Rationale:} To ensure that the movement of human’s body can be captured.\\\\
+\textbf{IPR2:} The system must be able to identify human's hand.\\\\
+\textbf{Rationale:} To ensure that the movement of human’s hand can be captured.\\\\
+\textbf{IPR3:} The system should be able to identify all the small items being exposed to the camera.\\\\
+\textbf{IPR4:} The system should be able to take a photo once the change of the location of an item is captured.\\\\
+\textbf{IPR5:} The system should be able to differentiate one item from another items which are identified by the system through 3 main parameters, item\_shape, item\_color and item\_size.\\\\
+\textbf{IPR6:} The system must be able to store all the photos into a file, and indicate the time when it was taken.\\\\
+\textbf{IPR7:} The system must be able to name each item with a unique ID.\\\\
+\textbf{IPR8:} The system should be able to arrange the photos stored in the file in ascending or descending order according to the time it was taken.\\\\
+\textbf{IPR9:} The system should be able to arrange the photos stored in the file in ascending or descending order according to their IDs.
+
+\subsection{UI Interface Menu Functional Requirements}
+>>>>>>> 1eccc00a85385cdc60e812b7b1b358de4099206a
 \textbf{UIR1:} The UI should be able to let user to choose whether to highlight a certain item or not.\\\\
 \textbf{UIR2:} The UI should be able to let user to switch the ordering method.\\\\
 \textbf{UIR3:} The UI must be able to notify the user when the WIFI signal is weak or unstable.\\\\
-\textbf{UIR4:} The UI must be able to allow the user to view the system’s status at any given point in time.
+
+\textbf{UIR4:} The UI must be able to allow the user to view the system’s status at any given point in time.\\\\
+\textbf{Rationale:} To ensure that the system will remain operational.
+
 
 \section{Nonfunctional Requirements}
 The next paragraphs will talk about about nonfunctional requirements in the designing of the smartVault, which will be discussed in several different parts. 
@@ -276,13 +315,16 @@ No applicable.
 Not Applicable.
 \subsection{Security Requirements}
 \subsubsection{Access Requirements}
-\textbf{AR1:} Any one except for the users is not allowed to access the any file that stores the information about the objects in the room.
-\textbf{AR1:} Any one except for the users is not allowed to access the any file that stores the information about the objects in the room.
+\textbf{AR1:} Any one except for the users is not allowed to access the any file that stores the information about the objects in the room.\\\\
+
+
 \subsubsection{Integrity Requirements}
 \textbf{IR1:} Data in teh files should not be changed unnecessarily.\\\\
 \textbf{IR2:} The files are locked whhen teh device shuts down.
 \subsubsection{Privacy Requirements}
-\textbf{PR1:} Other users are not allowed to access any file in the computer.\\
+
+\textbf{PR1:} Other users are not allowed to access any file in the computer.\\\\
+
 \textbf{PR2:} The camera should only work for a specific user.
 \subsubsection{Audit Requirements}
 Not applicable.
@@ -298,6 +340,94 @@ Not applicable.
 \textbf{CR1:} The performance of the product should not violate the laws that protect the privacy of thee user.
 \subsubsection{Standards Requirements}
 Not applicable.
+
+
+\section{Traceability and Priority}
+For both functional and nonfunctional requirements, the dependency matrix is made and priorities are assigned to each requirement. The Traceability matrix and priority table are shown below. In additon, the likelihood change of the requirements and the future plan of the requirements are also shown below.
+
+\subsection{Traceability Matrix}
+\begin{tabular}{|p{0.45\textwidth}| p{0.45\textwidth}|}
+\hline \multicolumn{2}{|c|}{Table 1: The Table of Requirement Traceability Matrix}\\
+
+\hline Functional Requirement ID&Nonfunctional Requirement ID\\
+
+\hline IPR4, IPR5&LR2\\
+
+\hline IPR8, IPR9&UPR1, PAR2\\
+\hline UIR4&RFR2\\
+\hline IPR6, IPR7&CR1\\
+\hline
+
+\end{tabular}
+
+\subsection{Priority Table}
+\begin{tabular}{|p{0.36\textwidth}|p{0.42\textwidth}|p{0.1\textwidth}|}
+
+\hline \multicolumn{3}{|c|}{Table 2: The Priority Table for each Requirement}\\
+
+\hline Functional Requirement ID&Nonfunctional Requirement ID&Priority\\
+
+\hline IPR2, IPR3, IPR3, IPR4, IPR5, IPR6, IPR7, UIR1, UIR4&LR2, UPR1, SCR2, PAR1, PAR2, PAR3, RFR1, RFR2, CR1, EPE1, IR1, CR1&HIGH\\
+
+\hline IPR8, IPR9, UIR2&APR1, APR2, EUR2, AR1, SCR3, RAR1, RAR2, SR1, AR1, IR2, PR1, PR2&MID\\
+
+\hline UIR3&EUR1, LR1, SCR1, MR1&LOW\\
+
+\hline
+
+\end{tabular}
+
+\subsection{Likelihood of Changes}
+
+\begin{tabular}{|p{0.25\textwidth}|p{0.15\textwidth}|p{0.60\textwidth}|}
+
+\hline \multicolumn{3}{|c|}{Table 3: Requirements that are Likely to Change}\\
+
+\hline Requirement ID&Likelihood&Ways to Change\\
+
+\hline IPR2(func)&Very Likely&The detection method of user moving the object may not just focused on the movement of hand but on other aspects.\\
+
+\hline IPR9(func)&likely&Since time is the easiest way to track an object, the assistance information may be changed so the ordering method may also be changed.\\
+
+\hline UIR1(func)&likely&The device will remember each object that is moved so this function may be useless.\\
+
+\hline UIR2(func)&likely&The sorting method is determined by the program not the user, so the ording method may not depend on the user. \\
+
+\hline EUR1(nonfunc)&likely&The physical installation of the device may be changed after the model is built.\\
+
+\hline SCR1(nonfunc)&likely&The base may be changed when the installation method of the device changed/\\
+
+\hline CR1(nonfunc)&very likely&The device may only choose information that make the sorting algorithm easier.\\
+
+\hline
+
+\end{tabular}
+
+\subsection{Requirement Timeline}
+
+\begin{tabular}{|p{0.5\textwidth}|p{0.5\textwidth}|}
+
+\hline \multicolumn{2}{|c|}{Table 4: The Timeline for each Requirement}\\
+
+\hline Requirement ID&Finish Date\\
+
+
+\hline IPR1, IPR3, IPR6, AR1, PAR1, PAR2, PAR3, SR1&2022.10.31\\
+
+\hline RFR1, CR1, AR1, IR1, PR1, PR2&2022.11.15\\
+
+\hline IPR2, IPR4, IPR5, UIR1, UIR3, UIR4, LR2, RFR2&2022.11.28\\
+
+\hline EUR2, SLR1, IR2&2022.12.15\\
+
+\hline IPR7, IPR8, IPR9, UIR2, UPR1, SCR2, SCR3, RAR1&2022.12.30\\
+
+\hline EUR1, LR1, SCR1, RAR2, EPE1, MR1, CR1&2023.1.15\\
+
+\hline
+
+\end{tabular}
+
 
 \section{Project Issues}
 
