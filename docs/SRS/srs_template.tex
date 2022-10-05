@@ -136,24 +136,106 @@ issues that should be considered for every engineering project.
 \section{Project Issues}
 
 \subsection{Open Issues}
+\begin{itemize}
+    \item Limit of 180 rotation degree of servo motor
+    \item Accuracy of object detection 
+    \item How to distinguish two objects with very limited resources
+    \item How to recognize the same object in different angles
+    \item How to guarantee the stability of the serial communication
+\end{itemize}
+
 
 \subsection{Off-the-Shelf Solutions}
+\begin{itemize}
+
+    \item Huskylens - is a AI camera which can learn new objects and recognize them. It has the machine learning technology enables projects to interact with people and environments which allows many kinds of system control.
+    \item NVIDIA Jetson TX2 - is an embedded AI computer device. It has 8GB memory and 59.7GB/s of memory bandwidth which provides a high quality AI performance to build efficient AI models including computer vision.
+\end{itemize}
+
 
 \subsection{New Problems}
+    \subsubsection{Effects on the Current Environment}
+       \hspace{0.5cm} Any changes to the exist database may cause the data related to each object missing
+    \subsubsection{Effect on the Installed Systems}
+        \hspace{0.5cm} Changes to the motorized camera mount will affect the algorithm or logic of the controller board
+    \subsubsection{Potential User Problems}
+        \hspace{0.5cm} Changes to the user interface may change the way that user used to search the object
+    
+    \subsubsection{Limitations in the Anticipated Implementation Environment}
+        \hspace{0.5cm}NA
+    \subsubsection{Follow-Up Problems}
+        \hspace{0.5cm} The changes in computer vision algorithm may cause the whole system malfunction
 
 \subsection{Tasks}
-
+    \subsubsection{Project Planning}
+    NA
+    
+    \subsubsection{Planning of the Development Phases}
+    NA
 \subsection{Migration to the New Product}
+    \subsubsection{Requirements for Migration to the New Product}
+        \begin{itemize}
+            \item All the objects data should be stored 
+            \item Motorized camera mount should be calibrated before using
+            \item The spec of camera should be kept in same as possible
+        \end{itemize}
+    \subsubsection{Data that Has to be Modified or translated for the new system}
+        \begin{itemize}
+            \item Objects data need to be transfer ed into the new system
+        \end{itemize}
 
 \subsection{Risks}
-
+\begin{itemize}
+    \item Connection lost between the board and camera during the motor movement.
+    \item Inappropriate distance measure and control between the object and the motor which furthermore cause damage or stuck.
+    \item Physical damage from collision with objects .
+    \item Physical damage from wire twisting during rotation.
+    \item Unexpected movement caused by the delay of data transfer
+\end{itemize}
 \subsection{Costs}
-
+\begin{large}
+\begin{center}
+    \begin{tabular}{|| c || c ||}
+    \hline
+    Product & Price\\
+    \hline\hline
+    USB Camera & \$30\\
+    \hline
+    PTZ Mount & \$25\\
+    \hline
+    Arduino & \$30\\
+    \hline
+    Motors & \$15\\
+    \hline
+    Total & \$100\\
+    \hline
+    \end{tabular}
+\end{center}
+\end{large}
 \subsection{User Documentation and Training}
-
+    \subsubsection{User Documentation Requirements}
+    \begin{itemize}
+        \item User manuals
+        \item Installation manuals
+        \item Technical specifications to accompany the product
+    \end{itemize}
+    
+    \subsubsection{Training Requirements}
+    NA
 \subsection{Waiting Room}
-
+\begin{itemize}
+    \item Expanding chassis's activity area including rotation angle and planar movement.
+    \item Developing new algorithm regarding data transfer to enable faster real-time reaction.
+    \item Adding alarm in case that object not found in the assigned area as an application of storage security.
+\end{itemize}
 \subsection{Ideas for Solutions}
+\begin{itemize}
+    \item Use DC motor with decoder to implement the unlimited rotation degree of camera mount
+    \item Use Field Oriented Control algorithm to implement the unlimited rotation degree of camera mount
+    \item Use frame-to-frame compassion to detect the relocation of objects
+    \item Predict the possible location of objects by tracking the users path in the room
+    \item Beeper alert when the camera view is not cleared
+\end{itemize}
 
 \newpage
 
