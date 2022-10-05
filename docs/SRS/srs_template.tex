@@ -97,7 +97,10 @@ This document is intended to provide detailed set of requirements project SmartV
 N/A
 \section{Project Constraints}
 \subsection{Mandated Constraints}
+\subsubsection{Solution Constraints}
 
+\subsubsection{Budget Constraints}
+For this project, the total budget is limited to \$750\
 \subsection{Naming Conventions and Terminology}
 
 \subsection{Relevant Facts and Assumptions}
@@ -119,7 +122,7 @@ The intended readers for this document are the developers responsible for develo
 \section{Functional Requirements}
 
 
-\subsection{The Scope of the Work and the Product}
+\subsection{The Scope of the Work}
 
 \subsubsection{The Context of the Work}
 \begin{figure}[H]
@@ -127,7 +130,26 @@ The intended readers for this document are the developers responsible for develo
     \includegraphics[scale=0.7]{work_context.png}
     \caption{context of work}
 \end{figure}
-\subsection{Finite State Machine Description}
+\subsubsection{Work Partitioning}
+
+\begin{table}[H]
+\caption{Business Event List} 
+\begin{tabularx}{\textwidth}{XXX}
+\toprule
+\textbf{Event Name} & \textbf{Input and Output} & \textbf{Summary of BUC}\\
+\midrule
+User input & Item description(in) & User inputs on webpage on which item to be found.\\
+Displace item position & Item position (output) & Displace item position on webpage for the desired item.\\
+Live feed from camera & live frames(in) & Sending frames for human and object detection.\\
+Motor Control& Degree and direction of rotation (out) & Controlling motor to reposition.\\
+Update database & New item position(out) & Replace or add position data for an item in the database.\\
+Acquire position & Item position(in) & Select corresponding item position from the database.\\
+
+\bottomrule
+\end{tabularx}
+\end{table}
+\subsection{The Scope of Product}
+\subsubsection{Finite State Machine Description}
 To make the behaviour of the product to achieve the target task, the Finite State Machine is created to describe the behaviour with detailed description provided after the picture. 
 \begin{figure}[H]
     \centering
@@ -155,7 +177,20 @@ To make the behaviour of the product to achieve the target task, the Finite Stat
 \end{figure}
 The Use Case Diagram shown above describes some actions that the user can interact with teh system. The line in the middle shows the boundaries between user and the internal program. The outmost large box shows the boundary for the whole system. All user can do is just to start and shut down the program. Th user can also find the target object by typing the information about the object and verify if the object is found. The system will interact with the environment by rotating its camera and detecting the movement of the object in the room. It will also ba able to update its database when the position of the object is changed. 
 
-
+\subsection{Monitor and Control Variables}
+\subsubsection{Monitor Variable}
+\begin{itemize}
+    \item Detected object position
+    \item Detected Object Characteristic 
+    \item Detected Object last seen time
+    \item Human activity and position in the camera frame
+\end{itemize}
+\subsubsection{Control Variable}
+\begin{itemize}
+    \item Degree of movement of the motor
+    \item Direction of movement of the motor
+    \item Speed of turning of the motor
+\end{itemize}
 
 \subsection{Functional Requirements}
 The following are the functional requirements of the project. They are separated into 2 main parts: Image Processing and Storage, and UI Interface Menu.
