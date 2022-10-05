@@ -69,10 +69,7 @@
 
 \pagenumbering{arabic}
 
-This document describes the requirements for \progname. The template for the Software
-Requirements Specification (SRS) is a subset of the Volere
-template~\cite{RobertsonAndRobertson2012}. If you make further modifications
-to the template, you should explicitly state what modifications were made.
+
 
 \begin{table}
 
@@ -112,18 +109,6 @@ N/A
 The users of SmartVault are people who have trouble finding their belongings in their daily lives. It is preferred that the user to have general knowledge of what is presented in the designated area. Users should be familiar and comfortable with technology. At minimum, the users should be able to read, type and navigate on a webpage. 
 \subsubsection{Reader Characteristics}
 The intended readers for this document are the developers responsible for developing SmartVault. Dr.Smith, a professor at McMaster University and his teaching team will also be the intended reader of this document. The document is written in a technical manner and requires the reader to possess both software and hardware knowledge. The reader should be familiar with image processing and the ability to understand the basic logic of object detection. The reader should also understand the software design cycle and the steps taken to develop a complete software program. In order to fully understand the document, it is suggested that the reader has the ability to read and comprehend the communication and control system between a software program and hardware device. 
-\section{Functional Requirements}
-
-
-\subsection{The Scope of the Work and the Product}
-
-\subsubsection{The Context of the Work}
-
-\subsubsection{Work Partitioning}
-
-\subsubsection{Individual Product Use Cases}
-
-\section{Behavior Description}
 \subsection{Assumptions and Dependencies}
 \textbf{AD1:} The user can perform simple computer opertions.\\
 \textbf{Rationale:} The user can type, moving mouse and clicking on the window.\\\\
@@ -131,7 +116,17 @@ The intended readers for this document are the developers responsible for develo
 \textbf{AD3:} The operation of the project should take place indoors with adequate lighting.\\\\
 \textbf{AD4:} All objects can be seen by the product without hiding.\\\\
 \textbf{AD5:} Every motion of the user can be seen by the device. 
+\section{Functional Requirements}
 
+
+\subsection{The Scope of the Work and the Product}
+
+\subsubsection{The Context of the Work}
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.7]{work_context.png}
+    \caption{context of work}
+\end{figure}
 \subsection{Finite State Machine Description}
 To make the behaviour of the product to achieve the target task, the Finite State Machine is created to describe the behaviour with detailed description provided after the picture. 
 \begin{figure}[H]
@@ -151,7 +146,8 @@ To make the behaviour of the product to achieve the target task, the Finite Stat
 \textbf{Object Taken Out:} If the object is still not found, the system will think that the object is taken out of the room or is hidden behind another object. \\\\
 \textbf{Rotate Camera:} If the device found the human body detected is not in thhe center of the screen or the camera is covered by something else, it will send signals to the motor to rotate the camera until problem sloved. 
 
-\subsection{Use Case Diagram}
+
+\subsubsection{Individual Product Use Cases}
 \begin{figure}[H]
     \centering
     \includegraphics[scale=0.8]{Use.png}
@@ -159,9 +155,11 @@ To make the behaviour of the product to achieve the target task, the Finite Stat
 \end{figure}
 The Use Case Diagram shown above describes some actions that the user can interact with teh system. The line in the middle shows the boundaries between user and the internal program. The outmost large box shows the boundary for the whole system. All user can do is just to start and shut down the program. Th user can also find the target object by typing the information about the object and verify if the object is found. The system will interact with the environment by rotating its camera and detecting the movement of the object in the room. It will also ba able to update its database when the position of the object is changed. 
 
-\section{Functional Requirements}
+
+
+\subsection{Functional Requirements}
 The following are the functional requirements of the project. They are separated into 2 main parts: Image Processing and Storage, and UI Interface Menu.
-\subsection{Image Processing and Storage Requirements}
+\subsubsection{Image Processing and Storage Requirements}
 \textbf{IPR1:} The device should be able to identify human's body.\\\\
 \textbf{IPR2:} The device must be able to identify human's hand.\\\\
 \textbf{IPR3:} The device must be able to take a photo automatically when required.\\\\
@@ -172,7 +170,7 @@ The following are the functional requirements of the project. They are separated
 \textbf{IPR8:} The device must be able to name each item with a unique ID.\\\\
 \textbf{IPR9:} The device should be able to arrange the photos stored in the file in ascending or descending order according to the time it was taken.\\\\
 \textbf{IPR10:} The device should be able to arrange the photos stored in the file in ascending or descending order according to their IDs.
-\subsection{UI Interface Menu Functional Requirements}
+\subsubsection{UI Interface Menu Functional Requirements}
 \textbf{UIR1:} The UI should be able to let user to choose whether to highlight a certain item or not.\\\\
 \textbf{UIR2:} The UI should be able to let user to switch the ordering method.\\\\
 \textbf{UIR3:} The UI must be able to notify the user when the WIFI signal is weak or unstable.\\\\
