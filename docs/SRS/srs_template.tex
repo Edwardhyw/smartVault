@@ -266,14 +266,14 @@ Not Applicable.
 \subsubsection{Personalization and Internationalization Requirements}
 Not applicable.
 \subsubsection{Learning Requirements}
-\textbf{LR1:} The software part of the product should be easy to install.\\\\
-\textbf{LR2:} The product should be easy to set up in its working environment.\\
+\textbf{LER1:} The software part of the product should be easy to install.\\\\
+\textbf{LER2:} The product should be easy to set up in its working environment.\\
 \textbf{Rationale:} The device can identify objjects in the room in a short tiime after powering up.
 \subsubsection{Understandability and Politeness Requirements}
 \textbf{UPR1:} The graphics used should be readeable and visiable to the user.\\
 \textbf{Rationale:} Easy for clients to find objects that wish to find in the room.
 \subsection{Accessibility Requirements}
-\textbf{AR1:} The display window should be concise enough for user to understand
+\textbf{ACR1:} The display window should be concise enough for user to understand
 \subsection{Performance Requirements}
 \subsubsection{Speed and Latency Requirements}
 \textbf{SLR1:} The response time of the product to show the location of the object should be less than 5 seconds.
@@ -293,11 +293,11 @@ Not applicable.
 \textbf{RFR2:} The device should be able to notify user for an error occurs in the program.\\
 \textbf{Rationale:} The user should be notified if he or she has a wrong input or havin inappropriate actions.
 \subsubsection{Capacity Requirements}
-\textbf{CR1:} The device sould be able to store the any information about the location of each object detected from the camera.
+\textbf{CAR1:} The device sould be able to store the any information about the location of each object detected from the camera.
 \subsubsection{Scalability or extensibility Requirements}
 Not applicable.
 \subsubsection{Longevity Requirements}
-\textbf{LR1:} The device should store the information about the objects until it is changed into a different environment.
+\textbf{LOR1:} The device should store the information about the objects until it is changed into a different environment.
 \subsection{Operational and Environmental Requirements}
 \subsubsection{Expected Physical Environment}
 \textbf{EPE1:} The device is supposed to work in any indoor space.
@@ -309,20 +309,20 @@ Not applicable.
 No applicable.
 \subsection{Maintainability and Support Requirements}
 \subsubsection{Maintenance Requirements}
-\textbf{MR1:} The maintenance for the device should be done by the developers.
+\textbf{MAR1:} The maintenance for the device should be done by the developers.
 \subsubsection{Supportability Requirements}
-\textbf{SR1:} The device is supported by any computers supports both C and python programming languages.
+\textbf{SUR1:} The device is supported by any computers supports both C and python programming languages.
 \subsubsection{Adaptability Requirements}
 Not Applicable.
 \subsection{Security Requirements}
 \subsubsection{Access Requirements}
-\textbf{AR1:} Any one except for the users is not allowed to access the any file that stores the information about the objects in the room.
+\textbf{AER1:} Any one except for the users is not allowed to access the any file that stores the information about the objects in the room.
 \subsubsection{Integrity Requirements}
-\textbf{IR1:} Data in the files should not be changed unnecessarily.\\\\
-\textbf{IR2:} The files are locked when the device shuts down.
+\textbf{INR1:} Data in the files should not be changed unnecessarily.\\\\
+\textbf{INR2:} The files are locked when the device shuts down.
 \subsubsection{Privacy Requirements}
-\textbf{PR1:} Other users are not allowed to access any file in the computer.\\\\
-\textbf{PR2:} The camera should only work for a specific user.
+\textbf{PRR1:} Other users are not allowed to access any file in the computer.\\\\
+\textbf{PRR2:} The camera should only work for a specific user.
 \subsubsection{Audit Requirements}
 Not applicable.
 \subsubsection{Immunity Requirements}
@@ -334,7 +334,7 @@ Not applicable.
 Not applicable.
 \subsection{Legal Requirements}
 \subsubsection{Compliance Requirements}
-\textbf{CR1:} The performance of the product should not violate the laws that protect the privacy of thee user.
+\textbf{CPR1:} The performance of the product should not violate the laws that protect the privacy of thee user.
 \subsubsection{Standards Requirements}
 Not applicable.
 
@@ -348,11 +348,11 @@ For both functional and nonfunctional requirements, the dependency matrix is mad
 
 \hline Functional Requirement ID&Nonfunctional Requirement ID\\
 
-\hline IPR4, IPR5&LR2\\
+\hline IPR4, IPR5&LER2\\
 
 \hline IPR8, IPR9&UPR1, PAR2\\
 \hline UIR4&RFR2\\
-\hline IPR6, IPR7&CR1\\
+\hline IPR6, IPR7&CAR1\\
 \hline
 
 \end{tabular}
@@ -364,11 +364,11 @@ For both functional and nonfunctional requirements, the dependency matrix is mad
 
 \hline Functional Requirement ID&Nonfunctional Requirement ID&Priority\\
 
-\hline IPR2, IPR3, IPR3, IPR4, IPR5, IPR6, IPR7, UIR1, UIR4&LR2, UPR1, SCR2, PAR1, PAR2, PAR3, RFR1, RFR2, CR1, EPE1, IR1, CR1&HIGH\\
+\hline IPR2, IPR3, IPR3, IPR4, IPR5, IPR6, IPR7, UIR1, UIR4&LER2, UPR1, SCR2, PAR1, PAR2, PAR3, RFR1, RFR2, CAR1, EPE1, INR1, CPR1&HIGH\\
 
-\hline IPR8, IPR9, UIR2&APR1, APR2, EUR2, AR1, SCR3, RAR1, RAR2, SR1, AR1, IR2, PR1, PR2&MID\\
+\hline IPR8, IPR9, UIR2&APR1, APR2, EUR2, ACR1, SCR3, RAR1, RAR2, SUR1, AER1, INR2, PRR1, PRR2&MID\\
 
-\hline UIR3&EUR1, LR1, SCR1, MR1&LOW\\
+\hline UIR3&EUR1, LER1, SCR1, MAR1&LOW\\
 
 \hline
 
@@ -394,7 +394,7 @@ For both functional and nonfunctional requirements, the dependency matrix is mad
 
 \hline SCR1(nonfunc)&likely&The base may be changed when the installation method of the device changed/\\
 
-\hline CR1(nonfunc)&very likely&The device may only choose information that make the sorting algorithm easier.\\
+\hline CAR1(nonfunc)&very likely&The device may only choose information that make the sorting algorithm easier.\\
 
 \hline
 
@@ -409,17 +409,17 @@ For both functional and nonfunctional requirements, the dependency matrix is mad
 \hline Requirement ID&Finish Date\\
 
 
-\hline IPR1, IPR3, IPR6, AR1, PAR1, PAR2, PAR3, SR1&2022.10.31\\
+\hline IPR1, IPR3, IPR6, ACR1, PAR1, PAR2, PAR3, SUR1&2022.10.31\\
 
-\hline RFR1, CR1, AR1, IR1, PR1, PR2&2022.11.15\\
+\hline RFR1, CAR1, AER1, INR1, PRR1, PRR2&2022.11.15\\
 
-\hline IPR2, IPR4, IPR5, UIR1, UIR3, UIR4, LR2, RFR2&2022.11.28\\
+\hline IPR2, IPR4, IPR5, UIR1, UIR3, UIR4, LER2, RFR2&2022.11.28\\
 
-\hline EUR2, SLR1, IR2&2022.12.15\\
+\hline EUR2, SLR1, INR2&2022.12.15\\
 
 \hline IPR7, IPR8, IPR9, UIR2, UPR1, SCR2, SCR3, RAR1&2022.12.30\\
 
-\hline EUR1, LR1, SCR1, RAR2, EPE1, MR1, CR1&2023.1.15\\
+\hline EUR1, LER1, SCR1, RAR2, EPE1, MAR1, CPR1&2023.1.15\\
 
 \hline
 
