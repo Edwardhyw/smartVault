@@ -55,9 +55,9 @@
 \end{table}
 
 
-This document is a modified Volere template and has been adopted according to project needs. Since this is a Mechtronics project, some subsections are different comparing to the original Volere template. The document follows the general organiztion of the Volere template with some additional sections to better suit for Mechatronics. 
+This document is a modified Volere template and has been adopted according to project needs. Since this is a Mechatronics project, some subsections are different comparing to the original Volere template. The document follows the general organization of the Volere template with some additional sections to better suit for Mechatronics. 
 
-Neglected subsections: the hands-on users of the product, personas, priorities assigned to users, users participation, maintenannce users and service technicians,implementation environment of the current system, partner or collaborative applications, off-the-shelf software, anticipated workplace environment, enterprise constrains, relevant facts, business rule.
+Neglected subsections: the hands-on users of the product, persona, priorities assigned to users, users participation, maintenance users and service technicians,implementation environment of the current system, partner or collaborative applications, off-the-shelf software, anticipated workplace environment, enterprise constrains, relevant facts, business rule.
 \newpage
 
 
@@ -83,14 +83,14 @@ Neglected subsections: the hands-on users of the product, personas, priorities a
 \section{Project Drivers}
 
 \subsection{The Purpose of the Project}
-The purpose of the project is to build a mechatronics system called "SmartVault" that is able to assist user in finding their belongings in a given area. 
+The purpose of the project is to build a Mechatronics system called "SmartVault" that is able to assist user in finding their belongings in a given area. 
 \subsection{The Purpose of the Document}
 This document is intended to provide detailed set of requirements project SmartVault. The documentation will cover the functionality of the system and the requirements that the system is expected to fulfill. In addition to the function requirements of software system, non-functional requirements will also be included in this document. Any additional useful information for building the system is also covered and written in details. This document is used as a reference and guideline for the development of the system and is to ensure that the built system is fulfilling the necessary requirements and meeting the desired goals.
 \subsection{The Stakeholders}
 
 \subsubsection{The Client}
 \begin{itemize}
-    \item Dr. Spencer Smith, professor from McMaster university, Computing and Software department. 
+    \item Dr. Spencer Smith, professor from McMaster University, Computing and Software department. 
 \end{itemize}
 
 \subsubsection{The Customers}
@@ -158,11 +158,11 @@ N/A
 
 
 \subsubsection{User Characteristics}
-The users of SmartVault are people who have trouble finding their belongings in their daily lives. It is preferred that the user to have general knowledge of what is presented in the designated area. Users should be familiar and comfortable with technology. At minimum, the users should be able to read, type and navigate on a webpage. 
+The users of SmartVault are people who have trouble finding their belongings in their daily lives. It is preferred that the user to have general knowledge of what is presented in the designated area. Users should be familiar and comfortable with technology. At minimum, the users should be able to read, type and navigate on a web-page. 
 \subsubsection{Reader Characteristics}
 The intended readers for this document are the developers responsible for developing SmartVault. Dr.Smith, a professor at McMaster University and his teaching team will also be the intended reader of this document. The document is written in a technical manner and requires the reader to possess both software and hardware knowledge. The reader should be familiar with image processing and the ability to understand the basic logic of object detection. The reader should also understand the software design cycle and the steps taken to develop a complete software program. In order to fully understand the document, it is suggested that the reader has the ability to read and comprehend the communication and control system between a software program and hardware device. 
 \subsection{Assumptions and Dependencies}
-\textbf{AD1:} The user can perform simple computer opertions.\\
+\textbf{AD1:} The user can perform simple computer operations.\\
 \textbf{Rationale:} The user can type, moving mouse and clicking on the window.\\\\
 \textbf{AD2:} The user can understand English.\\\\
 \textbf{AD3:} The operation of the project should take place indoors with adequate lighting.\\\\
@@ -187,8 +187,8 @@ The intended readers for this document are the developers responsible for develo
 \toprule
 \textbf{Event Name} & \textbf{Input and Output} & \textbf{Summary of BUC}\\
 \midrule
-User input & Item description(in) & User inputs on webpage on which item to be found.\\
-Displace item position & Item position (output) & Displace item position on webpage for the desired item.\\
+User input & Item description(in) & User inputs on web-page on which item to be found.\\
+Displace item position & Item position (output) & Displace item position on web-page for the desired item.\\
 Live feed from camera & Live frames(in) & Sending frames for human and object detection.\\
 Motor Control& Degree and direction of rotation (out) & Controlling motor to reposition.\\
 Update database & New item position(out) & Replace or add position data for an item in the database.\\
@@ -212,10 +212,10 @@ To make the behaviour of the product to achieve the target task, the Finite Stat
 \textbf{Updating:} The device will record the updated information (including time, Location, picture of object, and so on) of the object into the database.\\\\
 \textbf{Input Object Information} When the user want to find one object in the room, the user interface will ask the user to input information of the object (like size, color, last time saw it, and so on).\\\\
 \textbf{Providing List and Wait Response:} After the user has input the information, the system will provide a list of objects with pictures that satisfy the input information.\\\\
-\textbf{Provide Detailed Information:} WHen the user find the target object, the device will display the detailed information about the object like showing the current location on the screen. \\\\
-\textbf{Pull Out Initial Picture:} When the object is not found in the list, the devide will display the picture taken just after the program starts to let the user find the object.\\\\
+\textbf{Provide Detailed Information:} When the user find the target object, the device will display the detailed information about the object like showing the current location on the screen. \\\\
+\textbf{Pull Out Initial Picture:} When the object is not found in the list, the device will display the picture taken just after the program starts to let the user find the object.\\\\
 \textbf{Object Taken Out:} If the object is still not found, the system will think that the object is taken out of the room or is hidden behind another object. \\\\
-\textbf{Rotate Camera:} If the device found the human body detected is not in thhe center of the screen or the camera is covered by something else, it will send signals to the motor to rotate the camera until problem sloved. 
+\textbf{Rotate Camera:} If the device found the human body detected is not in the center of the screen or the camera is covered by something else, it will send signals to the motor to rotate the camera until problem solved. 
 
 
 \subsubsection{Individual Product Use Cases}
@@ -224,7 +224,7 @@ To make the behaviour of the product to achieve the target task, the Finite Stat
     \includegraphics[scale=0.8]{Use.png}
     \caption{The Picture of Use Case Diagram}
 \end{figure}
-The Use Case Diagram shown above describes some actions that the user can interact with teh system. The line in the middle shows the boundaries between user and the internal program. The outmost large box shows the boundary for the whole system. All user can do is just to start and shut down the program. Th user can also find the target object by typing the information about the object and verify if the object is found. The system will interact with the environment by rotating its camera and detecting the movement of the object in the room. It will also ba able to update its database when the position of the object is changed. 
+The Use Case Diagram shown above describes some actions that the user can interact with teh system. The line in the middle shows the boundaries between user and the internal program. The out-most large box shows the boundary for the whole system. All user can do is just to start and shut down the program. Th user can also find the target object by typing the information about the object and verify if the object is found. The system will interact with the environment by rotating its camera and detecting the movement of the object in the room. It will also ba able to update its database when the position of the object is changed. 
 
 \subsection{Monitor and Control Variables}
 \subsubsection{Monitor Variable}
@@ -260,8 +260,8 @@ The following are the functional requirements of the project. They are separated
 \subsubsection{UI Interface Menu Functional Requirements}
 \textbf{UIR1:} The UI should be able to let user to choose whether to highlight a certain item or not.\\\\
 \textbf{UIR2:} The UI should be able to let user to switch the ordering method.\\\\
-\textbf{UIR3:} The UI must be able to notify the user when the WIFI signal is weak or unstable.\\\\
-\textbf{UIR4:} The UI must be able to allow the user to view the system’s status at any given point in time.\\\\
+\textbf{UIR3:} The UI must be able to notify the user when the WI-FI signal is weak or unstable.\\\\
+\textbf{UIR4:} The UI must be able to allow the user to view the system's status at any given point in time.\\\\
 \textbf{Rationale:} To ensure that the system will remain operational.
 
 
@@ -270,25 +270,25 @@ The following are the functional requirements of the project. They are separated
 
 
 \section{Nonfunctional Requirements}
-The next paragraphs will talk about about nonfunctional requirements in the designing of the smartVault, which will be discussed in several different parts. 
+The next paragraphs will talk about about non-functional requirements in the designing of the SmartVault, which will be discussed in several different parts. 
 \subsection{Look and Feel Requirements}
 \subsubsection{Appearance Requirements}
 \textbf{APR1:} The device should not have exposed internal electronic wiring.\\\\
-\textbf{APR2:} The sharp corners should not be exposed to the users annd should be covered by some soft materials.
+\textbf{APR2:} The sharp corners should not be exposed to the users and should be covered by some soft materials.
 \subsubsection{style}
 Not Applicable.
 \subsection{Usability and Humanity Requirements}
 \subsubsection{Easy of Use Requirements}
 \textbf{EUR1:} The device should be easy to installed in the room.\\\\
-\textbf{EUR2:} Fonts, blanks and graphics shown on the screen should be big and visiable enough for the user to use without inserting wrong information.
+\textbf{EUR2:} Fonts, blanks and graphics shown on the screen should be big and visible enough for the user to use without inserting wrong information.
 \subsubsection{Personalization and Internationalization Requirements}
 Not applicable.
 \subsubsection{Learning Requirements}
 \textbf{LER1:} The software part of the product should be easy to install.\\\\
 \textbf{LER2:} The product should be easy to set up in its working environment.\\
-\textbf{Rationale:} The device can identify objjects in the room in a short tiime after powering up.
+\textbf{Rationale:} The device can identify objects in the room in a short time after powering up.
 \subsubsection{Understandability and Politeness Requirements}
-\textbf{UPR1:} The graphics used should be readeable and visiable to the user.\\
+\textbf{UPR1:} The graphics used should be readable and visible to the user.\\
 \textbf{Rationale:} Easy for clients to find objects that wish to find in the room.
 \subsection{Accessibility Requirements}
 \textbf{ACR1:} The display window should be concise enough for user to understand
@@ -300,18 +300,18 @@ Not applicable.
 \textbf{SCR2:} The device should not infringe on user's privacy.\\\\
 \textbf{SCR3:} The rotating speed of the motor should be slow enough without hurting people.
 \subsubsection{Precision and Accuracy Requirements}
-\textbf{PAR1:} The time based value used in the device should be precised to minute.\\\\
-\textbf{PAR2:} The location value used in the devce should be precised to whole number.\\\\
-\textbf{PAR3:} Other numatic values used in the device should be rounded to one decimal place.
-\subsubsection{Reliability and Avaliability Requirements}
+\textbf{PAR1:} The time based value used in the device should be precise to minute.\\\\
+\textbf{PAR2:} The location value used in the device should be precise to whole number.\\\\
+\textbf{PAR3:} Other numerical values used in the device should be rounded to one decimal place.
+\subsubsection{Reliability and Availability Requirements}
 \textbf{RAR1:} The device should not over-rotate to an unexpected angle.\\\\
-\textbf{RAR2:} The device should be avaliable to work for the whole time of except for maintaince or updating time.
+\textbf{RAR2:} The device should be available to work for the whole time of except for maintenance or updating time.
 \subsubsection{Robustness or Fault-Tolerance Requirements}
 \textbf{RFR1:} The data stored in the file should not be deleted or changed even after the program shuts down.\\\\
 \textbf{RFR2:} The device should be able to notify user for an error occurs in the program.\\
-\textbf{Rationale:} The user should be notified if he or she has a wrong input or havin inappropriate actions.
+\textbf{Rationale:} The user should be notified if he or she has a wrong input or having inappropriate actions.
 \subsubsection{Capacity Requirements}
-\textbf{CAR1:} The device sould be able to store the any information about the location of each object detected from the camera.
+\textbf{CAR1:} The device should be able to store the any information about the location of each object detected from the camera.
 \subsubsection{Scalability or extensibility Requirements}
 Not applicable.
 \subsubsection{Longevity Requirements}
@@ -348,7 +348,7 @@ Not applicable.
 \subsection{Cultural and Political Requirements}
 \subsubsection{Cultural Requirements}
 Not applicable.
-\subsubsection{Plitical Requirements}
+\subsubsection{Political Requirements}
 Not applicable.
 \subsection{Legal Requirements}
 \subsubsection{Compliance Requirements}
@@ -358,7 +358,7 @@ Not applicable.
 
 
 \section{Traceability and Priority}
-For both functional and nonfunctional requirements, the dependency matrix is made and priorities are assigned to each requirement. The Traceability matrix and priority table are shown below. In additon, the likelihood change of the requirements and the future plan of the requirements are also shown below.
+For both functional and non-functional requirements, the dependency matrix is made and priorities are assigned to each requirement. The Traceability matrix and priority table are shown below. In additon, the likelihood change of the requirements and the future plan of the requirements are also shown below.
 
 \subsection{Traceability Matrix}
 \begin{tabular}{|p{0.45\textwidth}| p{0.45\textwidth}|}
@@ -493,7 +493,7 @@ For both functional and nonfunctional requirements, the dependency matrix is mad
         \end{itemize}
     \subsubsection{Data that Has to be Modified or translated for the new system}
         \begin{itemize}
-            \item Objects data need to be transfer ed into the new system
+            \item Objects data need to be transferred into the new system
         \end{itemize}
 
 \subsection{Risks}
@@ -568,18 +568,18 @@ N/A
 
 \subsection{Reflection}
 
-Our team consists of 5 mechatronics student and is developing a mechatronics system where both hardware and software components are essential for success. There are may different skills and knowledge that ties into the success of the project. Many of these required skills might new and unfamiliar to some of the group members. However, as this is a project over a span of 6 months, there are plenty of time and opportunities to pick up and master some new skills. The learning of such skills will be delegated to different team members and mastered by them before delivering and teaching others member about it.  
+Our team consists of 5 Mechatronics student and is developing a Mechatronics system where both hardware and software components are essential for success. There are may different skills and knowledge that ties into the success of the project. Many of these required skills might new and unfamiliar to some of the group members. However, as this is a project over a span of 6 months, there are plenty of time and opportunities to pick up and master some new skills. The learning of such skills will be delegated to different team members and mastered by them before delivering and teaching others member about it.  
 
 The project is heavily relying on a functional, reliable, and efficient software system that involve live time object detection and image processing. The coding will be done in Python, so each member needs to have adequate skill of programming in Python and able to develop and test a python program. Knowledge of image processing and object detection also should be acquired.  In order to master the skills for programming in python and image processing, team members should practice and conduct research on different object detection method. It is required for the assigned team members to compare and learn from different method and making sure that our chosen method would yield the best results given our requirements. This part of the learning is assigned to Edward, Peng and Jinhua. Edward has gained relevant knowledge through courses he took and projects he did. Peng and Jinhua have great enthusiasm for this topic and would like to conduct research on it. 
 
-Another software component is the user interface. Members of the team should be able to build and maintain a working webpage using JavaScript. This skill is obtained by Edward through his co-op and other experiences. Erping and Jinhua also are assigned to perfect their abilities in such area. The path to success for this is to read relevant documents and tutorials, as well as practicing with small projects.
+Another software component is the user interface. Members of the team should be able to build and maintain a working web-page using JavaScript. This skill is obtained by Edward through his co-op and other experiences. Erping and Jinhua also are assigned to perfect their abilities in such area. The path to success for this is to read relevant documents and tutorials, as well as practising with small projects.
 In order to communicate between the software and hardware, related programming skills are needed. Erping as the lead developer for this topic has multiple experiences and with the help of Guangwei who has exceptional skills in this field, they will be able to excel the required skills and guide other members of the team.  
 
-On the hardware side, Guangwei will be the lead and responsible for the learning and teaching of the related skills. 3D modeling is needed for the building and 3D printing the camera mount. This skill is assigned to Guangwei and can be mastered through practicing and watching tutorials. Arduino board is the chosen board for handling the control of the motors and repositioning of the camera. Sufficient knowledge and skills to program Arduino is needed. This task is assigned to Erping and Guangwei. They both have experiences in this field and will be able to teach the rest of the team. Knowledge associated with handling motor movement is also needed and can be mastered by reviewing course notes and refreshing past knowledge. 
+On the hardware side, Guangwei will be the lead and responsible for the learning and teaching of the related skills. 3D modeling is needed for the building and 3D printing the camera mount. This skill is assigned to Guangwei and can be mastered through practising and watching tutorials. Arduino board is the chosen board for handling the control of the motors and repositioning of the camera. Sufficient knowledge and skills to program Arduino is needed. This task is assigned to Erping and Guangwei. They both have experiences in this field and will be able to teach the rest of the team. Knowledge associated with handling motor movement is also needed and can be mastered by reviewing course notes and refreshing past knowledge. 
 
-Aside from the hardware and software system, there are also skills associated with team management and team communication. In order to maintain a desired work plan and team coordination, it is important for all members of the team to possess the skills to work under a team environment. Members need to be comfortable and familiar with github and in order to excel, one must practice different github actions and commends. One also can improve on this by watching tutorial videos. Working in a team environment, it is important to have good communication skills and making sure people are on the same page. This can be mastered by actively engage in team meetings and ask for help when needed.  
+Aside from the hardware and software system, there are also skills associated with team management and team communication. In order to maintain a desired work plan and team coordination, it is important for all members of the team to possess the skills to work under a team environment. Members need to be comfortable and familiar with github and in order to excel, one must practice different Github actions and commends. One also can improve on this by watching tutorial videos. Working in a team environment, it is important to have good communication skills and making sure people are on the same page. This can be mastered by actively engage in team meetings and ask for help when needed.  
 
-To conclude, for a professional project like the capstone, there are many aspects to it and many skills are required. It is important to delegate different learning tasks to individual and be able to teach the new skillset to the rest of the team. The following are the skills mentioned in previous paragraphs and is the overview of the assignment of the learning process:
+To conclude, for a professional project like the capstone, there are many aspects to it and many skills are required. It is important to delegate different learning tasks to individual and be able to teach the new skill-set to the rest of the team. The following are the skills mentioned in previous paragraphs and is the overview of the assignment of the learning process:
 
 
 \begin{enumerate}
