@@ -3,6 +3,7 @@
 \usepackage{booktabs}
 \usepackage{tabularx}
 \usepackage{multirow}
+\usepackage{pdflscape}
 
 \title{Hazard Analysis\\\progname}
 
@@ -48,7 +49,7 @@ A good detection method should be used so that the human body can be detected by
 \subsection{User Interface}
 \subsection{Database}
 \subsection{Objection Detection}
-
+This system is responsible for detecting any moving object in the area and identifying each object with unique set of characteristics. The is the main logical system for smartVault to help locate a “lost” item. 
 \section{Safety Considerations and Connection with Requirements}
 \subsection{Movement of Camera}
 \subsection{Human Body Detection}
@@ -67,9 +68,14 @@ When the program detects the movements of human body, only part of movement or w
 \subsection{User Interface}
 \subsection{Database}
 \subsection{Object Detection}
+SmartVault will return error message when connection between camera and the object detection system is lost. When connection is lost, object detection system will not be able to monitor moving objects.
+
+
 \section{FMEA Worksheet}
+
 \begin{center}
-\begin{table}[]
+\begin{table}[h]
+\makebox[\linewidth]{
 \begin{tabular}{|llll|}
 \hline
 \multicolumn{4}{|l|}{Table 1: The FMEA Table}                                                                                                                                                                                                                                                                                                                                                                        \\ \hline
@@ -88,6 +94,42 @@ When the program detects the movements of human body, only part of movement or w
 
 \multicolumn{1}{|l|}{Object Detection} & \multicolumn{1}{l|}{N} & \multicolumn{1}{l|}{N} & \multicolumn{1}{l|}{N}   \\ \hline
 \end{tabular}
+}
 \end{table}
 \end{center}
+
+
+	\begin{table}[ht]
+		\centering
+		
+		\makebox[\linewidth]{
+			\begin{tabular}{|p{2cm}|p{2.5cm}|p{2.5cm}|p{2.5cm}|p{2.5cm}|p{2.5cm}|p{1cm}|p{1cm}|}
+				\hline
+				\multicolumn{8}{|c|}{\textbf{Failure Mode and Effects Analysis}}\\\hline
+				\textbf{Components} & \textbf{Failure Modes}& \textbf{Causes of Failure} & \textbf{Effects of Failure} & \textbf{Severity} & \textbf{Recommended Actions} & \textbf{SR} & \textbf{Ref} \\ \hline
+				Movement of Camera & NA & a. NA & a. NA & a. NA & a. NA & NA & \multirow{2}{*} {H3-1} \\ 
+				& & b. NA & b. NA & b. NA & b. NA & & \\ \cline{2-8}
+				& NA & NA & NA & NA & NA & SR6 & H3-2\\ \hline
+				Human Body Detection & NA & a. NA & a. NA & a. NA & a. NA & NA & \multirow{2}{*} {H3-1} \\ 
+				& & b. NA & b. NA & b. NA & b. NA & & \\ \cline{2-8}
+				& NA & NA & NA & NA & NA & SR6 & H3-2\\ \hline
+				User Interface & NA & a. NA & a. NA & a. NA & a. NA & NA & \multirow{2}{*} {H3-1} \\ 
+				& & b. NA & b. NA & b. NA & b. NA & & \\ \cline{2-8}
+				& NA & NA & NA & NA & NA & SR6 & H3-2\\ \hline
+				Database & NA & a. NA & a. NA & a. NA & a. NA & NA & \multirow{2}{*} {H3-1} \\ 
+				& & b. NA & b. NA & b. NA & b. NA & & \\ \cline{2-8}
+				& NA & NA & NA & NA & NA & SR6 & H3-2\\ \hline
+				Object Detection & NA & a. NA & a. NA & a. NA & a. NA & NA & \multirow{2}{*} {H3-1} \\ 
+				& & b. NA & b. NA & b. NA & b. NA & & \\ \cline{2-8}
+				& NA & NA & NA & NA & NA & SR6 & H3-2\\ \hline
+				
+				
+			\end{tabular}
+		}
+		
+		\caption{FMEA Table Part 1}
+		\label{FMEAPart2}
+	\end{table}
+
+
 \end{document}
