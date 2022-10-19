@@ -103,10 +103,10 @@ SmartVault will return error message when connection between camera and the obje
 		\centering
 		
 		\makebox[\linewidth]{
-			\begin{tabular}{|p{2cm}|p{2.5cm}|p{2.5cm}|p{2.5cm}|p{2.5cm}|p{2.5cm}|p{1cm}|p{1cm}|}
+			\begin{tabular}{|p{2cm}|p{2.5cm}|p{3cm}|p{3cm}|p{1.5cm}|p{3cm}|p{1cm}|p{1cm}|}
 				\hline
 				\multicolumn{8}{|c|}{\textbf{Failure Mode and Effects Analysis}}\\\hline
-				\textbf{Components} & \textbf{Failure Modes}& \textbf{Causes of Failure} & \textbf{Effects of Failure} & \textbf{Severity} & \textbf{Recommended Actions} & \textbf{SR} & \textbf{Ref} \\ \hline
+				\textbf{Components} & \textbf{Failure Modes}& \textbf{Causes of Failure} & \textbf{Effects of Failure} & \textbf{Severity (0-10 )} & \textbf{Recommended Actions} & \textbf{SR} & \textbf{Ref} \\ \hline
 				Movement of Camera & NA & a. NA & a. NA & a. NA & a. NA & NA & \multirow{2}{*} {H3-1} \\ 
 				& & b. NA & b. NA & b. NA & b. NA & & \\ \cline{2-8}
 				& NA & NA & NA & NA & NA & SR6 & H3-2\\ \hline
@@ -119,11 +119,12 @@ SmartVault will return error message when connection between camera and the obje
 				Database & NA & a. NA & a. NA & a. NA & a. NA & NA & \multirow{2}{*} {H3-1} \\ 
 				& & b. NA & b. NA & b. NA & b. NA & & \\ \cline{2-8}
 				& NA & NA & NA & NA & NA & SR6 & H3-2\\ \hline
-				Object Detection & NA & a. NA & a. NA & a. NA & a. NA & NA & \multirow{2}{*} {H3-1} \\ 
-				& & b. NA & b. NA & b. NA & b. NA & & \\ \cline{2-8}
-				& NA & NA & NA & NA & NA & SR6 & H3-2\\ \hline
+				Object Detection & Connection lost with camera live feed & a.Temporary internet lost & a.There will be no video frames for SmartVault to process and monitoring object movement & 10 & a.System output error message to user and retry connecting & NA & \multirow{2}{*} {H3-1} \\ 
+				& & b.Camera system is out of  battery & b.Same as H5-1a & b. 10 & b. Refer to H1- & & \\ \cline{2-8}
 				
-				
+				& Object detection faults & a. Unable to detect moving object   & a.SmartVault will not be able to update the specific item's new position & 10 & a.Well rehearsed image processing and detection method will be implemented to mitigate the chance of this event & SR6  & \multirow{2}{*} {H3-1} \\ 
+				& & b.Unable to uniquely identify an object (sharing all characteristics with two or more recorded item) & b. same as H5-2a & b. 10 & b. Refer to H5-2a & & \\ \hline
+						
 			\end{tabular}
 		}
 		
