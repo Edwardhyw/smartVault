@@ -142,9 +142,11 @@ SmartVault will return error message when connection between camera and the obje
 				& Abnormal rotation speed of camera & Caused by the control algorithm error  & High & 					System will lose the tracking of user and objects & Restart the system & NA & NA\\ 						\hline
 
 
-				Human Body Detection & NA & a. NA & a. NA & a. NA & a. NA & NA & \multirow{2}{*} {H3-1} \\
-				& & b. NA & b. NA & b. NA & b. NA & & \\ \cline{2-8}
-				& NA & NA & NA & NA & NA & SR6 & H3-2\\ \hline
+				Human Body Detection & Human body detection failure & a. Detection method Failure & a. Wrong position description of the objects& High & a. Restart the program & IPR1 & \multirow{3}{*} {H3-1} \\ 
+				& & b. Wrong Human Body Detected & & & b. Compare detected body with human body database stored inside the system & & \\ 
+                     & &c. Wrong postures of human body & & & & &\\ \cline{2-8}
+				& Body movement detection failure & a. Detection method failure & Hard to associate movement of objects with movement of human body & High & a. Retart the program & IPR4 & \multirow{2}{*} {H3-2}\\ 
+                     & & b. Wrong movement detected &  &  & b. Rejudging movement zone around the human body &  & \\ \hline
 				User Interface & App closes unexpectedly & Host device loses power, or Crash due to instabilty & Current progress is lost & High & a. Store 				 	unsaved data locally on user's device & NA & NA \\ \cline{2-8}
 				 & User cannot log in to the app successfully & User's credential is unmatched & User is unable to use the system & High & a. Reset user's 						credentials & NA & NA \\ \cline{2-8}
 				 & An unauthorized user logs in as a privileged one with high-level access & Authentication issue & User could view or modify data even he/						she is not allowed & Strongly high & a. Fix the account permission and undo changes made by unauthorized user & NA & NA \\ \hline
