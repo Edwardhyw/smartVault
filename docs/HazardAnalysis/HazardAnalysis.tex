@@ -132,9 +132,16 @@ SmartVault will return error message when connection between camera and the obje
 				\hline
 				\multicolumn{8}{|c|}{\textbf{Failure Mode and Effects Analysis}}\\\hline
 				\textbf{Components} & \textbf{Failure Modes}& \textbf{Causes of Failure} & \textbf{Effects of Failure} & \textbf{Severity} & \textbf{Recommended Actions} & \textbf{SR} & \textbf{Ref} \\ \hline
-				Movement of Camera & NA & a. NA & a. NA & a. NA & a. NA & NA & \multirow{2}{*} {H3-1} \\ 
-				& & b. NA & b. NA & b. NA & b. NA & & \\ \cline{2-8}
-				& NA & NA & NA & NA & NA & SR6 & H3-2\\ \hline
+				Movement of Camera & Servo motor overload & Servo gear or components stuck & Motor 						overheat and damage & Strongly High & Lubricate the parts when hear uncommon noise & NA & NA \\ \cline{2-8} 	
+				& Short circuit & Liquid spill & The camera stop moving, and the whole system may stop 					working & Strongly High & Need technician to repair & NA & NA\\ \cline{2-8}
+				
+				& Unstable connection & Loosen connection during rotation & Whole system stop working, 					cannot tracking new objects & High & Unplug the connections and plug in again then 						restart the whole system & NA & NA\\ \cline{2-8}
+				
+				& Risk of falling & Loosen assembly & The parts will disassembly and may cause injury & 				Strongly High & Concern about any abnormal movement or noise of the camera, technician may 						needed depend on situation & NA & NA\\ \cline{2-8}
+				
+				& Abnormal rotation speed of camera & Caused by the control algorithm error  & High & 					System will lose the tracking of user and objects & Restart the system & NA & NA\\ 						\hline
+				
+				
 				Human Body Detection & NA & a. NA & a. NA & a. NA & a. NA & NA & \multirow{2}{*} {H3-1} \\ 
 				& & b. NA & b. NA & b. NA & b. NA & & \\ \cline{2-8}
 				& NA & NA & NA & NA & NA & SR6 & H3-2\\ \hline
