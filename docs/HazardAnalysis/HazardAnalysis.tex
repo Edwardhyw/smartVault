@@ -50,6 +50,7 @@ A good detection method should be used so that the human body can be detected by
 \subsection{User Interface}
 This component provides a communication layer between the system and the user through a computer app.
 \subsection{Database}
+A fast and accurate data flow is the cornerstone for a system to be able to work properly and meet and requirements. The design and implementation of database is playing a major role in the whole system design.
 \subsection{Objection Detection}
 This system is responsible for detecting any moving object in the area and identifying each object with unique set of characteristics. The is the main logical system for smartVault to help locate a “lost” item.
 \section{Safety Considerations and Connection with Requirements}
@@ -88,6 +89,14 @@ User cannot log in to the app successfully, such that he/she do not have the abi
 \subsubsection{Authentication}
 An unauthorized user logs in as a privileged user with high-level access.
 \subsection{Database}
+\subsubsection{Overflow}
+As video are divided into frames to analyze, the files may occupy unexpected large spaces without restriction and further crash the program.\\
+\textbf{Related Requirements: }IPR6
+\subsubsection{Mismatch}
+The object information are not collected completely and create wrong identification.\\
+\textbf{Related Requirements: }IPR5
+\subsubsection{Miss time requirement}
+As the system is designed to be real-time, timing issue might occur when dealing with large data stream.The algorithm takes time longer than expectation and can not proceed next task.\\
 \subsection{Object Detection}
 SmartVault will return error message when connection between camera and the object detection system is lost. When connection is lost, object detection system will not be able to monitor moving objects.
 
@@ -148,10 +157,12 @@ SmartVault will return error message when connection between camera and the obje
 				User Interface & App closes unexpectedly & Host device loses power, or Crash due to instabilty & Current progress is lost & High & a. Store 				 	unsaved data locally on user's device & NA & NA \\ \cline{2-8}
 				 & User cannot log in to the app successfully & User's credential is unmatched & User is unable to use the system & High & a. Reset user's 						credentials & NA & NA \\ \cline{2-8}
 				 & An unauthorized user logs in as a privileged one with high-level access & Authentication issue & User could view or modify data even he/						she is not allowed & Strongly high & a. Fix the account permission and undo changes made by unauthorized user & NA & NA \\ \hline
-				Database & NA & a. NA & a. NA & a. NA & a. NA & NA & \multirow{2}{*} {H3-1} \\
-				& & b. NA & b. NA & b. NA & b. NA & & \\ \cline{2-8}
-				& NA & NA & NA & NA & NA & SR6 & H3-2\\ \hline
-				Object Detection & NA & a. NA & a. NA & a. NA & a. NA & NA & \multirow{2}{*} {H3-1} \\
+
+				Database & Overflow & Files of frames are stored without size restriction & Program crash & High & Set a strict time period for the 				    camera to capture picture for each task & NA & NA\\  \cline{2-8}
+				& Mismatch & Object information are not collected completely & Inaccurate behavior done by the system & Medium & Fist ensure the 				 functionality of camera is in good condition then re-enter information about the object & NA & NA\\ \cline{2-8}
+				& Miss time requirement & Too much items in one frame and takes the program longer time to proceed & Long time delay of the system 				   behavior & Medium & Increase search frame and prioritize the assigned area & NA & NA\\
+				\hline
+				Object Detection & NA & a. NA & a. NA & a. NA & a. NA & NA & \multirow{2}{*} {H3-1} \\ 
 				& & b. NA & b. NA & b. NA & b. NA & & \\ \cline{2-8}
 				& NA & NA & NA & NA & NA & SR6 & H3-2\\ \hline
 
