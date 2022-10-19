@@ -54,18 +54,10 @@ This system is responsible for detecting any moving object in the area and ident
 \section{Safety Considerations and Connection with Requirements}
 \subsection{Movement of Camera}
 \subsection{Human Body Detection}
-\subsubsection{Human Body not Detected}
-When a human presents in the room and the images have been shown in the computer, the program fail to detect the human body in the screen. \\
-\textbf{Related Requirements: }IPR1
-\subsubsection{Wrong Human Body Detected}
-When the software component of the oobject detects a human body shown in the camera, the body shown on the screen is not actually a body of a person.\\
-\textbf{Related Requirements: }IPR1
-\subsubsection{Body Movement not Detected}
-When people moves in the room and thhe images has been sent to the computer, the program cannot detect the movement of the body.\\
-\textbf{Related Requirements: }IPR4
-\subsubsection{Wrong Body Movement Detected}
-When the program detects the movements of human body, only part of movement or wrong movement is identified by the program.\\
-\textbf{Related Requirements: }IPR4
+\subsubsection{Human Body Detection Failure}
+When a human presents in the room and the images have been shown in the computer, the program fail to detect the human body in the screen or wrong object detected by the software and identified as "Human".
+\subsubsection{Body Movement Detection Failure}
+When people moves in the room and the images has been sent to the computer, the program cannot detect the movement of the body or the movements of other objects are identified as buman body movements.
 \subsection{User Interface}
 \subsubsection{General}
 App closes unexpectedly, it could lead to the loss of current progress.
@@ -121,9 +113,11 @@ SmartVault will return error message when connection between camera and the obje
 				Movement of Camera & NA & a. NA & a. NA & a. NA & a. NA & NA & \multirow{2}{*} {H3-1} \\ 
 				& & b. NA & b. NA & b. NA & b. NA & & \\ \cline{2-8}
 				& NA & NA & NA & NA & NA & SR6 & H3-2\\ \hline
-				Human Body Detection & NA & a. NA & a. NA & a. NA & a. NA & NA & \multirow{2}{*} {H3-1} \\ 
-				& & b. NA & b. NA & b. NA & b. NA & & \\ \cline{2-8}
-				& NA & NA & NA & NA & NA & SR6 & H3-2\\ \hline
+				Human Body Detection & Human body detection failure & a. Detection method Failure & a. Wrong position description of the objects& High & a. Restart the program & IPR1 & \multirow{3}{*} {H3-1} \\ 
+				& & b. Wrong Human Body Detected & & & b. Compare detected body with human body database stored inside the system & & \\ 
+                     & &c. Wrong postures of human body & & & & &\\ \cline{2-8}
+				& Body movement detection failure & a. Detection method failure & Hard to associate movement of objects with movement of human body & High & a. Retart the program & IPR4 & \multirow{2}{*} {H3-2}\\ 
+                     & & b. Wrong movement detected &  &  & b. Rejudging movement zone around the human body &  & \\ \hline
 				User Interface & App closes unexpectedly & Host device loses power, or Crash due to instabilty & Current progress is lost & High & a. Store 				 	unsaved data locally on user's device & NA & NA \\ \cline{2-8}
 				 & User cannot log in to the app successfully & User's credential is unmatched & User is unable to use the system & High & a. Reset user's 						credentials & NA & NA \\ \cline{2-8}
 				 & An unauthorized user logs in as a privileged one with high-level access & Authentication issue & User could view or modify data even he/						she is not allowed & Strongly high & a. Fix the account permission and undo changes made by unauthorized user & NA & NA \\ \hline
