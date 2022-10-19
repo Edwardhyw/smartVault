@@ -44,6 +44,7 @@ Date2 & Name(s) & Description of changes\\
 \section{Component Overview}
 The project can be divided into five different main components. Those components are listed in the paragraphs below. 
 \subsection{Movement of Camera}
+A stable and accurate motorized camera mount is necessary for the movement tracking. The servos need to move in a appropriate speed and angle in order to make the camera capture the best view of both objects and user.
 \subsection{Human Body Detection}
 A good detection method should be used so that the human body can be detected by the program in the images provided by the camera. The movement of the human body shoudl also need to be detected to help the camera to judge its angular position. 
 \subsection{User Interface}
@@ -53,6 +54,19 @@ This component provides a communication layer between the system and the user th
 This system is responsible for detecting any moving object in the area and identifying each object with unique set of characteristics. The is the main logical system for smartVault to help locate a “lost” item. 
 \section{Safety Considerations and Connection with Requirements}
 \subsection{Movement of Camera}
+\subsubsection{Servo motor overload}
+When the camera got block by something or the gear of servo get stuck during the rotation, the system will lose the tracking of user and the worst result could be a motor overheat and burn.
+\subsubsection{Short circuit}
+If some liquid gets spilled on the parts, it might cause the short circuit of the controller board and servo motor, which will cause the entire system stop working and possible to lose data.
+
+\subsubsection{Unstable connection with other components}
+If the connection between camera and system is unstable during rotation, the detection and tracking system will stop working since the system cannot capture the image.
+
+\subsubsection{Risk of falling}
+When the parts assembly get loosen after a long-term operation, there is a chance for the parts to fall off from mount or the main body. This situation will cause the injure of user and the damage of the entire system.
+
+\subsubsection{Non-appropriate angular velocity of camera}
+If the rotation speed of the camera go too fast or too slow, the the system may lose the tracking of user. It is also possible to cause injure of user by hitting the users' body.
 \subsection{Human Body Detection}
 \subsubsection{Human Body not Detected}
 When a human presents in the room and the images have been shown in the computer, the program fail to detect the human body in the screen. \\
