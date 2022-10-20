@@ -103,104 +103,86 @@ SmartVault will return error message when connection between camera and the obje
 
 \section{FMEA Worksheet}
 
-\begin{center}
-\begin{table}[h]
-\makebox[\linewidth]{
-\begin{tabular}{|llll|}
-\hline
-\multicolumn{4}{|l|}{Table 1: The FMEA Table}                                                                                                                                                                                                                                                                                                                                                                        \\ \hline
-\multicolumn{1}{|l|}{Components}& \multicolumn{1}{l|}{Failures}& \multicolumn{1}{l|}{Cause of Failure} & \multicolumn{1}{l|}{Recommended Action}                                                                                                      \\ \hline
-\multicolumn{1}{|l|}{Movement of Camera}& \multicolumn{1}{l|}{N} & \multicolumn{1}{l|}{N} & \multicolumn{1}{l|}{N}  \\ \hline
-
-\multicolumn{1}{|l|}{\multirow{8}{*}{Human Body Detection}} & \multicolumn{1}{l|}{\multirow{2}{*}{Human Body not Detected}} & \multicolumn{1}{l|}{\multirow{2}{*}{\begin{tabular}[c]{@{}l@{}}a. Detection method failure\\ b. Wrong posture of human\end{tabular}}} & \multicolumn{1}{l|}{\multirow{2}{*}{\begin{tabular}[c]{@{}l@{}}a. Restart the program\\ b. request help from development team\end{tabular}}} \\
-\multicolumn{1}{|l|}{}                                      & \multicolumn{1}{l|}{}                                         & \multicolumn{1}{l|}{}                                                                                                                 & \multicolumn{1}{l|}{}                                                                                                                        \\ \cline{2-4}
-\multicolumn{1}{|l|}{}                                      & \multicolumn{1}{l|}{Wrong Human Body Detected}                & \multicolumn{1}{l|}{a. Detection method failure}                                                                                      & \multicolumn{1}{l|}{\begin{tabular}[c]{@{}l@{}}a. Restart the program\\ b. Request help from development team\end{tabular}}                  \\ \cline{2-4}
-\multicolumn{1}{|l|}{}                                      & \multicolumn{1}{l|}{Body Movement not Detected}               & \multicolumn{1}{l|}{\begin{tabular}[c]{@{}l@{}}a. Detection method failure\\ b. Human body moves too fast\end{tabular}}               & \multicolumn{1}{l|}{\begin{tabular}[c]{@{}l@{}}a. Restart the program\\ b. Request help from Development team\end{tabular}}                  \\ \cline{2-4}
-\multicolumn{1}{|l|}{}                                      & \multicolumn{1}{l|}{Wrong Body Movement Detected}             & \multicolumn{1}{l|}{a. Detection method failure}                                                                                      & \multicolumn{1}{l|}{\begin{tabular}[c]{@{}l@{}}a. Restart the program\\ b. Request help from development team\end{tabular}}                  \\ \hline
-
-\multicolumn{1}{|l|}{General} & \multicolumn{1}{l|}{\begin{tabular}[c]{@{}l@{}}App closes \\unexpectedly\end{tabular}} & \multicolumn{1}{l|}{\begin{tabular}[c]{@{}l@{}}a. Host device \\loses power \\b. Crash due \\to instabilty\end{tabular}} & \multicolumn{1}{l|}{\begin{tabular}[c]{@{}l@{}}a. Store unsaved data lo- \\ cally on user's device\end{tabular}}                  \\ \hline
-
-\multicolumn{1}{|l|}{\begin{tabular}[c]{@{}l@{}}Login \\In \\Issue\end{tabular}} & \multicolumn{1}{l|}{\begin{tabular}[c]{@{}l@{}}User cannot log \\in to the \\ app successfully\end{tabular}}             & \multicolumn{1}{l|}{\begin{tabular}[c]{@{}l@{}}a. User's credentials \\are unmatched\end{tabular}}                                                                                      & \multicolumn{1}{l|}{\begin{tabular}[c]{@{}l@{}}a. Reset user's credentials\end{tabular}}                  \\ \hline
-
-\multicolumn{1}{|l|}{\begin{tabular}[c]{@{}l@{}}Authenti- \\cation\end{tabular}}                               & \multicolumn{1}{l|}{\begin{tabular}[c]{@{}l@{}}An unauthorized \\user logs in as \\ a privileged one \\with high-level \\access\end{tabular}}             & \multicolumn{1}{l|}{\begin{tabular}[c]{@{}l@{}}Authentica- \\tion issue\end{tabular}}                                                                                      & \multicolumn{1}{l|}{\begin{tabular}[c]{@{}l@{}}a. Fix the account \\permission and undo \\changes made by \\unauthorized user\end{tabular}}                  \\ \hline
-
-\multicolumn{1}{|l|}{Database} & \multicolumn{1}{l|}{N} & \multicolumn{1}{l|}{N}  & \multicolumn{1}{l|}{N}   \\ \hline
-
-\multicolumn{1}{|l|}{Object Detection} & \multicolumn{1}{l|}{N} & \multicolumn{1}{l|}{N} & \multicolumn{1}{l|}{N}   \\ \hline
-\end{tabular}
-}
-\end{table}
-\end{center}
-
-
 	\begin{table}[ht]
 		\centering
 
 		\makebox[\linewidth]{
-<<<<<<< HEAD
-			\begin{tabular}{|p{2cm}|p{2.5cm}|p{3cm}|p{3cm}|p{1.5cm}|p{3cm}|p{1cm}|p{1cm}|}
-				\hline
-				\multicolumn{8}{|c|}{\textbf{Failure Mode and Effects Analysis}}\\\hline
-				\textbf{Components} & \textbf{Failure Modes}& \textbf{Causes of Failure} & \textbf{Effects of Failure} & \textbf{Severity (0-10 )} & \textbf{Recommended Actions} & \textbf{SR} & \textbf{Ref} \\ \hline
-				Movement of Camera & NA & a. NA & a. NA & a. NA & a. NA & NA & \multirow{2}{*} {H3-1} \\ 
-				& & b. NA & b. NA & b. NA & b. NA & & \\ \cline{2-8}
-				& NA & NA & NA & NA & NA & SR6 & H3-2\\ \hline
-				Human Body Detection & NA & a. NA & a. NA & a. NA & a. NA & NA & \multirow{2}{*} {H3-1} \\ 
-				& & b. NA & b. NA & b. NA & b. NA & & \\ \cline{2-8}
-				& NA & NA & NA & NA & NA & SR6 & H3-2\\ \hline
-				User Interface & NA & a. NA & a. NA & a. NA & a. NA & NA & \multirow{2}{*} {H3-1} \\ 
-				& & b. NA & b. NA & b. NA & b. NA & & \\ \cline{2-8}
-				& NA & NA & NA & NA & NA & SR6 & H3-2\\ \hline
-				Database & NA & a. NA & a. NA & a. NA & a. NA & NA & \multirow{2}{*} {H3-1} \\ 
-				& & b. NA & b. NA & b. NA & b. NA & & \\ \cline{2-8}
-				& NA & NA & NA & NA & NA & SR6 & H3-2\\ \hline
-=======
-
-			\begin{tabular}{|p{2.5cm}|p{2.5cm}|p{2.5cm}|p{2.5cm}|p{2.5cm}|p{2.5cm}|p{1cm}|p{1cm}|}
+			\begin{tabular}{|p{2.5cm}|p{2.5cm}|p{3cm}|p{2.5cm}|p{1.5cm}|p{2.5cm}|p{1cm}|p{1cm}|}
 				\hline
 				\multicolumn{8}{|c|}{\textbf{Failure Mode and Effects Analysis}}\\\hline
 				\textbf{Components} & \textbf{Failure Modes}& \textbf{Causes of Failure} & \textbf{Effects of Failure} & \textbf{Severity} & \textbf{Recommended Actions} & \textbf{SR} & \textbf{Ref} \\ \hline
-				Movement of Camera & Servo motor overload & Servo gear or components stuck & Motor 						overheat and damage & Strongly High & Lubricate the parts when hear uncommon noise & NA & NA \\ \cline{2-8}
-				& Short circuit & Liquid spill & The camera stop moving, and the whole system may stop 					working & Strongly High & Need technician to repair & NA & NA\\ \cline{2-8}
+				Movement of Camera & Servo motor overload & Servo gear or components stuck & Motor 						overheat and damage & Strongly High & Lubricate the parts when hear uncommon noise & NA & H1-1 \\ \cline{2-8}
+				& Short circuit & Liquid spill & The camera stop moving, and the whole system may stop 					working & Strongly High & Need technician to repair & NA & H1-2\\ \cline{2-8}
 
-				& Unstable connection & Loosen connection during rotation & Whole system stop working, 					cannot tracking new objects & High & Unplug the connections and plug in again then 						restart the whole system & NA & NA\\ \cline{2-8}
+				& Unstable connection & Loosen connection during rotation & Whole system stop working, 					cannot tracking new objects & High & Unplug the connections and plug in again then 						restart the whole system & NA & H1-3\\ \cline{2-8}
 
-				& Risk of falling & Loosen assembly & The parts will disassembly and may cause injury & 				Strongly High & Concern about any abnormal movement or noise of the camera, technician may 						needed depend on situation & NA & NA\\ \cline{2-8}
+				& Risk of falling & Loosen assembly & The parts will disassembly and may cause injury & 				Strongly High & Concern about any abnormal movement or noise of the camera, technician may 						needed depend on situation & NA & H1-4\\ \cline{2-8}
 
-				& Abnormal rotation speed of camera & Caused by the control algorithm error  & High & 					System will lose the tracking of user and objects & Restart the system & NA & NA\\ 						\hline
+				& Abnormal rotation speed of camera & Caused by the control algorithm error  & High & 					System will lose the tracking of user and objects & Restart the system & NA & H1-5\\ 						\hline
 
 
-				Human Body Detection & Human body detection failure & a. Detection method Failure & a. Wrong position description of the objects& High & a. Restart the program & IPR1 & \multirow{3}{*} {H3-1} \\ 
-				& & b. Wrong Human Body Detected & & & b. Compare detected body with human body database stored inside the system & & \\ 
-                     & &c. Wrong postures of human body & & & & &\\ \cline{2-8}
-				& Body movement detection failure & a. Detection method failure & Hard to associate movement of objects with movement of human body & High & a. Retart the program & IPR4 & \multirow{2}{*} {H3-2}\\ 
-                     & & b. Wrong movement detected &  &  & b. Rejudging movement zone around the human body &  & \\ \hline
-				User Interface & App closes unexpectedly & Host device loses power, or Crash due to instabilty & Current progress is lost & High & a. Store 				 	unsaved data locally on user's device & NA & NA \\ \cline{2-8}
-				 & User cannot log in to the app successfully & User's credential is unmatched & User is unable to use the system & High & a. Reset user's 						credentials & NA & NA \\ \cline{2-8}
-				 & An unauthorized user logs in as a privileged one with high-level access & Authentication issue & User could view or modify data even he/						she is not allowed & Strongly high & a. Fix the account permission and undo changes made by unauthorized user & NA & NA \\ \hline
-
-				Database & Overflow & Files of frames are stored without size restriction & Program crash & High & Set a strict time period for the 				    camera to capture picture for each task & NA & NA\\  \cline{2-8}
-				& Mismatch & Object information are not collected completely & Inaccurate behavior done by the system & Medium & Fist ensure the 				 functionality of camera is in good condition then re-enter information about the object & NA & NA\\ \cline{2-8}
-				& Miss time requirement & Too much items in one frame and takes the program longer time to proceed & Long time delay of the system 				   behavior & Medium & Increase search frame and prioritize the assigned area & NA & NA\\
-				\hline
->>>>>>> cf9acd28058d558d1d897278ba22b23ee2a0b788
-				Object Detection & Connection lost with camera live feed & a.Temporary internet lost & a.There will be no video frames for SmartVault to process and monitoring object movement & 10 & a.System output error message to user and retry connecting & NA & \multirow{2}{*} {H3-1} \\ 
-				& & b.Camera system is out of  battery & b.Same as H5-1a & b. 10 & b. Refer to H1- & & \\ \cline{2-8}
 				
-				& Object detection faults & a. Unable to detect moving object   & a.SmartVault will not be able to update the specific item's new position & 10 & a.Well rehearsed image processing and detection method will be implemented to mitigate the chance of this event & SR6  & \multirow{2}{*} {H3-1} \\ 
-				& & b.Unable to uniquely identify an object (sharing all characteristics with two or more recorded item) & b. same as H5-2a & b. 10 & b. Refer to H5-2a & & \\ \hline
+				
 						
-<<<<<<< HEAD
-=======
 
-
->>>>>>> cf9acd28058d558d1d897278ba22b23ee2a0b788
 			\end{tabular}
 		}
 
 		\caption{FMEA Table Part 1}
+		\label{FMEAPart1}
+	\end{table}
+\begin{table}[ht]
+		\centering
+
+		\makebox[\linewidth]{
+			\begin{tabular}{|p{2.5cm}|p{2.5cm}|p{3cm}|p{2.5cm}|p{1.5cm}|p{2.5cm}|p{1cm}|p{1cm}|}
+				\hline
+				\multicolumn{8}{|c|}{\textbf{Failure Mode and Effects Analysis}}\\\hline
+				\textbf{Components} & \textbf{Failure Modes}& \textbf{Causes of Failure} & \textbf{Effects of Failure} & \textbf{Severity} & \textbf{Recommended Actions} & \textbf{SR} & \textbf{Ref} \\ \hline
+Human Body Detection & Human body detection failure & a. Detection method Failure & a. Wrong position description of the objects& High & a. Restart the program & IPR1 & \multirow{3}{*} {H2-1} \\ 
+				& & b. Wrong Human Body Detected & & & b. Compare detected body with human body database stored inside the system & & \\ 
+                     & &c. Wrong postures of human body & & & & &\\ \cline{2-8}
+				& Body movement detection failure & a. Detection method failure & Hard to associate movement of objects with movement of human body & High & a. Retart the program & IPR4 & \multirow{2}{*} {H2-2}\\ 
+                     & & b. Wrong movement detected &  &  & b. Rejudging movement zone around the human body &  & \\ \hline				
+				User Interface & App closes unexpectedly & Host device loses power, or Crash due to instabilty & Current progress is lost & High & a. Store 				 	unsaved data locally on user's device & NA & H3-1 \\ \cline{2-8}
+				 & User cannot log in to the app successfully & User's credential is unmatched & User is unable to use the system & High & a. Reset user's 						credentials & NA & H3-2 \\ \cline{2-8}
+				 & An unauthorized user logs in as a privileged one with high-level access & Authentication issue & User could view or modify data even he/						she is not allowed & Strongly high & a. Fix the account permission and undo changes made by unauthorized user & NA & H3-3 \\ \hline
+
+				
+				
+				
+			\end{tabular}
+		}
+
+		\caption{FMEA Table Part 2}
 		\label{FMEAPart2}
 	\end{table}
+	\begin{table}[ht]
+		\centering
 
+		\makebox[\linewidth]{
+			\begin{tabular}{|p{2.5cm}|p{2.5cm}|p{3cm}|p{2.5cm}|p{1.5cm}|p{2.5cm}|p{1cm}|p{1cm}|}
+				\hline
+				\multicolumn{8}{|c|}{\textbf{Failure Mode and Effects Analysis}}\\\hline
+				\textbf{Components} & \textbf{Failure Modes}& \textbf{Causes of Failure} & \textbf{Effects of Failure} & \textbf{Severity} & \textbf{Recommended Actions} & \textbf{SR} & \textbf{Ref} \\ \hline
+
+				Database & Overflow & Files of frames are stored without size restriction & Program crash & High & Set a strict time period for the 				    camera to capture picture for each task & NA & H4-1\\  \cline{2-8}
+				& Mismatch & Object information are not collected completely & Inaccurate behavior done by the system & Medium & Fist ensure the 				 functionality of camera is in good condition then re-enter information about the object & NA & H4-2\\ \cline{2-8}
+				& Miss time requirement & Too much items in one frame and takes the program longer time to proceed & Long time delay of the system 				   behavior & Medium & Increase search frame and prioritize the assigned area & NA & H4-3\\
+				\hline
+
+				Object Detection & Connection lost with camera live feed & a.Temporary internet lost & a.There will be no video frames for SmartVault to process and monitoring object movement & High & a.System output error message to user and retry connecting & NA & \multirow{2}{*} {H5-1} \\ 
+				& & b.Camera system is out of  battery & b.Same as H5-1a &  & b. Refer to H1- & & \\ \cline{2-8}
+				
+				& Object detection faults & a. Unable to detect moving object   & a.SmartVault will not be able to update the specific item's new position & High & a.Well rehearsed image processing and detection method will be implemented to mitigate the chance of this event & SR6  & \multirow{2}{*} {H5-2} \\ 
+				& & b.Unable to uniquely identify an object (sharing all characteristics with two or more recorded item) & b. same as H5-2a &  & b. Refer to H5-2a & & \\ \hline
+				
+				
+			\end{tabular}
+		}
+
+		\caption{FMEA Table Part 3}
+		\label{FMEAPart3}
+	\end{table}
 
 \end{document}
