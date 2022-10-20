@@ -49,7 +49,7 @@ The project can be divided into five different main components. Those components
 \subsection{Movement of Camera}
 A stable and accurate motorized camera mount is necessary for the movement tracking. The servos need to move in a appropriate speed and angle in order to make the camera capture the best view of both objects and user.
 \subsection{Human Body Detection}
-A good detection method should be used so that the human body can be detected by the program in the images provided by the camera. The movement of the human body shoudl also need to be detected to help the camera to judge its angular position.
+A good detection method should be used so that the human body can be detected by the program in the images provided by the camera. The movement of the human body should also need to be detected to help the camera to judge its angular position.
 \subsection{User Interface}
 This component provides a communication layer between the system and the user through a computer app.
 \subsection{Database}
@@ -150,9 +150,9 @@ The requirements outlined in this hazard analysis document will be implemented t
 Human Body Detection & Human body detection failure & a. Detection method Failure & a. Wrong position description of the objects& High & a. Restart the program & SR4 & \multirow{3}{*} {H2-1} \\ 
 				& & b. Wrong Human Body Detected & & & b. Compare detected body with human body database stored inside the system & & \\ 
                      & &c. Wrong postures of human body & & & & &\\ \cline{2-8}
-				& Body movement detection failure & a. Detection method failure & Hard to associate movement of objects with movement of human body & High & a. Retart the program & SR3 & \multirow{2}{*} {H2-2}\\ 
+				& Body movement detection failure & a. Detection method failure & Hard to associate movement of objects with movement of human body & High & a. Restart the program & SR3 & \multirow{2}{*} {H2-2}\\ 
                      & & b. Wrong movement detected &  &  & b. Rejudging movement zone around the human body &  & \\ \hline				
-				User Interface & App closes unexpectedly & Host device loses power, or Crash due to instabilty & Current progress is lost & High & a. Store 				 	unsaved data locally on user's device & SR9 & H3-1 \\ \cline{2-8}
+				User Interface & App closes unexpectedly & Host device loses power, or Crash due to instability & Current progress is lost & High & a. Store 				 	unsaved data locally on user's device & SR9 & H3-1 \\ \cline{2-8}
 				 & User cannot log in to the app successfully & User's credential is unmatched & User is unable to use the system & High & a. Reset user's 						credentials & SR5 & H3-2 \\ \cline{2-8}
 				 & An unauthorized user logs in as a privileged one with high-level access & Authentication issue & User could view or modify data even he/						she is not allowed & Strongly high & a. Fix the account permission and undo changes made by unauthorized user & SR10 & H3-3 \\ \hline
 
