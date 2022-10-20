@@ -112,13 +112,13 @@ SmartVault will return error message when connection between camera and the obje
 				\multicolumn{8}{|c|}{\textbf{Failure Mode and Effects Analysis}}\\\hline
 				\textbf{Components} & \textbf{Failure Modes}& \textbf{Causes of Failure} & \textbf{Effects of Failure} & \textbf{Severity} & \textbf{Recommended Actions} & \textbf{SR} & \textbf{Ref} \\ \hline
 				Movement of Camera & Servo motor overload & Servo gear or components stuck & Motor 						overheat and damage & Strongly High & Lubricate the parts when hear uncommon noise & NA & H1-1 \\ \cline{2-8}
-				& Short circuit & Liquid spill & The camera stop moving, and the whole system may stop 					working & Strongly High & Need technician to repair & NA & H1-2\\ \cline{2-8}
+				& Short circuit & Liquid spill & The camera stop moving, and the whole system may stop 					working & Strongly High & Need technician to repair & MAR1 & H1-2\\ \cline{2-8}
 
-				& Unstable connection & Loosen connection during rotation & Whole system stop working, 					cannot tracking new objects & High & Unplug the connections and plug in again then 						restart the whole system & NA & H1-3\\ \cline{2-8}
+				& Unstable connection & Loosen connection during rotation & Whole system stop working, 					cannot tracking new objects & High & Unplug the connections and plug in again then 						restart the whole system & RAR2 & H1-3\\ \cline{2-8}
 
-				& Risk of falling & Loosen assembly & The parts will disassembly and may cause injury & 				Strongly High & Concern about any abnormal movement or noise of the camera, technician may 						needed depend on situation & NA & H1-4\\ \cline{2-8}
+				& Risk of falling & Loosen assembly & The parts will disassembly and may cause injury & 				Strongly High & Concern about any abnormal movement or noise of the camera, technician may 						needed depend on situation & SCR1 & H1-4\\ \cline{2-8}
 
-				& Abnormal rotation speed of camera & Caused by the control algorithm error  & High & 					System will lose the tracking of user and objects & Restart the system & NA & H1-5\\ 						\hline
+				& Abnormal rotation speed of camera & Caused by the control algorithm error  & High & 					System will lose the tracking of user and objects & Restart the system & SCR3 RAR1 & H1-5\\			\hline
 
 
 				
@@ -144,9 +144,9 @@ Human Body Detection & Human body detection failure & a. Detection method Failur
                      & &c. Wrong postures of human body & & & & &\\ \cline{2-8}
 				& Body movement detection failure & a. Detection method failure & Hard to associate movement of objects with movement of human body & High & a. Retart the program & IPR4 & \multirow{2}{*} {H2-2}\\ 
                      & & b. Wrong movement detected &  &  & b. Rejudging movement zone around the human body &  & \\ \hline				
-				User Interface & App closes unexpectedly & Host device loses power, or Crash due to instabilty & Current progress is lost & High & a. Store 				 	unsaved data locally on user's device & NA & H3-1 \\ \cline{2-8}
-				 & User cannot log in to the app successfully & User's credential is unmatched & User is unable to use the system & High & a. Reset user's 						credentials & NA & H3-2 \\ \cline{2-8}
-				 & An unauthorized user logs in as a privileged one with high-level access & Authentication issue & User could view or modify data even he/						she is not allowed & Strongly high & a. Fix the account permission and undo changes made by unauthorized user & NA & H3-3 \\ \hline
+				User Interface & App closes unexpectedly & Host device loses power, or Crash due to instabilty & Current progress is lost & High & a. Store 				 	unsaved data locally on user's device & RFR1 INR2 & H3-1 \\ \cline{2-8}
+				 & User cannot log in to the app successfully & User's credential is unmatched & User is unable to use the system & High & a. Reset user's 						credentials & UIR4 RFR2 & H3-2 \\ \cline{2-8}
+				 & An unauthorized user logs in as a privileged one with high-level access & Authentication issue & User could view or modify data even he/						she is not allowed & Strongly high & a. Fix the account permission and undo changes made by unauthorized user & AER1 PRR1 & H3-3 \\ \hline
 
 				
 				
