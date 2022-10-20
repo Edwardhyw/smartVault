@@ -42,6 +42,8 @@ Date2 & Name(s) & Description of changes\\
 \newpage
 \section{Introduction}
 This document describes the components making up the system and identify the possible hazardous behavior that could cause functional issue and safety problem. The Failure Modes and Effects Analysis method are being used in this document to clearly identify possible hazardous behaviors and the recommended actions that could be done to reduce the risk level. The system is meant to be implemented to help people locate items they have difficulty remembering. The mean function of this system are object recognition and item tracking which is used to satisfy daily-life need instead of industrial level. Safety requirement is crucial to be satisfied in the case users are considered to be non-professional. In the follow sections, all components of the system and hazards caused by the failure will be taken into consideration and methods can be applied in each case to solve the issue will also be clarified.
+\section{Scope}
+The scope of this hazard analysis document is to include all potential hazard relating to both hardware and software component of the project. 
 \section{Component Overview}
 The project can be divided into five different main components. Those components are listed in the paragraphs below.
 \subsection{Movement of Camera}
@@ -54,6 +56,11 @@ This component provides a communication layer between the system and the user th
 A fast and accurate data flow is the cornerstone for a system to be able to work properly and meet and requirements. The design and implementation of database is playing a major role in the whole system design.
 \subsection{Objection Detection}
 This system is responsible for detecting any moving object in the area and identifying each object with unique set of characteristics. The is the main logical system for smartVault to help locate a “lost” item.
+\section{Critical Assumptions}
+Critical assumptions that are made are: \\
+CA1: Camera is mounted in a safe environment. \\
+CA2: The computer device deploying SmartVault is in good condition.
+
 \section{Safety Considerations and Connection with Requirements}
 \subsection{Movement of Camera}
 \subsubsection{Servo motor overload}
