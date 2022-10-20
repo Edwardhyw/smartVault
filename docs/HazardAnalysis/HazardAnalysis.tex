@@ -5,11 +5,13 @@
 \usepackage{multirow}
 \usepackage{pdflscape}
 
-\title{Hazard Analysis\\\progname}
+\title{Hazard Analysis\\Mechatronics Engineering}
 
-\author{\authname}
+\author{Edward He, Erping Zhang \\
+Guangwei Tang, Peng Cui  \\
+Peihua Jin  \\}
 
-\date{}
+\date{2022-10-19}
 
 \input{../Comments}
 \input{../Common}
@@ -40,7 +42,7 @@ Date2 & Name(s) & Description of changes\\
 
 \newpage
 \section{Introduction}
-
+This document describes the components making up the system and identify the possible hazardous behavior that could cause functional issue and safety problem. The Failure Modes and Effects Analysis method are being used in this document to clearly identify possible hazardous behaviors and the recommended actions that could be done to reduce the risk level. The system is meant to be implemented to help people locate items they have difficulty remembering. The mean function of this system are object recognition and item tracking which is used to satisfy daily-life need instead of industrial level. Safety requirement is crucial to be satisfied in the case users are considered to be non-professional. In the follow sections, all components of the system and hazards caused by the failure will be taken into consideration and methods can be applied in each case to solve the issue will also be clarified.
 \section{Component Overview}
 The project can be divided into five different main components. Those components are listed in the paragraphs below.
 \subsection{Movement of Camera}
@@ -53,7 +55,7 @@ This component provides a communication layer between the system and the user th
 A fast and accurate data flow is the cornerstone for a system to be able to work properly and meet and requirements. The design and implementation of database is playing a major role in the whole system design.
 \subsection{Objection Detection}
 This system is responsible for detecting any moving object in the area and identifying each object with unique set of characteristics. The is the main logical system for smartVault to help locate a “lost” item.
-\section{Safety Considerations}
+\section{Safety Considerations and Connection with Requirements}
 \subsection{Movement of Camera}
 \subsubsection{Servo motor overload}
 When the camera got block by something or the gear of servo get stuck during the rotation, the system will lose the tracking of user and the worst result could be a motor overheat and burn.
@@ -69,10 +71,18 @@ When the parts assembly get loosen after a long-term operation, there is a chanc
 \subsubsection{Non-appropriate angular velocity of camera}
 If the rotation speed of the camera go too fast or too slow, the the system may lose the tracking of user. It is also possible to cause injure of user by hitting the users' body.
 \subsection{Human Body Detection}
-\subsubsection{Human Body Detection Failure}
-When a human presents in the room and the images have been shown in the computer, the program fail to detect the human body or identifies other objects presents in the room as a "Human".
-\subsubsection{Body Movement Detection Failure}
-When people moves in the room and thhe images has been sent to the computer, the program cannot detect the movement of the body or detects the movememnts of other objects as human body movement.
+\subsubsection{Human Body not Detected}
+When a human presents in the room and the images have been shown in the computer, the program fail to detect the human body in the screen. \\
+\textbf{Related Requirements: }IPR1
+\subsubsection{Wrong Human Body Detected}
+When the software component of the oobject detects a human body shown in the camera, the body shown on the screen is not actually a body of a person.\\
+\textbf{Related Requirements: }IPR1
+\subsubsection{Body Movement not Detected}
+When people moves in the room and thhe images has been sent to the computer, the program cannot detect the movement of the body.\\
+\textbf{Related Requirements: }IPR4
+\subsubsection{Wrong Body Movement Detected}
+When the program detects the movements of human body, only part of movement or wrong movement is identified by the program.\\
+\textbf{Related Requirements: }IPR4
 \subsection{User Interface}
 \subsubsection{General}
 App closes unexpectedly, it could lead to the loss of current progress.
@@ -91,6 +101,47 @@ The object information are not collected completely and create wrong identificat
 As the system is designed to be real-time, timing issue might occur when dealing with large data stream.The algorithm takes time longer than expectation and can not proceed next task.\\
 \subsection{Object Detection}
 SmartVault will return error message when connection between camera and the object detection system is lost. When connection is lost, object detection system will not be able to monitor moving objects.
+\section{Safety and Security Requirements}
+\subsection{Safety Requirements}
+\subsubsection{SR1}
+The device will stop if the motor is overloaded or has an abnormal rotation speed.\\
+Rationale: It should be able to set a maximum and minimum speed for the motor. As long as the speed exceeds the range, send an error and shut down the system.\\
+Associated Hazards: H1-1, H1-5
+\subsubsection{SR2}
+The device will return an error message when the connection is unstable.\\
+Rationale: The user should be notified if the connection is unstable or loose.\\
+Associated Hazards: H1-3, H1-4
+\subsubsection{SR3}
+The device will return an error message if the object or human moves too fast.\\
+Rationale: Detection may fail due to various reasons, and the user should be made aware of the issue, and try to move slower.\\
+Associated Hazards: H2-2, H5-2
+\subsubsection{SR4}
+The device will return an error message when the image processing is failed.\\
+Rationale: Object identification may fail due to various reasons, and the user should be notified if the identification is failed, and notice the underlying cause behind it.\\
+Associated Hazards: H2-1, H5-2
+\subsubsection{SR5}
+The device will return an error message if there is an issue with the user’s credential.\\
+Rationale: The user should be notified with the issue, and may attempt to reset the credentials.\\
+Associated Hazards: H3-2
+\subsubsection{SR6}
+The device will return an error message if the database has an overflow or mismatch.\\
+Rationale: The user should be notified with the issue, and may attempt to find a solution for the issue.\\
+Associated Hazards: H4-1, H4-2
+\subsubsection{SR7}
+The device will return an error message when the database cannot proceed large numbers of items in one frame.\\
+Rationale: The user should have an opportunity to slice the job into small pieces and redo the task again.\\
+Associated Hazards: H4-3
+
+\subsection{Security Requirements}
+\subsubsection{SR8}
+The device will save user’s data periodically to the local file.\\
+Rationale: In case of unexpected shutdown or loss of power. The user should be able to keep all information from the last step.\\
+Associated Hazards: H3-1, H5-1
+\subsubsection{SR9}
+The device will return an error message if there is an authentication issue detected.
+Rationale: The user should be notified that there is another user who logins in as a superuser. Then fix the account permission and undo all changes.
+Associated Hazards: H3-3
+
 
 \section{FMEA Worksheet}
 
@@ -102,19 +153,19 @@ SmartVault will return error message when connection between camera and the obje
 				\hline
 				\multicolumn{8}{|c|}{\textbf{Failure Mode and Effects Analysis}}\\\hline
 				\textbf{Components} & \textbf{Failure Modes}& \textbf{Causes of Failure} & \textbf{Effects of Failure} & \textbf{Severity} & \textbf{Recommended Actions} & \textbf{SR} & \textbf{Ref} \\ \hline
-				Movement of Camera & Servo motor overload & Servo gear or components stuck & Motor 						overheat and damage & Strongly High & Lubricate the parts when hear uncommon noise & SR-1 & H1-1 \\ \cline{2-8}
-				& Short circuit & Liquid spill & The camera stop moving, and the whole system may stop 					working & Strongly High & Need technician to repair & SR-1, SR-2 & H1-2\\ \cline{2-8}
+				Movement of Camera & Servo motor overload & Servo gear or components stuck & Motor 						overheat and damage & Strongly High & Lubricate the parts when hear uncommon noise & SR1 & H1-1 \\ \cline{2-8}
+				& Short circuit & Liquid spill & The camera stop moving, and the whole system may stop 					working & Strongly High & Need technician to repair & NA & H1-2\\ \cline{2-8}
 
-				& Unstable connection & Loosen connection during rotation & Whole system stop working, 					cannot tracking new objects & High & Unplug the connections and plug in again then 						restart the whole system & SR-1 & H1-3\\ \cline{2-8}
+				& Unstable connection & Loosen connection during rotation & Whole system stop working, 					cannot tracking new objects & High & Unplug the connections and plug in again then 						restart the whole system & SR2 & H1-3\\ \cline{2-8}
 
-				& Risk of falling & Loosen assembly & The parts will disassembly and may cause injury & 				Strongly High & Concern about any abnormal movement or noise of the camera, technician may 						needed depend on situation & SR-2 & H1-4\\ \cline{2-8}
+				& Risk of falling & Loosen assembly & The parts will disassembly and may cause injury & 				Strongly High & Concern about any abnormal movement or noise of the camera, technician may 						needed depend on situation & SR2 & H1-4\\ \cline{2-8}
 
-				& Abnormal rotation speed of camera & Caused by the control algorithm error  & High & 					System will lose the tracking of user and objects & Restart the system & SR-1 & H1-5\\ 						\hline
+				& Abnormal rotation speed of camera & Caused by the control algorithm error  & High & 					System will lose the tracking of user and objects & Restart the system & SR1 & H1-5\\			\hline
 
 
-				
-				
-						
+
+
+
 
 			\end{tabular}
 		}
@@ -130,18 +181,18 @@ SmartVault will return error message when connection between camera and the obje
 				\hline
 				\multicolumn{8}{|c|}{\textbf{Failure Mode and Effects Analysis}}\\\hline
 				\textbf{Components} & \textbf{Failure Modes}& \textbf{Causes of Failure} & \textbf{Effects of Failure} & \textbf{Severity} & \textbf{Recommended Actions} & \textbf{SR} & \textbf{Ref} \\ \hline
-Human Body Detection & Human body detection failure & a. Detection method Failure & a. Wrong position description of the objects& High & a. Restart the program & SR-4 & \multirow{3}{*} {H2-1} \\ 
-				& & b. Wrong Human Body Detected & & & b. Compare detected body with human body database stored inside the system & & \\ 
+Human Body Detection & Human body detection failure & a. Detection method Failure & a. Wrong position description of the objects& High & a. Restart the program & SR4 & \multirow{3}{*} {H2-1} \\
+				& & b. Wrong Human Body Detected & & & b. Compare detected body with human body database stored inside the system & & \\
                      & &c. Wrong postures of human body & & & & &\\ \cline{2-8}
-				& Body movement detection failure & a. Detection method failure & Hard to associate movement of objects with movement of human body & High & a. Retart the program & SR-4 & \multirow{2}{*} {H2-2}\\ 
-                     & & b. Wrong movement detected &  &  & b. Rejudging movement zone around the human body &  & \\ \hline				
-				User Interface & App closes unexpectedly & Host device loses power, or Crash due to instabilty & Current progress is lost & High & a. Store 				 	unsaved data locally on user's device & SR-3 & H3-1 \\ \cline{2-8}
-				 & User cannot log in to the app successfully & User's credential is unmatched & User is unable to use the system & High & a. Reset user's 						credentials & SR-3 & H3-2 \\ \cline{2-8}
-				 & An unauthorized user logs in as a privileged one with high-level access & Authentication issue & User could view or modify data even he/						she is not allowed & Strongly high & a. Fix the account permission and undo changes made by unauthorized user & SR-2, SR-3 & H3-3 \\ \hline
+				& Body movement detection failure & a. Detection method failure & Hard to associate movement of objects with movement of human body & High & a. Retart the program & SR3 & \multirow{2}{*} {H2-2}\\
+                     & & b. Wrong movement detected &  &  & b. Rejudging movement zone around the human body &  & \\ \hline
+				User Interface & App closes unexpectedly & Host device loses power, or Crash due to instabilty & Current progress is lost & High & a. Store 				 	unsaved data locally on user's device & SR8 & H3-1 \\ \cline{2-8}
+				 & User cannot log in to the app successfully & User's credential is unmatched & User is unable to use the system & High & a. Reset user's 						credentials & SR5 & H3-2 \\ \cline{2-8}
+				 & An unauthorized user logs in as a privileged one with high-level access & Authentication issue & User could view or modify data even he/						she is not allowed & Strongly high & a. Fix the account permission and undo changes made by unauthorized user & SR9 & H3-3 \\ \hline
 
-				
-				
-				
+
+
+
 			\end{tabular}
 		}
 
@@ -157,36 +208,23 @@ Human Body Detection & Human body detection failure & a. Detection method Failur
 				\multicolumn{8}{|c|}{\textbf{Failure Mode and Effects Analysis}}\\\hline
 				\textbf{Components} & \textbf{Failure Modes}& \textbf{Causes of Failure} & \textbf{Effects of Failure} & \textbf{Severity} & \textbf{Recommended Actions} & \textbf{SR} & \textbf{Ref} \\ \hline
 
-				Database & Overflow & Files of frames are stored without size restriction & Program crash & High & Set a strict time period for the 				    camera to capture picture for each task & SR-5 & H4-1\\  \cline{2-8}
-				& Mismatch & Object information are not collected completely & Inaccurate behavior done by the system & Medium & Fist ensure the 				 functionality of camera is in good condition then re-enter information about the object & SR-4, SR-5 & H4-2\\ \cline{2-8}
-				& Miss time requirement & Too much items in one frame and takes the program longer time to proceed & Long time delay of the system 				   behavior & Medium & Increase search frame and prioritize the assigned area & SR-4 & H4-3\\
+				Database & Overflow & Files of frames are stored without size restriction & Program crash & High & Set a strict time period for the 				    camera to capture picture for each task & SR6 & H4-1\\  \cline{2-8}
+				& Mismatch & Object information are not collected completely & Inaccurate behavior done by the system & Medium & Fist ensure the 				 functionality of camera is in good condition then re-enter information about the object & SR6 & H4-2\\ \cline{2-8}
+				& Miss time requirement & Too much items in one frame and takes the program longer time to proceed & Long time delay of the system 				   behavior & Medium & Increase search frame and prioritize the assigned area & SR7 & H4-3\\
 				\hline
 
-				Object Detection & Connection lost with camera live feed & a.Temporary internet lost & a.There will be no video frames for SmartVault to process and monitoring object movement & High & a.System output error message to user and retry connecting & SR-1 & \multirow{2}{*} {H5-1} \\ 
+				Object Detection & Connection lost with camera live feed & a.Temporary internet lost & a.There will be no video frames for SmartVault to process and monitoring object movement & High & a.System output error message to user and retry connecting & SR8 & \multirow{2}{*} {H5-1} \\
 				& & b.Camera system is out of  battery & b.Same as H5-1a &  & b. Refer to H1- & & \\ \cline{2-8}
-				
-				& Object detection faults & a. Unable to detect moving object   & a.SmartVault will not be able to update the specific item's new position & High & a.Well rehearsed image processing and detection method will be implemented to mitigate the chance of this event & SR-4  & \multirow{2}{*} {H5-2} \\ 
+
+				& Object detection faults & a. Unable to detect moving object   & a.SmartVault will not be able to update the specific item's new position & High & a.Well rehearsed image processing and detection method will be implemented to mitigate the chance of this event & SR3 SR4 & \multirow{2}{*} {H5-2} \\
 				& & b.Unable to uniquely identify an object (sharing all characteristics with two or more recorded item) & b. same as H5-2a &  & b. Refer to H5-2a & & \\ \hline
-				
-				
+
+
 			\end{tabular}
 		}
 
 		\caption{FMEA Table Part 3}
 		\label{FMEAPart3}
 	\end{table}
-\newpage
-\section{Software Requirements}
-From the table provided above, several safety requirements for this project can be concluded and described in paragraphs below. \\\\
-\textbf{SR-1: }The rotating pattern, like the speed, angle of rotation of the camera should be controlled within a controllable range, the circuit should also be stable and securely connected.\\
-Associated Hazards: H1-1, H1-2, H1-3, H1-5, H5-1.\\\\
-\textbf{SR-2: }The camera should be installed in a safe and stable environment, while keeping the camera working properly at all times. The images the camera takes should not be used to other impporper uses. \\
-Associated Hazards: H1-2, H1-4, H3-3.\\\\
-\textbf{SR-3: }The product should provide the user with a stable and safe control window, so that users can achieve their goals through the interface. At the same time, the stability of the internal system and the privacy of users should be protected to the greatest extent possible.\\
-Associated Hazards: H3-1, H3-2, H3-3.\\\\
-\textbf{SR-4: }The product should effectively identify and screen the information transmitted by the camera, and at the same time ensure a stable connection between the database and the working system.\\
-Associated Hazards: H2-1, H2-2, H4-2, H4-3\\\\
-\textbf{SR-5: }The database should respond to the information provided by the operating system in a timely manner, and ensure the stable storage of the information\\
-Associated Hazards: H4-1, H4-2\\\\
 
 \end{document}
