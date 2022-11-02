@@ -253,122 +253,77 @@ How test will be performed:
 
 \wss{Provide a table that shows which test cases are supporting which
   requirements.}
+\section{Proof of Concept Testing}
+Before any serious development of the game starts, a proof-of-concept test would be carried out to show the undertaking is feasible. The remaining of this section describes the proof-of-concept test in detail.
+
+\subsection{Significant Risks}
+The successful completion of the project depends on overcoming the following significant risks:
+\begin{enumerate}
+\item{}
+In order to satisfy the functionality of human detection, the camera must be able to rotate and follow the movement of the user. The risk is to make the user located in the center of the screen all the time. Otherwise, the observation may behave poorly and unclearly if the user is out of the screen or located at the edge of the screen.			
+\item{}
+SmartVault is used to keep the items of users or to find out when and what gets lost or missed. The most important part of the project is to identify the differences through the compare between two images.
+\end{enumerate}
+\subsection{Demonstration Plan}
+The prototype will try to test human detection firstly. Three cases will be applied for the proof-of-concept testing.
+\begin{enumerate}
+\item{test 1\\}
+Type: Functional, automatic\\
+Initial State: User stays in the center of the screen\\
+Input: Null\\
+Output: The camera does not rotate, and the user is identified with a yellow rectangle shown in the screen.\\			
+\item{test 2\\}
+Type: Functional, dynamic, automatic\\
+Initial State: User stays at the edge of the screen\\
+Input: Null\\
+Output: The user is identified with a yellow rectangle shown in the screen, then the camera begins to rotate until the user is in the center of the screen.\\
+\item{test 3\\}
+Type: Functional, automatic\\
+Initial State: User is out of the screen\\
+Input: Null\\
+Output: The camera does not rotate, and the user cannot be identified on the screen.\\
+\item{test 4\\}
+Type: Functional, dynamic, automatic\\
+Initial State: User is in the screen\\
+Input: User randomly walk around the room\\
+Output: The camera rotates and follows the user, and the user is identified with a yellow rectangle shown in the screen. In addition, the location of the rectangle also moves depending on the movement of the user.\\
+\end{enumerate}
+The prototype will try to test item identification secondly. Three cases will be applied for the proof-of-concept testing.
+\begin{enumerate}
+\item{test 1\\}
+Type: Functional, static, automatic\\
+Initial State: Null\\
+Input: Two identical images with no difference.\\
+Output: Nothing to do with SmartVault.\\ 
+\item{test 2\\}
+Type: Functional, static, automatic\\
+Initial State: Null\\
+Input: Two images with the same item, but the location of the item is changed.\\
+Output: The difference of the location is identified. SmartVault will record these change and upload to the local file.\\ 
+\item{test 3\\}
+Type: Functional, static, automatic\\
+Initial State: Null\\
+Input: Two images with different items, but the locations of the items are the same.\\
+Output: The difference of the items is identified. SmartVault will record these change and upload to the local file.\\ 
+\item{test 4\\}
+Type: Functional, static, automatic\\
+Initial State: Null\\
+Input: A image with 6 small items.\\
+Output: SmartVault will identify each item with a yellow rectangle around it. In other words, there should be 6 rectangles in total.\\ 
+\item{test 5\\}
+Type: Functional, dynamic, automatic\\
+Initial State: Null\\
+Input: A image with 1 small item and it will keep moving during the test.\\
+Output: SmartVault will identify this item with a yellow rectangle around it. In addition, the rectangle will move depending on the movement of the object\\ 
+\end{enumerate}
 
 \section{Unit Test Description}
 
-\wss{Reference your MIS and explain your overall philosophy for test case
-  selection.}  
-\wss{This section should not be filled in until after the MIS has
-  been completed.}
+\subsection{Unit Testing of Internal Functions}
+In order to build unit tests for the internal functions of the program, certain modules which can return values could be tested. This will involve choosing proper method and giving them input values. Through comparing what they are expected to output and the actual outputs, a series of unit tests can be created. These unit tests will choose both proper inputs and those could generate exceptions. The acceptable range for the unit test could be determined through testing the output with exceptions. There is no need for stubs or drivers to be applied for the testing. Since the tests have been already done by the individual classes. Some coverage metrics will be shown to measure how much of the code had been covered for testing purposes. The goal is to reach as much as possible to ensure that all functions related to various modules get tested adequately. The expectation of the coverage percentage of unit tests is set to 80 percent.
+\subsection{Unit Testing of Output Files}
+In order to create unit tests for the output files, the quality and accuracy of the output images will be considered for testing. This will involve creating certain situation and compare the actual results with the expected ones. For the saved images in the output files, they will be rated depending on how similar they are with the expected images. Only those output images being rated with a score larger than 95 percent will be considered as qualified. On the other hand, if the score does not meet 95 percent, the test case fails and the developer team should analysis the reason behind it and redo the test case. In addition, some extreme cases will be applied to the unit testing process, to measure the maximum and minimum acceptable range for the unit tests.
 
-\subsection{Unit Testing Scope}
-
-\wss{What modules are outside of the scope.  If there are modules that are
-  developed by someone else, then you would say here if you aren't planning on
-  verifying them.  There may also be modules that are part of your software, but
-  have a lower priority for verification than others.  If this is the case,
-  explain your rationale for the ranking of module importance.}
-
-\subsection{Tests for Functional Requirements}
-
-\wss{Most of the verification will be through automated unit testing.  If
-  appropriate specific modules can be verified by a non-testing based
-  technique.  That can also be documented in this section.}
-
-\subsubsection{Module 1}
-
-\wss{Include a blurb here to explain why the subsections below cover the module.
-  References to the MIS would be good.  You will want tests from a black box
-  perspective and from a white box perspective.  Explain to the reader how the
-  tests were selected.}
-
-\begin{enumerate}
-
-\item{test-id1\\}
-
-Type: \wss{Functional, Dynamic, Manual, Automatic, Static etc. Most will
-  be automatic}
-					
-Initial State: 
-					
-Input: 
-					
-Output: \wss{The expected result for the given inputs}
-
-Test Case Derivation: \wss{Justify the expected value given in the Output field}
-
-How test will be performed: 
-					
-\item{test-id2\\}
-
-Type: \wss{Functional, Dynamic, Manual, Automatic, Static etc. Most will
-  be automatic}
-					
-Initial State: 
-					
-Input: 
-					
-Output: \wss{The expected result for the given inputs}
-
-Test Case Derivation: \wss{Justify the expected value given in the Output field}
-
-How test will be performed: 
-
-\item{...\\}
-    
-\end{enumerate}
-
-\subsubsection{Module 2}
-
-...
-
-\subsection{Tests for Nonfunctional Requirements}
-
-\wss{If there is a module that needs to be independently assessed for
-  performance, those test cases can go here.  In some projects, planning for
-  nonfunctional tests of units will not be that relevant.}
-
-\wss{These tests may involve collecting performance data from previously
-  mentioned functional tests.}
-
-\subsubsection{Module ?}
-		
-\begin{enumerate}
-
-\item{test-id1\\}
-
-Type: \wss{Functional, Dynamic, Manual, Automatic, Static etc. Most will
-  be automatic}
-					
-Initial State: 
-					
-Input/Condition: 
-					
-Output/Result: 
-					
-How test will be performed: 
-					
-\item{test-id2\\}
-
-Type: Functional, Dynamic, Manual, Static etc.
-					
-Initial State: 
-					
-Input: 
-					
-Output: 
-					
-How test will be performed: 
-
-\end{enumerate}
-
-\subsubsection{Module ?}
-
-...
-
-\subsection{Traceability Between Test Cases and Modules}
-
-\wss{Provide evidence that all of the modules have been considered.}
 				
 \bibliographystyle{plainnat}
 
