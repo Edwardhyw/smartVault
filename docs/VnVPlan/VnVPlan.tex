@@ -93,41 +93,49 @@ This document ... \wss{provide an introductory blurb and roadmap of the
 \citet{SRS}
 
 \section{Plan}
-
-\wss{Introduce this section.   You can provide a roadmap of the sections to
-  come.}
+In this section, it provides an overview and roadmap for the document. This section outlines the members of the verification and validation team for the project SmartVault and their assigned roles. This section describes the methods to verify and validate each component of the project, which includes SRS, Design, implementation, testing tools and the software for SmartVault.
 
 \subsection{Verification and Validation Team}
 
-\wss{You, your classmates and the course instructor.  Maybe your supervisor.
-  You shoud do more than list names.  You should say what each person's role is
-  for the project.  A table is a good way to summarize this information.}
+\begin{table}[h]
+\begin{center}
+\begin{tabular}{|l | l|}
+\hline
+  \textbf{Member} & \textbf{Role}\\
+  \hline
+  Edward He & Static Verification Lead; Back-end Testing\\
+  \hline
+  Erping Zhang & Design Verification Lead; Front-end Testing \\
+  \hline
+  Guangwei Tang & SRS Verification Lead; Hardware Testing\\
+  \hline
+  Peng Cui & Dynamic Verification Lead; Code Inspection\\
+  \hline
+  Peihua Jin & Automated Testing Lead;Code Inspection\\
+  \hline
+  Spencer Smith & Review of documents and system\\
+  \hline
+  Peer Groups & Review of documents and system\\
+  \hline
+\end{tabular}
+\end{center}
+\caption{Verification and Validation Team Members and Roles}            
 
+\end{table}
+\break
 \subsection{SRS Verification Plan}
 
-\wss{List any approaches you intend to use for SRS verification.  This may just
-  be ad hoc feedback from reviewers, like your classmates, or you may have
-  something more rigorous/systematic in mind..}
+In order to verify the SRS document, the SRS checklist will be used to make sure that the document included all components on the checklist and are complete. The SRS document will also be reviewed by other groups and based on their feedbacks, changes will be made accordingly. Professor Spencer Smith and the teaching team will also review the document and provide feedbakcs. Requirements Listed in the SRS document will be verified and validated by the methods listed in the following sections.
 
-\wss{Remember you have an SRS checklist}
+
 
 \subsection{Design Verification Plan}
 
-\wss{Plans for design verification}
-
-\wss{The review will include reviews by your classmates}
-
-\wss{Remember you have MG and MIS checklists}
+To verify the design of the system, MG and MIS checklist will be utilized. The team has decided and implemented a procedure for each individual design made by different team developer. Any design decision is required to be reviewed and verified by at least 3 other members. The design of SmartVault will also be reviewed by peers and instructor. 
 
 \subsection{Implementation Verification Plan}
 
-\wss{You should at least point to the tests listed in this document and the unit
-  testing plan.}
-
-\wss{In this section you would also give any details of any plans for static verification of
-  the implementation.  Potential techniques include code walkthroughs, code
-  inspection, static analyzers, etc.}
-
+The implementation of the SmartVault will be done with both dynamic and static verification. For dynamic verification, both non-functional and functional requirements implementation will be tested. The test will consist both system test and unit test to ensure the written code comply with the requirements and functionalities. More details for the dynamic verification refer to section 5 and 6 of this document. For the static verification, it will be done with code inspection and coding standards. The team will utilize  Git and Github to inspect and verify coding. The merge of a new functionality or modification of current implementation has to be reviewed by 2 others member prior to merging to the main branch. Code inspections/walkthrough will be done weekly to ensure it follows the coding standards. SmartVault will be primarily written in Python and team members are required to follow PEP8 standard by using linter Pylint.
 \subsection{Automated Testing and Verification Tools}
 
 \wss{What tools are you using for automated testing.  Likely a unit testing
@@ -144,9 +152,7 @@ This document ... \wss{provide an introductory blurb and roadmap of the
 
 \subsection{Software Validation Plan}
 
-\wss{If there is any external data that can be used for validation, you should
-  point to it here.  If there are no plans for validation, you should state that
-  here.}
+Software validation will be mostly conducted by team members. External validation is set to be conducted with consumers(stakeholders) of the product where they can try out the system and report if there is anything they would like to change.
 
 \section{System Test Description}
 	
