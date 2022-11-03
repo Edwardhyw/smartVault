@@ -27,11 +27,12 @@
 
 \section{Revision History}
 
-\begin{tabularx}{\textwidth}{p{3cm}p{2cm}X}
+\begin{tabularx}{\textwidth}{p{3cm}p{3cm}X}
 \toprule {\bf Date} & {\bf Version} & {\bf Notes}\\
 \midrule
-Date 1 & 1.0 & Notes\\
-Date 2 & 1.1 & Notes\\
+2022-11-2 & Edward He, Erping Zhang & Revision 0\\
+& Guangwei Tang, Peng Cui & \\
+& Peihua Jin & \\
 \bottomrule
 \end{tabularx}
 
@@ -40,10 +41,7 @@ Date 2 & 1.1 & Notes\\
 \tableofcontents
 
 \listoftables
-\wss{Remove this section if it isn't needed}
 
-\listoffigures
-\wss{Remove this section if it isn't needed}
 
 \newpage
 
@@ -54,12 +52,13 @@ Date 2 & 1.1 & Notes\\
   \toprule		
   \textbf{symbol} & \textbf{description}\\
   \midrule 
-  T & Test\\
+  SRS & Software Requirements Specifications\\
+  MG & Module Guide\\
+  MIS & Module Interface Specification\\
   \bottomrule
 \end{tabular}\\
 
-\wss{symbols, abbreviations or acronyms -- you can simply reference the SRS
-  \citep{SRS} tables, if appropriate}
+
 
 \newpage
 
@@ -105,7 +104,7 @@ In this section, it provides an overview and roadmap for the document. This sect
   \hline
   Peng Cui & Dynamic Verification Lead; Code Inspection\\
   \hline
-  Peihua Jin & Automated Testing Lead;Code Inspection\\
+  Peihua Jin & Automated Testing Lead; Code Inspection\\
   \hline
   Spencer Smith & Review of documents and system\\
   \hline
@@ -132,17 +131,12 @@ To verify the design of the system, MG and MIS checklist will be utilized. The t
 The implementation of the SmartVault will be done with both dynamic and static verification. For dynamic verification, both non-functional and functional requirements implementation will be tested. The test will consist both system test and unit test to ensure the written code comply with the requirements and functionalities. More details for the dynamic verification refer to section 5 and 6 of this document. For the static verification, it will be done with code inspection and coding standards. The team will utilize  Git and Github to inspect and verify coding. The merge of a new functionality or modification of current implementation has to be reviewed by 2 others member prior to merging to the main branch. Code inspections/walkthrough will be done weekly to ensure it follows the coding standards. SmartVault will be primarily written in Python and team members are required to follow PEP8 standard by using linter Pylint.
 \subsection{Automated Testing and Verification Tools}
 
-\wss{What tools are you using for automated testing.  Likely a unit testing
-  framework and maybe a profiling tool, like ValGrind.  Other possible tools
-  include a static analyzer, make, continuous integration tools, test coverage
-  tools, etc.  Explain your plans for summarizing code coverage metrics.
-  Linters are another important class of tools.  For the programming language
-  you select, you should look at the available linters.  There may also be tools
-  that verify that coding standards have been respected, like flake9 for
-  Python.}
-
-\wss{The details of this section will likely evolve as you get closer to the
-  implementation.}
+\begin{itemize}
+    \item Coding Standard(PEP 8) : pylint
+    \item Unit Testing Frameworks: PyUnit
+   
+   
+\end{itemize}
 
 \subsection{Software Validation Plan}
 
@@ -631,13 +625,6 @@ In order to create unit tests for the output files, the quality and accuracy of 
 \newpage
 
 \section{Appendix}
-
-This is where you can place additional information.
-
-\subsection{Symbolic Parameters}
-
-The definition of the test cases will call for SYMBOLIC\_CONSTANTS.
-Their values are defined in this section for easy maintenance.
 
 \subsection{Usability Survey Questions}
 
