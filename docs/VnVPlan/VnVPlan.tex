@@ -85,41 +85,49 @@ This document ... \wss{provide an introductory blurb and roadmap of the
 \citet{SRS}
 
 \section{Plan}
-
-\wss{Introduce this section.   You can provide a roadmap of the sections to
-  come.}
+In this section, it provides an overview and roadmap for the document. This section outlines the members of the verification and validation team for the project SmartVault and their assigned roles. This section describes the methods to verify and validate each component of the project, which includes SRS, Design, implementation, testing tools and the software for SmartVault.
 
 \subsection{Verification and Validation Team}
 
-\wss{You, your classmates and the course instructor.  Maybe your supervisor.
-  You shoud do more than list names.  You should say what each person's role is
-  for the project.  A table is a good way to summarize this information.}
+\begin{table}[h]
+\begin{center}
+\begin{tabular}{|l | l|}
+\hline
+  \textbf{Member} & \textbf{Role}\\
+  \hline
+  Edward He & Static Verification Lead; Back-end Testing\\
+  \hline
+  Erping Zhang & Design Verification Lead; Front-end Testing \\
+  \hline
+  Guangwei Tang & SRS Verification Lead; Hardware Testing\\
+  \hline
+  Peng Cui & Dynamic Verification Lead; Code Inspection\\
+  \hline
+  Peihua Jin & Automated Testing Lead;Code Inspection\\
+  \hline
+  Spencer Smith & Review of documents and system\\
+  \hline
+  Peer Groups & Review of documents and system\\
+  \hline
+\end{tabular}
+\end{center}
+\caption{Verification and Validation Team Members and Roles}            
 
+\end{table}
+\break
 \subsection{SRS Verification Plan}
 
-\wss{List any approaches you intend to use for SRS verification.  This may just
-  be ad hoc feedback from reviewers, like your classmates, or you may have
-  something more rigorous/systematic in mind..}
+In order to verify the SRS document, the SRS checklist will be used to make sure that the document included all components on the checklist and are complete. The SRS document will also be reviewed by other groups and based on their feedbacks, changes will be made accordingly. Professor Spencer Smith and the teaching team will also review the document and provide feedbakcs. Requirements Listed in the SRS document will be verified and validated by the methods listed in the following sections.
 
-\wss{Remember you have an SRS checklist}
+
 
 \subsection{Design Verification Plan}
 
-\wss{Plans for design verification}
-
-\wss{The review will include reviews by your classmates}
-
-\wss{Remember you have MG and MIS checklists}
+To verify the design of the system, MG and MIS checklist will be utilized. The team has decided and implemented a procedure for each individual design made by different team developer. Any design decision is required to be reviewed and verified by at least 3 other members. The design of SmartVault will also be reviewed by peers and instructor. 
 
 \subsection{Implementation Verification Plan}
 
-\wss{You should at least point to the tests listed in this document and the unit
-  testing plan.}
-
-\wss{In this section you would also give any details of any plans for static verification of
-  the implementation.  Potential techniques include code walkthroughs, code
-  inspection, static analyzers, etc.}
-
+The implementation of the SmartVault will be done with both dynamic and static verification. For dynamic verification, both non-functional and functional requirements implementation will be tested. The test will consist both system test and unit test to ensure the written code comply with the requirements and functionalities. More details for the dynamic verification refer to section 5 and 6 of this document. For the static verification, it will be done with code inspection and coding standards. The team will utilize  Git and Github to inspect and verify coding. The merge of a new functionality or modification of current implementation has to be reviewed by 2 others member prior to merging to the main branch. Code inspections/walkthrough will be done weekly to ensure it follows the coding standards. SmartVault will be primarily written in Python and team members are required to follow PEP8 standard by using linter Pylint.
 \subsection{Automated Testing and Verification Tools}
 
 \wss{What tools are you using for automated testing.  Likely a unit testing
@@ -136,9 +144,7 @@ This document ... \wss{provide an introductory blurb and roadmap of the
 
 \subsection{Software Validation Plan}
 
-\wss{If there is any external data that can be used for validation, you should
-  point to it here.  If there are no plans for validation, you should state that
-  here.}
+Software validation will be mostly conducted by team members. External validation is set to be conducted with consumers(stakeholders) of the product where they can try out the system and report if there is anything they would like to change.
 
 \section{System Test Description}
 	
@@ -375,6 +381,7 @@ How test will be performed:
 
 
 
+
 \subsubsection{Usability}
 		
 \begin{enumerate}
@@ -543,121 +550,75 @@ How test will be performed: \wss{User will be asked to enter wrong parameters in
     
 \end{center}
 
+
+\subsection{Significant Risks}
+The successful completion of the project depends on overcoming the following significant risks:
+\begin{enumerate}
+\item{}
+In order to satisfy the functionality of human detection, the camera must be able to rotate and follow the movement of the user. The risk is to make the user located in the center of the screen all the time. Otherwise, the observation may behave poorly and unclearly if the user is out of the screen or located at the edge of the screen.			
+\item{}
+SmartVault is used to keep the items of users or to find out when and what gets lost or missed. The most important part of the project is to identify the differences through the compare between two images.
+\end{enumerate}
+\subsection{Demonstration Plan}
+The prototype will try to test human detection firstly. Three cases will be applied for the proof-of-concept testing.
+\begin{enumerate}
+\item{test 1\\}
+Type: Functional, automatic\\
+Initial State: User stays in the center of the screen\\
+Input: Null\\
+Output: The camera does not rotate, and the user is identified with a yellow rectangle shown in the screen.\\			
+\item{test 2\\}
+Type: Functional, dynamic, automatic\\
+Initial State: User stays at the edge of the screen\\
+Input: Null\\
+Output: The user is identified with a yellow rectangle shown in the screen, then the camera begins to rotate until the user is in the center of the screen.\\
+\item{test 3\\}
+Type: Functional, automatic\\
+Initial State: User is out of the screen\\
+Input: Null\\
+Output: The camera does not rotate, and the user cannot be identified on the screen.\\
+\item{test 4\\}
+Type: Functional, dynamic, automatic\\
+Initial State: User is in the screen\\
+Input: User randomly walk around the room\\
+Output: The camera rotates and follows the user, and the user is identified with a yellow rectangle shown in the screen. In addition, the location of the rectangle also moves depending on the movement of the user.\\
+\end{enumerate}
+The prototype will try to test item identification secondly. Three cases will be applied for the proof-of-concept testing.
+\begin{enumerate}
+\item{test 1\\}
+Type: Functional, static, automatic\\
+Initial State: Null\\
+Input: Two identical images with no difference.\\
+Output: Nothing to do with SmartVault.\\ 
+\item{test 2\\}
+Type: Functional, static, automatic\\
+Initial State: Null\\
+Input: Two images with the same item, but the location of the item is changed.\\
+Output: The difference of the location is identified. SmartVault will record these change and upload to the local file.\\ 
+\item{test 3\\}
+Type: Functional, static, automatic\\
+Initial State: Null\\
+Input: Two images with different items, but the locations of the items are the same.\\
+Output: The difference of the items is identified. SmartVault will record these change and upload to the local file.\\ 
+\item{test 4\\}
+Type: Functional, static, automatic\\
+Initial State: Null\\
+Input: A image with 6 small items.\\
+Output: SmartVault will identify each item with a yellow rectangle around it. In other words, there should be 6 rectangles in total.\\ 
+\item{test 5\\}
+Type: Functional, dynamic, automatic\\
+Initial State: Null\\
+Input: A image with 1 small item and it will keep moving during the test.\\
+Output: SmartVault will identify this item with a yellow rectangle around it. In addition, the rectangle will move depending on the movement of the object\\ 
+\end{enumerate}
+
 \section{Unit Test Description}
 
-\wss{Reference your MIS and explain your overall philosophy for test case
-  selection.}  
-\wss{This section should not be filled in until after the MIS has
-  been completed.}
+\subsection{Unit Testing of Internal Functions}
+In order to build unit tests for the internal functions of the program, certain modules which can return values could be tested. This will involve choosing proper method and giving them input values. Through comparing what they are expected to output and the actual outputs, a series of unit tests can be created. These unit tests will choose both proper inputs and those could generate exceptions. The acceptable range for the unit test could be determined through testing the output with exceptions. There is no need for stubs or drivers to be applied for the testing. Since the tests have been already done by the individual classes. Some coverage metrics will be shown to measure how much of the code had been covered for testing purposes. The goal is to reach as much as possible to ensure that all functions related to various modules get tested adequately. The expectation of the coverage percentage of unit tests is set to 80 percent.
+\subsection{Unit Testing of Output Files}
+In order to create unit tests for the output files, the quality and accuracy of the output images will be considered for testing. This will involve creating certain situation and compare the actual results with the expected ones. For the saved images in the output files, they will be rated depending on how similar they are with the expected images. Only those output images being rated with a score larger than 95 percent will be considered as qualified. On the other hand, if the score does not meet 95 percent, the test case fails and the developer team should analysis the reason behind it and redo the test case. In addition, some extreme cases will be applied to the unit testing process, to measure the maximum and minimum acceptable range for the unit tests.
 
-\subsection{Unit Testing Scope}
-
-\wss{What modules are outside of the scope.  If there are modules that are
-  developed by someone else, then you would say here if you aren't planning on
-  verifying them.  There may also be modules that are part of your software, but
-  have a lower priority for verification than others.  If this is the case,
-  explain your rationale for the ranking of module importance.}
-
-\subsection{Tests for Functional Requirements}
-
-\wss{Most of the verification will be through automated unit testing.  If
-  appropriate specific modules can be verified by a non-testing based
-  technique.  That can also be documented in this section.}
-
-\subsubsection{Module 1}
-
-\wss{Include a blurb here to explain why the subsections below cover the module.
-  References to the MIS would be good.  You will want tests from a black box
-  perspective and from a white box perspective.  Explain to the reader how the
-  tests were selected.}
-
-\begin{enumerate}
-
-\item{test-id1\\}
-
-Type: \wss{Functional, Dynamic, Manual, Automatic, Static etc. Most will
-  be automatic}
-					
-Initial State: 
-					
-Input: 
-					
-Output: \wss{The expected result for the given inputs}
-
-Test Case Derivation: \wss{Justify the expected value given in the Output field}
-
-How test will be performed: 
-					
-\item{test-id2\\}
-
-Type: \wss{Functional, Dynamic, Manual, Automatic, Static etc. Most will
-  be automatic}
-					
-Initial State: 
-					
-Input: 
-					
-Output: \wss{The expected result for the given inputs}
-
-Test Case Derivation: \wss{Justify the expected value given in the Output field}
-
-How test will be performed: 
-
-\item{...\\}
-    
-\end{enumerate}
-
-\subsubsection{Module 2}
-
-...
-
-\subsection{Tests for Nonfunctional Requirements}
-
-\wss{If there is a module that needs to be independently assessed for
-  performance, those test cases can go here.  In some projects, planning for
-  nonfunctional tests of units will not be that relevant.}
-
-\wss{These tests may involve collecting performance data from previously
-  mentioned functional tests.}
-
-\subsubsection{Module ?}
-		
-\begin{enumerate}
-
-\item{test-id1\\}
-
-Type: \wss{Functional, Dynamic, Manual, Automatic, Static etc. Most will
-  be automatic}
-					
-Initial State: 
-					
-Input/Condition: 
-					
-Output/Result: 
-					
-How test will be performed: 
-					
-\item{test-id2\\}
-
-Type: Functional, Dynamic, Manual, Static etc.
-					
-Initial State: 
-					
-Input: 
-					
-Output: 
-					
-How test will be performed: 
-
-\end{enumerate}
-
-\subsubsection{Module ?}
-
-...
-
-\subsection{Traceability Between Test Cases and Modules}
-
-\wss{Provide evidence that all of the modules have been considered.}
 				
 \bibliographystyle{plainnat}
 
