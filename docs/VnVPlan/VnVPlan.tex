@@ -146,7 +146,7 @@ Software validation will be mostly conducted by team members. External validatio
 	
 \subsection{Tests for Functional Requirements}
 
-\subsubsection{Image Processing and Storage}
+\subsubsection{Area of Testing1}
 		
 \paragraph{Manual Testing}
 
@@ -348,7 +348,7 @@ Control: Manual
 					
 Initial State: Turn on the system and User interface show up in the laptop
 					
-Input: User change the signal strength of Wifi
+Input: User change the signal strength of WiFi
 					
 Output: The graphical display to the user
 
@@ -559,56 +559,56 @@ SmartVault is used to keep the items of users or to find out when and what gets 
 \end{enumerate}
 \subsection{Demonstration Plan}
 The prototype will try to test human detection firstly. Three cases will be applied for the proof-of-concept testing.
-\begin{enumerate}
-\item{test 1\\}
+\begin{itemize}
+\item{test \#1\\}
 Type: Functional, automatic\\
 Initial State: User stays in the center of the screen\\
 Input: Null\\
 Output: The camera does not rotate, and the user is identified with a yellow rectangle shown in the screen.\\			
-\item{test 2\\}
+\item{test \#2\\}
 Type: Functional, dynamic, automatic\\
 Initial State: User stays at the edge of the screen\\
 Input: Null\\
 Output: The user is identified with a yellow rectangle shown in the screen, then the camera begins to rotate until the user is in the center of the screen.\\
-\item{test 3\\}
+\item{test \#3\\}
 Type: Functional, automatic\\
 Initial State: User is out of the screen\\
 Input: Null\\
 Output: The camera does not rotate, and the user cannot be identified on the screen.\\
-\item{test 4\\}
+\item{test \#4\\}
 Type: Functional, dynamic, automatic\\
 Initial State: User is in the screen\\
 Input: User randomly walk around the room\\
 Output: The camera rotates and follows the user, and the user is identified with a yellow rectangle shown in the screen. In addition, the location of the rectangle also moves depending on the movement of the user.\\
-\end{enumerate}
-The prototype will try to test item identification secondly. Three cases will be applied for the proof-of-concept testing.
-\begin{enumerate}
-\item{test 1\\}
-Type: Functional, static, automatic\\
+\end{itemize}
+The prototype will try to test item identification secondly. Five cases will be applied for the proof-of-concept testing.
+\begin{itemize}
+\item{test \#5\\}
+Type: Functional, dynamic, automatic\\
 Initial State: Null\\
 Input: Two identical images with no difference.\\
 Output: Nothing to do with SmartVault.\\ 
-\item{test 2\\}
-Type: Functional, static, automatic\\
+\item{test \#6\\}
+Type: Functional, dynamic, automatic\\
 Initial State: Null\\
 Input: Two images with the same item, but the location of the item is changed.\\
 Output: The difference of the location is identified. SmartVault will record these change and upload to the local file.\\ 
-\item{test 3\\}
-Type: Functional, static, automatic\\
+\item{test \#7\\}
+Type: Functional, dynamic, automatic\\
 Initial State: Null\\
 Input: Two images with different items, but the locations of the items are the same.\\
 Output: The difference of the items is identified. SmartVault will record these change and upload to the local file.\\ 
-\item{test 4\\}
-Type: Functional, static, automatic\\
+\item{test \#8\\}
+Type: Functional, dynamic, automatic\\
 Initial State: Null\\
 Input: A image with 6 small items.\\
 Output: SmartVault will identify each item with a yellow rectangle around it. In other words, there should be 6 rectangles in total.\\ 
-\item{test 5\\}
+\item{test \#9\\}
 Type: Functional, dynamic, automatic\\
 Initial State: Null\\
 Input: A image with 1 small item and it will keep moving during the test.\\
 Output: SmartVault will identify this item with a yellow rectangle around it. In addition, the rectangle will move depending on the movement of the object\\ 
-\end{enumerate}
+\end{itemize}
 
 \section{Unit Test Description}
 
