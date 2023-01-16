@@ -171,11 +171,11 @@ For the searching interface of this project, the window will come up after the u
 \wss{Show what will be built, with detail on fabrication and materials}
 \wss{Include appendices as appropriate, possibly with sketches, drawings,
 circuit diagrams, etc}
-
+The electrical components of the system include the Arduino controller board, camera and stepper motors. The electrical schema is shown below:
 \section{Design of Communication Protocols}
 
-\wss{If appropriate}
 
+The communication protocol between the hardware and software is serial communication protocol. The software system acts as the master and the hardware acts as slave. The communication is a one direction communication, the software system sends the serial command to the Arduino controller board, and the board control the stepper following the serial commands.
 \section{Timeline}
 
 \wss{Schedule of tasks and who is responsible}
