@@ -1,0 +1,215 @@
+\documentclass[12pt, titlepage]{article}
+
+\usepackage{fullpage}
+\usepackage[round]{natbib}
+\usepackage{multirow}
+\usepackage{booktabs}
+\usepackage{tabularx}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks,
+    citecolor=blue,
+    filecolor=black,
+    linkcolor=red,
+    urlcolor=blue
+}
+
+\input{../../Comments}
+\input{../../Common}
+
+\newcounter{acnum}
+\newcommand{\actheacnum}{AC\theacnum}
+\newcommand{\acref}[1]{AC\ref{#1}}
+
+\newcounter{ucnum}
+\newcommand{\uctheucnum}{UC\theucnum}
+\newcommand{\uref}[1]{UC\ref{#1}}
+
+\newcounter{mnum}
+\newcommand{\mthemnum}{M\themnum}
+\newcommand{\mref}[1]{M\ref{#1}}
+
+\begin{document}
+
+\title{System Design for \progname{}} 
+\author{\authname}
+\date{\today}
+
+\maketitle
+
+\pagenumbering{roman}
+
+\section{Revision History}
+
+\begin{tabularx}{\textwidth}{p{3cm}p{2cm}X}
+\toprule {\bf Date} & {\bf Version} & {\bf Notes}\\
+\midrule
+Date 1 & 1.0 & Notes\\
+Date 2 & 1.1 & Notes\\
+\bottomrule
+\end{tabularx}
+
+\newpage
+
+\section{Reference Material}
+
+This section records information for easy reference.
+
+\subsection{Abbreviations and Acronyms}
+
+\renewcommand{\arraystretch}{1.2}
+\begin{tabular}{l l} 
+  \toprule		
+  \textbf{symbol} & \textbf{description}\\
+  \midrule 
+  \progname & Explanation of program name\\
+  \wss{...} & \wss{...}\\
+  \bottomrule
+\end{tabular}\\
+
+\newpage
+
+\tableofcontents
+
+\newpage
+
+\listoftables
+
+\listoffigures
+
+\newpage
+
+\pagenumbering{arabic}
+
+
+\section{Purpose}
+
+This Document mainly talks about the design of the project, including the behavior, variables and interfaces used in the design. It will also talk about the design of the hardware component of the object, with some electrical components used and some communication protocols in the design.
+
+\section{Scope}
+
+The system will be designed to track the movement of the object to get the latest location information about it so that the user can always get the desired output. The user will be able to login and start the program through their own username and password. Then the information about the object will be detected through some image processing algorithms and will be stored into certain files. The user can locate desired objects through the searching interface by providing several searching keys. 
+
+
+\subsection{Context Diagram}
+
+The following pictures shows the design of the context diagram of the project. In this diagram, the user can interact with the SmartVault by logging in and provide key information about the object and SmartVault will output searching results to the user. There will be a camera located in the room that will keep sending images to SmartVault used for image processing. The motor will interact with SmartVault so to change the angular position of the camera. SmartVault will send or update information stored in the database. It will also extract desired information from the database. 
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.8]{work_context.png}
+    \caption{The Picture of Use Case Diagram}
+\end{figure}
+
+\section{Project Overview}
+
+\subsection{Normal Behaviour}
+
+\subsection{Undesired Event Handling}
+
+\wss{How you will approach undesired events}
+
+\subsection{Component Diagram}
+
+\subsection{Connection Between Requirements and Design} \label{SecConnection}
+
+\wss{The intention of this section is to document decisions that are made
+  ``between'' the requirements and the design.  To satisfy some requirements,
+  design decisions need to be made.  Rather than make these decisions implicit,
+  they are explicitly recorded here.  For instance, if a program has security
+  requirements, a specific design decision may be made to satisfy those
+  requirements with a password.}
+
+\section{System Variables}
+
+\wss{Include this section for Mechatronics projects}
+
+\subsection{Monitored Variables}
+
+\subsection{Controlled Variables}
+
+\subsection{Constants Variables}
+
+\section{User Interfaces}
+
+Two user interfaces will be used for this project, one is for the user to login and the other is used for searching the position information of the desired object. This section will mainly talks about these two interfaces in the following paragraphs. 
+
+\subsection{Login Interface}
+
+
+\subsection{Searching Interface}
+
+The Searching Interface is used to help the user to locate the position of the object. The picture shown below describe the FSM of the project. After the program starts, the image processing method will be used to record initial condition of the object detected in the roon through the image taken by the camera. The program will wait for further changes. The motor will rotate the camera if the user detected is not in the certer of the camera or certain percentage of area of the images is blocked. When the movement of an object is detected, if it is moved by human, the program will track the movement of hands and update the information stored in the database. If it is moved by other objects, the program will only update it final state. When the user want to search certain object, the program will allow the user to input some information about the object, also known as the search key. Then a list of pictures meets the information will be provided and wait for the user to choose. If the desired object is within the list and the user has confirmed it, the algorithm will finish. If the object is not found, the initial pictures will be pulled out and let the user to choose. The object is marked "Taken out" if the object is still not found. 
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.8]{FSM.png}
+    \caption{The Finite State Machine of the Project}
+\end{figure}
+
+For the searching interface of this project, the window will come up after the use has successfully logging into the system. A simple design of that interface is shown in the figure below. On the left hand side the images talen by the camera will be shown. On the right hand side, the object-searching algorithm will be used. If the user want to search for one desired object, the system will ask the user to input several informations about that object. After user has finished entered the information and press search, a new window will appear. It will provide several pictures that meets the input information. After the user has confirmed the final result, the result window will come up with the information that the user needs about the object. 
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.8]{Search.png}
+    \caption{The Design of Searching Window}
+\end{figure}
+
+\section{Design of Hardware}
+
+\wss{Most relevant for mechatronics projects}
+\wss{Show what will be acquired}
+\wss{Show what will be built, with detail on fabrication and materials}
+\wss{Include appendices as appropriate, possibly with sketches, drawings, CAD, etc}
+
+\section{Design of Electrical Components}
+
+\wss{Most relevant for mechatronics projects}
+\wss{Show what will be acquired}
+\wss{Show what will be built, with detail on fabrication and materials}
+\wss{Include appendices as appropriate, possibly with sketches, drawings,
+circuit diagrams, etc}
+
+\section{Design of Communication Protocols}
+
+\wss{If appropriate}
+
+\section{Timeline}
+
+\wss{Schedule of tasks and who is responsible}
+
+% \bibliographystyle {plainnat}
+% \bibliography{../../../refs/References}
+
+\newpage{}
+
+\appendix
+
+\section{Interface}
+
+\wss{Include additional information related to the appearance of, and
+interaction with, the user interface}
+
+\section{Mechanical Hardware}
+
+\section{Electrical Components}
+
+\section{Communication Protocols}
+
+\section{Reflection}
+
+The information in this section will be used to evaluate the team members on the
+graduate attribute of Problem Analysis and Design.  Please answer the following questions:
+
+\begin{enumerate}
+  \item What are the limitations of your solution?  Put another way, given
+  unlimited resources, what could you do to make the project better? (LO\_ProbSolutions)
+  \item Give a brief overview of other design solutions you considered.  What
+  are the benefits and tradeoffs of those other designs compared with the chosen
+  design?  From all the potential options, why did you select documented design?
+  (LO\_Explores)
+\end{enumerate}
+
+\end{document}
