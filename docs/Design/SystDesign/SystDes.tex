@@ -157,13 +157,13 @@ The following pictures shows the design of the context diagram of the project. I
 
 \hline Constant Name&Constant Type&Value&Units &Comment\\
 
-\hline Angle per step&float&TBD&Degree/step& \\
+\hline Angle per step&float&TBD&Degree/step&This is the angle movement stepper motor will move after 1 signal \\
 
-\hline Height of the Camera&float&TBD&mm&\\
-\hline Angular Velocity&float&TBD&Degree/sec&\\
-\hline Resolution&Integer&1920x1080&Pixel&\\
-\hline Arduino input voltage&float&9.0&V&\\
-\hline &&&&\\
+\hline Height of the Camera&float&TBD&mm&This is the distance between the lens of camera and the bottom of the mount\\
+\hline Angular Velocity&float&TBD&Degree/sec&This is the constant angular velocity of the camera rotation\\
+\hline Resolution&Integer&1920x1080&Pixel&This is the resolution of the camera\\
+\hline Arduino input voltage&float&9.0&V&This is the input voltage of the Arduino board\\
+
 
 \hline
 
@@ -206,12 +206,21 @@ For the searching interface of this project, the window will come up after the u
 
 \section{Design of Electrical Components}
 
-\wss{Most relevant for mechatronics projects}
-\wss{Show what will be acquired}
-\wss{Show what will be built, with detail on fabrication and materials}
-\wss{Include appendices as appropriate, possibly with sketches, drawings,
-circuit diagrams, etc}
-The electrical components of the system include the Arduino controller board, camera and stepper motors. The electrical schema is shown below:
+
+The electrical components of the system include the Arduino controller board,stepper motor driver board, camera and stepper motors. The electrical schema is shown below:\\
+\begin{figure}[H]
+\caption{Board-motor connection}
+\centering
+\includegraphics[width=\textwidth]{board}
+\end{figure}
+\begin{figure}[H]
+\caption{Stepper motor driver board schematic}
+\centering
+\includegraphics[width=\textwidth]{ULN2003}
+\end{figure}
+
+
+
 \section{Design of Communication Protocols}
 
 
