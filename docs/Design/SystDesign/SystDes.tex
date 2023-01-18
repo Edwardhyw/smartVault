@@ -134,14 +134,22 @@ SmartVault will start operating once the user login successfully and provide tec
 \end{table}
 \subsection{Undesired Event Handling}
 
-\wss{How you will approach undesired events}
+
+\subsubsection{Lost Serial Communication}
+If the serial communication stop by accident, the software will detect it and try to reconnect the communication
+
+\subsubsection{Loosen Physical Connection}
+If the physical connection between software system and hardware system is detected, the program will set an alert to remind user to reset the connections.
+
+\subsubsection{Loosen Assembly}
+If the physical joints of motor or mount get loosen, user will need to repair the part or ask for technical help.
 
 \subsection{Component Diagram}
 The picture shown below presents different components known as modules in this project. All the modules are divided into two big module group: Software Module and Hardware Module. 
 
 \begin{figure}[H]
     \centering
-    \includegraphics[scale=0.3]{Module.png}
+    \includegraphics[width=1\textwidth]{Module.png}
     \caption{The Picture of Component Diagram}
 \end{figure}
 
@@ -182,7 +190,7 @@ To achieve the requirements mentioned in Software Requirement Specification Docu
 
 \section{System Variables}
 
-\wss{Include this section for Mechatronics projects}
+
 
 \subsection{Monitored Variables}
 \begin{tabular}{|p{0.2\textwidth}|p{0.15\textwidth}|p{0.1\textwidth}|p{0.2\textwidth}|p{0.3\textwidth}|}
