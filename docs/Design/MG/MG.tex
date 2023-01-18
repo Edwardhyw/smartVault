@@ -64,8 +64,8 @@ This section records information for easy reference.
   \toprule		
   \textbf{symbol} & \textbf{description}\\
   \midrule 
-  AC & Anticipated Change\\
   DAG & Directed Acyclic Graph \\
+  LC & Likely Change\\
   M & Module \\
   MG & Module Guide \\
   OS & Operating System \\
@@ -130,182 +130,199 @@ potential readers of this document are as follows:
   decomposition, and flexibility of the design.
 \end{itemize}
 
-The rest of the document is organized as follows. Section
-\ref{SecChange} lists the anticipated and unlikely changes of the software
-requirements. Section \ref{SecMH} summarizes the module decomposition that
-was constructed according to the likely changes. Section \ref{SecConnection}
-specifies the connections between the software requirements and the
-modules. Section \ref{SecMD} gives a detailed description of the
-modules. Section \ref{SecTM} includes two traceability matrices. One checks
+The rest of the document is organized as follows. Section 4 lists the likely and unlikely changes of the software requirements. Section 5 gives a detailed description of the
+modules. Section 6 describes the use relation between modules. Section 7 specifies the connections between the software requirements and the modules and includes two traceability matrices. One checks
 the completeness of the design against the requirements provided in the SRS. The
-other shows the relation between anticipated changes and the modules. Section
-\ref{SecUse} describes the use relation between modules.
+other shows the relation between anticipated changes and the modules. 
 
-\section{Anticipated and Unlikely Changes} \label{SecChange}
+\section{Likely and Unlikely Changes} \label{SecChange}
 
 This section lists possible changes to the system. According to the likeliness
 of the change, the possible changes are classified into two
-categories. Anticipated changes are listed in Section \ref{SecAchange}, and
+categories. Likely changes are listed in Section \ref{SecLchange}, and
 unlikely changes are listed in Section \ref{SecUchange}.
 
-\subsection{Anticipated Changes} \label{SecAchange}
+\subsection{Likely Changes} \label{SecLchange}
 
-Anticipated changes are the source of the information that is to be hidden
-inside the modules. Ideally, changing one of the anticipated changes will only
+Likely changes are the source of the information that is to be hidden
+inside the modules. Ideally, changing one of the likely changes will only
 require changing the one module that hides the associated decision. The approach
-adapted here is called design for
-change.
+adapted here is called design for change.\\\\
+\textbf{LC1:} The camera may get upgraded and replaced with the one with higher resolution to achieve more accurate images.\\
+\textbf{Rationale:} To ensure that Image Processing Module could collect clear information with high resolution.\\\\
+\textbf{LC2:} The security of user’s private account will be strengthened. \\
+\textbf{Rationale:} It is necessary to safely protect the private information of the users’.\\\\
+\textbf{LC3:} The specific
+hardware on which the software is running.\\\\
+\textbf{LC4:} The algorithm of Image Processing Module and Information Storage Module might be optimized.\\
+\textbf{Rationale:} To accurately execute the task and efficiently track the missing item.\\\\
+\textbf{LC5:} Any one except for the users is not allowed to access the any file that stores the information about the objects in the room.\\\\
+\textbf{LC6:} The device is supposed to work in only indoor space.\\
+\textbf{Rationale:} To ensure that the system is able to adapt multiple environment.\\
 
-\begin{description}
-\item[\refstepcounter{acnum} \actheacnum \label{acHardware}:] The specific
-  hardware on which the software is running.
-\item[\refstepcounter{acnum} \actheacnum \label{acInput}:] The format of the
-  initial input data.
-\item ...
-\end{description}
 
-\subsection{Unlikely Changes} \label{SecUchange}
+
+\subsection{Unlikely Changes}  \label{SecUchange}
 
 The module design should be as general as possible. However, a general system is
 more complex. Sometimes this complexity is not necessary. Fixing some design
 decisions at the system architecture stage can simplify the software design. If
 these decision should later need to be changed, then many parts of the design
 will potentially need to be modified. Hence, it is not intended that these
-decisions will be changed.
+decisions will be changed.\\\\
+\textbf{UC1:} The maintenance for the device should be done by the developers.\\\\
+\textbf{UC2:} The performance of the product should not violate the laws that protect the privacy of the user. \\
+\textbf{Rationale:} To ensure that the private information of the users’is safely protected.\\\\
+\textbf{UC3:} The device is supported by any computers supports both C and python programming languages.\\\\
+\textbf{UC4:} The device should be easy to installed in the room.\\
+\textbf{Rationale:} To satisfy the convenience of the installation of the device.\\\\
+\textbf{UC5:} The device should not have exposed internal electronic wiring.\\\\
+\textbf{UC6:} The base of the device should be strong enough without falling from the floor.\\
+\textbf{Rationale:} To ensure that the base of the system is stable enough to avoid any accidents\\
 
+
+\section{Secret of Each Module} 
+\subsection{Software Modules}
+\subsubsection{Login Module}
 \begin{description}
-\item[\refstepcounter{ucnum} \uctheucnum \label{ucIO}:] Input/Output devices
-  (Input: File and/or Keyboard, Output: File, Memory, and/or Screen).
-\item ...
+\item[Secrets:]The data structure and unit used to login in to the personal account.
+\item[Services:]This module provides the interface between the user and the application. So, the system can use it to display personal account.
+\item[Implemented By:] Python
+\end{description}
+\subsubsection{Information Storage Module}
+\begin{description}
+\item[Secrets:]The unit used to storage data and information
+hardware.
+\item[Services:]Provides with a storage platform used by the rest of the system. This module protects the data and store the information and picture of the recorded items. Once the object detection is captured by the Image Processing Module, the camera will take a photo and store in the local file. Therefore, the system can use it to display and fetch out the desired information.
+\item[Implemented By:] Python
+\end{description}
+\subsubsection{Image Processing Module}
+\paragraph{5.1.3.1	 Object Detection Module}
+\begin{description}
+\item[Secrets:]The data structure and algorithm used to implement the image processing and compare the image differences.
+\item[Services:]This module serves as a tool to capture the object movement. In addition, it provides with the function for the comparison of different positions. So, the system can use it to process the required basic operation.
+\item[Implemented By:] Python
+\end{description}
+\paragraph{5.1.3.2	 Human Detection Module}
+\begin{description}
+\item[Secrets:]The data structure and algorithm used to implement the image processing and capture the movement of human.
+\item[Services:]This module serves as a tool to capture the human movement. So, the system can use it to process the required basic operation.
+\item[Implemented By:] Python
 \end{description}
 
-\section{Module Hierarchy} \label{SecMH}
+\subsubsection{Information Extraction Module}
+\begin{description}
+\item[Secrets:]The module unit implemented to display specific information and attribute of the desired object.
+\item[Services:]Serves as an information extraction system. This module cooperates with the Information Storage Module to output the required information which depends on the attributes chosen by the user. Consequently, the system can use it to display outputs according to various variables determined by the user.
+\item[Implemented By:] Python
+\end{description}
+\subsubsection{Communication Port 1 Module}
+\begin{description}
+\item[Secrets:]This module unit is used to connect the software data with the hardware module through sending the USB signal, which is considered as a serial communication system.
+\item[Services:]Serves as a connection bridge between the hardware and software module in the system. This module works along with the Communication Port 2 Module to deal with the data transmission through sending command from the software end to the hardware end. Thus, the system can use it to transmit and receive data and signals from the hardware module unit.
+\item[Implemented By:] Python
+\end{description}
 
+\subsection{Hardware Module}
+
+\subsubsection{Communication Port 2 Module}
+\begin{description}
+\item[Secrets:] This module unit is used to communicate the data and signal with the software module through reading the USB signal, which is defined as a serial communication system.
+\item[Services:]Behaves as a link between the hardware and software module in the system. This module works along with the Communication Port 1 Module to receive the data transmitted from the software end. Therefore, the system can use it to receive data and signals from the software module unit and also send the data to the software system.
+\item[Implemented By:] Python
+\end{description}
+\subsubsection{Motor Control Module}
+\begin{description}
+\item[Secrets:]The hardware module designed to implement the control of step motor, including the two-dimension speed control, human movement capture.
+\item[Services:]The module serves as a unit to control the rotatory angular velocity of the motor, which is implemented with a closed-loop control as the controller of the angular speed of step motor. So, the system can use it to proceed the desired basic operation.
+\item[Implemented By:] Python
+\end{description}
+
+
+\subsection{Module Summary}
 This section provides an overview of the module design. Modules are summarized
-in a hierarchy decomposed by secrets in Table \ref{TblMH}. The modules listed
+in a hierarchy decomposed by secrets in Table \ref{TableMS}. The modules listed
 below, which are leaves in the hierarchy tree, are the modules that will
 actually be implemented.
-
-\begin{description}
-\item [\refstepcounter{mnum} \mthemnum \label{mHH}:] Hardware-Hiding Module
-\item ...
-\end{description}
-
-
-\begin{table}[h!]
-\centering
-\begin{tabular}{p{0.3\textwidth} p{0.6\textwidth}}
-\toprule
-\textbf{Level 1} & \textbf{Level 2}\\
-\midrule
-
-{Hardware-Hiding Module} & ~ \\
-\midrule
-
-\multirow{7}{0.3\textwidth}{Behaviour-Hiding Module} & ?\\
-& ?\\
-& ?\\
-& ?\\
-& ?\\
-& ?\\
-& ?\\ 
-& ?\\
-\midrule
-
-\multirow{3}{0.3\textwidth}{Software Decision Module} & {?}\\
-& ?\\
-& ?\\
-\bottomrule
-
-\end{tabular}
-\caption{Module Hierarchy}
-\label{TblMH}
+\begin{table}[H]
+\begin{tabularx}{\textwidth}{XX}
+  \toprule		
+  \textbf{symbol} & \textbf{description}\\
+  \midrule 
+  M1 & Login Module \\
+  M2 & Information Storage Module \\
+  M3 & Image Processing Module \\
+  M4 & Information Extraction Module \\
+  M5 & Communication Port 1 Module \\
+  M6 & Communication Port 2 Module \\
+  M7 & Motor Control Module \\
+  \bottomrule
+\end{tabularx}
+\caption{Module Summary}
+\label{TableMS}
 \end{table}
 
-\section{Connection Between Requirements and Design} \label{SecConnection}
-
-The design of the system is intended to satisfy the requirements developed in
-the SRS. In this stage, the system is decomposed into modules. The connection
-between requirements and modules is listed in Table \ref{TblRT}.
-
-\wss{The intention of this section is to document decisions that are made
-  ``between'' the requirements and the design.  To satisfy some requirements,
-  design decisions need to be made.  Rather than make these decisions implicit,
-  they are explicitly recorded here.  For instance, if a program has security
-  requirements, a specific design decision may be made to satisfy those
-  requirements with a password.  In scientific examples, the choice of algorithm
-could potentially go here, if that is a decision that is exposed by the
-interface.}
-
-\section{Module Decomposition} \label{SecMD}
-
-Modules are decomposed according to the principle of ``information hiding''
-proposed by \citet{ParnasEtAl1984}. The \emph{Secrets} field in a module
-decomposition is a brief statement of the design decision hidden by the
-module. The \emph{Services} field specifies \emph{what} the module will do
-without documenting \emph{how} to do it. For each module, a suggestion for the
-implementing software is given under the \emph{Implemented By} title. If the
-entry is \emph{OS}, this means that the module is provided by the operating
-system or by standard programming language libraries.  \emph{\progname{}} means the
-module will be implemented by the \progname{} software.
-
-Only the leaf modules in the hierarchy have to be implemented. If a dash
-(\emph{--}) is shown, this means that the module is not a leaf and will not have
-to be implemented.
-
-\subsection{Hardware Hiding Modules (\mref{mHH})}
-
-\begin{description}
-\item[Secrets:]The data structure and algorithm used to implement the virtual
-  hardware.
-\item[Services:]Serves as a virtual hardware used by the rest of the
-  system. This module provides the interface between the hardware and the
-  software. So, the system can use it to display outputs or to accept inputs.
-\item[Implemented By:] OS
-\end{description}
-
-\subsection{Behaviour-Hiding Module}
-
-\begin{description}
-\item[Secrets:]The contents of the required behaviours.
-\item[Services:]Includes programs that provide externally visible behaviour of
-  the system as specified in the software requirements specification (SRS)
-  documents. This module serves as a communication layer between the
-  hardware-hiding module and the software decision module. The programs in this
-  module will need to change if there are changes in the SRS.
-\item[Implemented By:] --
-\end{description}
-
-\subsubsection{Input Format Module (\mref{mInput})}
-
-\begin{description}
-\item[Secrets:]The format and structure of the input data.
-\item[Services:]Converts the input data into the data structure used by the
-  input parameters module.
-\item[Implemented By:] [Your Program Name Here]
-\item[Type of Module:] [Record, Library, Abstract Object, or Abstract Data Type]
-  [Information to include for leaf modules in the decomposition by secrets tree.]
-\end{description}
-
-\subsubsection{Etc.}
+\begin{table}[H]
+\begin{tabularx}{\textwidth}{XXX}
+  \toprule		
+  \textbf{Assigned Task} & \textbf{Designer} & \textbf{Deadline}\\
+  \midrule 
+  M1 & Cui, Peng & 1.31\\
+  M2 & He, Edward and Jin, Peihua & 1.31\\
+  M3 & He, Edward and Jin, Peihua and Zhang, Erping & 1.31\\
+  M4 & Jin, Peihua and Cui, Peng & 1.31\\
+  M5 & Cui, Peng & 1.31\\
+  M6 & Tang, Guangwei & 1.31\\
+  M7 & Zhang, Erping & 1.31\\
+  Phase 1 & All & 2.10\\
+  Phase 2 & All & 2.30\\
+  Final & All & 3.15\\
+  \bottomrule
+\end{tabularx}
+\caption{Timeline}
+\label{TableTL}
+\end{table}
 
 
-\subsection{Software Decision Module}
+\section{Relationship Between Modules} 
 
-\begin{description}
-\item[Secrets:] The design decision based on mathematical theorems, physical
-  facts, or programming considerations. The secrets of this module are
-  \emph{not} described in the SRS.
-\item[Services:] Includes data structure and algorithms used in the system that
-  do not provide direct interaction with the user. 
-  % Changes in these modules are more likely to be motivated by a desire to
-  % improve performance than by externally imposed changes.
-\item[Implemented By:] --
-\end{description}
+In this section, the uses hierarchy between modules is
+provided. \citet{Parnas1978} said of two programs A and B that A {\em uses} B if
+correct execution of B may be necessary for A to complete the task described in
+its specification. That is, A {\em uses} B if there exist situations in which
+the correct functioning of A depends upon the availability of a correct
+implementation of B.  Figure \ref{FigUH} illustrates the use relation between
+the modules. It can be seen that the graph is a directed acyclic graph
+(DAG). Each level of the hierarchy offers a testable and usable subset of the
+system, and modules in the higher level of the hierarchy are essentially simpler
+because they use modules from the lower levels.\\
+\\
+In summary, the user has to login into the account through Login Module M1. Then, he or she is expected to look for the desired item using Information Extraction Module M4 with multiple searching keys. The information and data are stored in Information Storage Module M2 and progressed by Image Processing Module M3. In addition, the data transmission between the hardware-end and the software-end is connected with Communication Port 1 Module M5 and Communication Port 2 Module M6. The motor is controlled and operated by Motor Control Module M7.
 
-\subsubsection{Etc.}
 
-\section{Traceability Matrix} \label{SecTM}
+\begin{figure}[H]
+\centering
+\includegraphics[width=1\textwidth]{UsesHierarchy.png}
+\caption{Use hierarchy among modules}
+\label{FigUH}
+\end{figure}
+
+
+\section{Relationship Between Modules and SRS}
+This part specifies the connections between the software requirements and the modules.\\\\
+\textbf{IPR1:} Image Processing Module M3 is able to identify human's body.\\\\
+\textbf{IPR2:} Image Processing Module M3 could identify human's hand.\\\\
+\textbf{IPR3:} Information Storage Module M2 and Image Processing Module M3 should be able to identify all the small items being exposed to the camera.\\\\
+\textbf{IPR4:} Information Storage Module M2, Image Processing Module M3, Information Extraction Module M4 should take a photo once the change of the location of an item is captured.\\\\
+\textbf{IPR5:} Information Storage Module M2, Image Processing Module M3, Information Extraction Module M4 should be able to differentiate one item from another items which are identified by the system through 3 main parameters, item\_shape, item\_color and item\_size.\\\\
+\textbf{IPR6:} Information Storage Module M2, Information Extraction Module M4 must be able to store all the photos into a file, and indicate the time when it was taken.\\\\
+\textbf{IPR7:} Information Storage Module M2, Information Extraction Module M4 must be able to name each item with a unique ID.\\\\
+\textbf{IPR8:} Information Storage Module M2 should be able to arrange the photos stored in the file in ascending or descending order according to the time it was taken.\\\\
+\textbf{IPR9:} Information Storage Module M2 should be able to arrange the photos stored in the file in ascending or descending order according to their IDs.\\\\
+\textbf{UIR1:} Information Storage Module M2 should be able to let user to choose whether to highlight a certain item or not.\\\\
+\textbf{UIR2:} Information Storage Module M2, Information Extraction Module M4 should be able to let user to switch the ordering method.\\\\
+\textbf{UIR3:} Login Module M1, Information Storage Module M2, Image Processing Module M3, Information Extraction Module M4 must be able to notify the user when the WI-FI signal is weak or unstable.\\\\
+\textbf{UIR4:} Login Module M1, and Information Storage Module M2 must be able to allow the user to view the system's status at any given point in time.\\
 
 This section shows two traceability matrices: between the modules and the
 requirements and between the modules and the anticipated changes.
@@ -318,17 +335,19 @@ requirements and between the modules and the anticipated changes.
 \toprule
 \textbf{Req.} & \textbf{Modules}\\
 \midrule
-R1 & \mref{mHH}, \mref{mInput}, \mref{mParams}, \mref{mControl}\\
-R2 & \mref{mInput}, \mref{mParams}\\
-R3 & \mref{mVerify}\\
-R4 & \mref{mOutput}, \mref{mControl}\\
-R5 & \mref{mOutput}, \mref{mODEs}, \mref{mControl}, \mref{mSeqDS}, \mref{mSolver}, \mref{mPlot}\\
-R6 & \mref{mOutput}, \mref{mODEs}, \mref{mControl}, \mref{mSeqDS}, \mref{mSolver}, \mref{mPlot}\\
-R7 & \mref{mOutput}, \mref{mEnergy}, \mref{mControl}, \mref{mSeqDS}, \mref{mPlot}\\
-R8 & \mref{mOutput}, \mref{mEnergy}, \mref{mControl}, \mref{mSeqDS}, \mref{mPlot}\\
-R9 & \mref{mVerifyOut}\\
-R10 & \mref{mOutput}, \mref{mODEs}, \mref{mControl}\\
-R11 & \mref{mOutput}, \mref{mODEs}, \mref{mEnergy}, \mref{mControl}\\
+IPR1 & M3\\
+IPR2 & M3\\
+IPR3 & M2, M3\\
+IPR4 & M2, M3, M4\\
+IPR5 & M2, M3, M4\\
+IPR6 & M2, M4\\
+IPR7 & M2, M4\\
+IPR8 & M2\\
+IPR9 & M2\\
+UIR1 & M2\\
+UIR2 & M2, M4\\
+UIR3 & M1, M2, M3, M4\\
+UIR4 & M1, M2\\
 \bottomrule
 \end{tabular}
 \caption{Trace Between Requirements and Modules}
@@ -339,60 +358,26 @@ R11 & \mref{mOutput}, \mref{mODEs}, \mref{mEnergy}, \mref{mControl}\\
 \centering
 \begin{tabular}{p{0.2\textwidth} p{0.6\textwidth}}
 \toprule
-\textbf{AC} & \textbf{Modules}\\
+\textbf{LC} & \textbf{Modules}\\
 \midrule
-\acref{acHardware} & \mref{mHH}\\
-\acref{acInput} & \mref{mInput}\\
-\acref{acParams} & \mref{mParams}\\
-\acref{acVerify} & \mref{mVerify}\\
-\acref{acOutput} & \mref{mOutput}\\
-\acref{acVerifyOut} & \mref{mVerifyOut}\\
-\acref{acODEs} & \mref{mODEs}\\
-\acref{acEnergy} & \mref{mEnergy}\\
-\acref{acControl} & \mref{mControl}\\
-\acref{acSeqDS} & \mref{mSeqDS}\\
-\acref{acSolver} & \mref{mSolver}\\
-\acref{acPlot} & \mref{mPlot}\\
+LC1 & M6, M7\\
+LC2 & M1 ,M2\\
+LC3 & M6\\
+LC4 & M2, M3\\
+LC5 & M1\\
+LC6 & -\\
 \bottomrule
 \end{tabular}
-\caption{Trace Between Anticipated Changes and Modules}
+\caption{Trace Between Likely Changes and Modules}
 \label{TblACT}
 \end{table}
 
-\section{Use Hierarchy Between Modules} \label{SecUse}
 
-In this section, the uses hierarchy between modules is
-provided. \citet{Parnas1978} said of two programs A and B that A {\em uses} B if
-correct execution of B may be necessary for A to complete the task described in
-its specification. That is, A {\em uses} B if there exist situations in which
-the correct functioning of A depends upon the availability of a correct
-implementation of B.  Figure \ref{FigUH} illustrates the use relation between
-the modules. It can be seen that the graph is a directed acyclic graph
-(DAG). Each level of the hierarchy offers a testable and usable subset of the
-system, and modules in the higher level of the hierarchy are essentially simpler
-because they use modules from the lower levels.
-
-\begin{figure}[H]
-\centering
-%\includegraphics[width=0.7\textwidth]{UsesHierarchy.png}
-\caption{Use hierarchy among modules}
-\label{FigUH}
-\end{figure}
 
 %\section*{References}
 
 \bibliographystyle {plainnat}
 \bibliography{../../../refs/References}
 
-\newpage{}
-\section*{Appendix --- Reflection}
-
-The information in this section will be used to evaluate the team members on the
-graduate attribute of Lifelong Learning.  Please answer the following questions:
-
-\begin{enumerate}
-  \item 
-  \item 
-\end{enumerate}
 
 \end{document}
