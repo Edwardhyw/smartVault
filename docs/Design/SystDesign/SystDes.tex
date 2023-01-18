@@ -330,7 +330,7 @@ Camera is connected to the PC for video display and fixed to mounting bracket in
 \end{figure}
 
 \subsection{Mounting bracket}
-The mounting bracket is designed to meet the design requirement. It consists of two parts. First part is used to fix the camera and allow vertical motion. One hole is constructed on one side of the wall to fit the stepper motor's actuator. The dimensions can be found in the  figure below.
+The mounting bracket is designed to meet the design requirement. It consists of two parts. First part is used to fix the camera and allow vertical motion. One hole is constructed on one side of the wall to fit the stepper motor's actuator. The part will be 3D-printed by using PLA material. The dimensions can be found in the  figure below.
 \begin{figure}[H]
 \caption{Mount-part1}
 \centering
@@ -354,16 +354,31 @@ The whole configuration of the mounting bracket is shown below.
 
 
 The electrical components of the system include the Arduino controller board,stepper motor driver board, camera and stepper motors. The electrical schema is shown below:\\
+\subsection{Arduino board}
+Input Voltage: 9V\\
+Output Voltage: 5V/3.3V
+
+\subsection{ULN2003 Driver Board}
+	Input Voltage: 5-12V\\
+	Output Voltage: 5-12V\\
+	Input Pin Number: 4\\
+	Output Pin Number: 5 \\
+
+	\begin{figure}[H]
+	\caption{Stepper motor driver board schematic}
+	\centering
+	\includegraphics[width=\textwidth]{ULN2003}
+	\end{figure}
+
+\subsection{Electrical Design Schematic}
 \begin{figure}[H]
-\caption{Board-motor connection}
+\caption{Electrical connection}
 \centering
-\includegraphics[width=\textwidth]{board}
+\includegraphics[width=\textwidth]{board-motor}
 \end{figure}
-\begin{figure}[H]
-\caption{Stepper motor driver board schematic}
-\centering
-\includegraphics[width=\textwidth]{ULN2003}
-\end{figure}
+
+
+
 
 
 
