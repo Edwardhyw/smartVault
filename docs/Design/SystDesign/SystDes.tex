@@ -106,7 +106,7 @@ The following pictures shows the design of the context diagram of the project. I
 \section{Project Overview}
 The purpose of this project is to create a system that help the user to locate their belongs in a certain space. SmartVault will allow user to login and start the camera, by detecting the movement of the object dynamically, it will keep recording and updating positional information about the objects that are detected in the camera. Then user can detect the position of the object by sorting through the database with certain searching information.
 \subsection{Normal Behaviour}
-SmartVault will start operating once the user login successfully and provide technical support when the user needs. It will store the position information of objects in the database for further use. The movement of the camera is controlled by the motor so that the monitoring angle will always in best angle. It will automatically detect the movement of object using image processing method. THIS LINE IS USED FOR OTHER MOCULE. TALKS ABOUT THE REST OF DEFINITION OF HARDWARE PART. To achieve different behaviors, different components are describes in the table below with their purpose. 
+SmartVault will start operating once the user login successfully and provide technical support when the user needs. It will store the position information of objects in the database for further use. The movement of the camera is controlled by the motor so that the monitoring angle will always in best angle. It will automatically detect the movement of object using image processing method. The rotation of the motor is controlled by the human detection module which always make the camera track the motion of human. The 3D-printed camera mount will hold the motor together and map the rotation of motor to the movement of camera. To achieve different behaviours, different components are describes in the table below with their purpose. 
 
 \begin{table}[H]
 \begin{center}
@@ -123,7 +123,11 @@ SmartVault will start operating once the user login successfully and provide tec
     \hline
     Motor & Control the angle of the camera monitoring the room\\
     \hline
-    Description & As part of the project hard requirement for Mechatronics group, the design can not be all software based \\
+    Arduino board & This is the programmable controller to receive the signal from software module and send signal to the actuator \\
+    \hline
+    3D-printed mount&Connects the motors and camera \\
+   	\hline
+   	ULN2003 driver board&Connect Arduino and stepper motor, simplify the control signal\\
     \hline
     \end{tabular}
 \end{center}
