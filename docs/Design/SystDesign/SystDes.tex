@@ -181,10 +181,50 @@ To achieve the requirements mentioned in Software Requirement Specification Docu
 \wss{Include this section for Mechatronics projects}
 
 \subsection{Monitored Variables}
+\begin{tabular}{|l|l|l|l|l|}
 
+\hline \multicolumn{5}{|c|}{Table 1: Monitored Variables}\\
+
+\hline Monitor Name&Monitor Type&Range&Units &Comment\\
+
+
+
+\hline
+
+\end{tabular}
 \subsection{Controlled Variables}
+\begin{tabular}{|l|l|l|l|l|}
 
+\hline \multicolumn{5}{|c|}{Table 2: Controlled Variables}\\
+
+\hline Controlled Name&Controlled Type&Range&Units &Comment\\
+
+
+
+\hline
+
+\end{tabular}
 \subsection{Constants Variables}
+\begin{tabular}{|p{0.2\textwidth}|p{0.15\textwidth}|p{0.1\textwidth}|p{0.2\textwidth}|p{0.3\textwidth}|}
+
+\hline \multicolumn{5}{|c|}{Table 3: Constants Variables}\\
+
+\hline Constant Name&Constant Type&Value&Units &Comment\\
+
+\hline Angle per step&float&TBD&Degree/step&This is the angle movement stepper motor will move after 1 signal \\
+
+\hline Height of the Camera&float&TBD&mm&This is the distance between the lens of camera and the bottom of the mount\\
+\hline Angular Velocity&float&TBD&Degree/sec&This is the constant angular velocity of the camera rotation\\
+\hline Resolution&Integer&1920x1080&Pixel&This is the resolution of the camera\\
+\hline Arduino input voltage&float&9.0&V&This is the input voltage of the Arduino board\\
+
+
+\hline
+
+\end{tabular}
+
+
+
 
 \section{User Interfaces}
 
@@ -251,24 +291,76 @@ If the user press "Object not Found ?" button, another confirmation window with 
 \end{figure}
 
 \section{Design of Hardware}
+The hardware part consists of motor, Arduino contoller board, camera and mount.Arduino controller board is used to communicate with PC and driven by the functionality input by the user. Two stepper motors will be used for horizontal motion and vertical motion respectively. Camera is directly connected to PC to display the video in the user interface. Mount is designed to meet the requirement which can fix both the camera and the motors and capable of three-dimension movement. Further details will be described in below subsections.
+\subsection{Stepper Motors}
+Stepper motors are directly connected to the Arduino controller board to receive corresponding signal and rotate to the assigned position. In this section, its physical dimensions will be mainly described. The dimension figure is shown below.
+\begin{figure}[H]
+\caption{Motor figure}
+\centering
+\includegraphics[width=5cm]{motor_figure.jpg}
+\end{figure}
+\begin{figure}[H]
+\caption{Motor dimension}
+\centering
+\includegraphics[width=\textwidth]{motor.png}
+\end{figure}
+\subsection{Arduino controller board}
+Arduino controller board is connected to PC and the stepper motors.It is responsible for sending signals to the stepper motors in order to move the camera to desired angle. The board is shown below. As it is not in the moving part of the hardware system, its dimensions are not taken into consideration for initial design.
+\begin{figure}[H]
+\caption{Arduino controller board}
+\centering
+\includegraphics[width=5cm]{board}
+\end{figure}
+\subsection{Camera}
+Camera is connected to the PC for video display and fixed to mounting bracket in order to be driven by the stepper motors. The camera is shown below. Under our design and cost consideration, the protruding camera part's radius is taken into consideration.
+\begin{figure}[H]
+\caption{Camera}
+\centering
+\includegraphics[width=5cm]{camera.jpg}
+\end{figure}
 
-\wss{Most relevant for mechatronics projects}
-\wss{Show what will be acquired}
-\wss{Show what will be built, with detail on fabrication and materials}
-\wss{Include appendices as appropriate, possibly with sketches, drawings, CAD, etc}
+\subsection{Mounting bracket}
+The mounting bracket is designed to meet the design requirement. It consists of two parts. First part is used to fix the camera and allow vertical motion. One hole is constructed on one side of the wall to fit the stepper motor's actuator. The dimensions can be found in the  figure below.
+\begin{figure}[H]
+\caption{Mount-part1}
+\centering
+\includegraphics[width=\textwidth]{mount_part1.png}
+\end{figure}
+Second part is used to fix the first part and driven by the second stepper motor to allow horizontal motion.One hole is constructed at the bottom to fit the stepper motor's actuator. The dimensions can be found in the figure below.
+\begin{figure}[H]
+\caption{Mount-part2}
+\centering
+\includegraphics[width=\textwidth]{mount_part2.png}
+\end{figure}
+The whole configuration of the mounting bracket is shown below.
+\begin{figure}[H]
+\caption{Mount bracket}
+\centering
+\includegraphics[width=\textwidth]{whole_part.png}
+\end{figure}
+
 
 \section{Design of Electrical Components}
 
-\wss{Most relevant for mechatronics projects}
-\wss{Show what will be acquired}
-\wss{Show what will be built, with detail on fabrication and materials}
-\wss{Include appendices as appropriate, possibly with sketches, drawings,
-circuit diagrams, etc}
+
+The electrical components of the system include the Arduino controller board,stepper motor driver board, camera and stepper motors. The electrical schema is shown below:\\
+\begin{figure}[H]
+\caption{Board-motor connection}
+\centering
+\includegraphics[width=\textwidth]{board}
+\end{figure}
+\begin{figure}[H]
+\caption{Stepper motor driver board schematic}
+\centering
+\includegraphics[width=\textwidth]{ULN2003}
+\end{figure}
+
+
 
 \section{Design of Communication Protocols}
 
-\wss{If appropriate}
 
+The communication protocol between the hardware and software is serial communication protocol. The software system acts as the master and the hardware acts as slave. The communication is a one direction communication, the software system sends the serial command to the Arduino controller board, and the board control the stepper following the serial commands.
 \section{Timeline}
 
 \wss{Schedule of tasks and who is responsible}
@@ -286,11 +378,12 @@ circuit diagrams, etc}
 interaction with, the user interface}
 
 \section{Mechanical Hardware}
+Mechanical hardware consists of two mounting brackets. First part fix the position of the camera and connect with the stepper motor who controls vertical motion. Second part is connected with the stepper motor who controls horizontal motion. Part one is fixed to the part two by a rod. The horizontal-motion stepper motor act as the base of the system. The mounting bracket will be 3D-printed with PLA to minimize the weight.
 
 \section{Electrical Components}
-
+The electrical components include 1 Arduino board, 2 stepper motors, 2 ULN2003 drivers and 1 camera. The motor driver simplify the control process of the stepper motor and save the physical space of the hardware. The Arduino board send signal to control the stepper motor.
 \section{Communication Protocols}
-
+The serial communication protocol in the project guarantee the communication between software and hardware. The project uses python serial library to send the serial signal to the Arduino board. The communication is one-way direction which means the Arduino only receive the signal from software system but not send any signal back to the system.
 \section{Reflection}
 
 The information in this section will be used to evaluate the team members on the
