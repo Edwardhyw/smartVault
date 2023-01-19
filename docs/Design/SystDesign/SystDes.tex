@@ -418,17 +418,12 @@ The electrical components include 1 Arduino board, 2 stepper motors, 2 ULN2003 d
 \section{Communication Protocols}
 The serial communication protocol in the project guarantee the communication between software and hardware. The project uses python serial library to send the serial signal to the Arduino board. The communication is one-way direction which means the Arduino only receive the signal from software system but not send any signal back to the system.
 \section{Reflection}
+\subsection{LO\_ProbSolutions}
+\hspace*{1cm}The first limitation is the detection area of the camera. As described in the previous sections, the system will first capture a photo of the environment and wait for changes to proceed with further operations including the detection of human movement. However, the restriction of the detection area can not be avoided under the usage of the webcam in this project. The assumption of this project is that the hardware system is fixed in the top corner of a room. There will always exist blind angle such that the camera will not fully capture the initial state of the environment or even later states if any movement is happening outside of the first frame. A potential improvement for this limitation would be using a fisheye camera which will definitely takes more costs and narrow the design to fully software implementation. The second approach would be assigning periodic scanning of the environment to the system with the same equipment using in current design. It will solve the detection area restriction and male the project more ideal if not considering physical damage that could possible occure more frequently with more movements involved.
+\\\hspace*{1cm}Second limitation is the sensitivity of the object and motion detection. The sensitivity is highly connected with the size of the library using. The assumption of the working condition for the system is ideal that each object can be identified clearly with their unique properties if it is captured in the frame and possible human-driven movement will only occur once at a time. A possible ideal improvement would be using a long-time trained mature library that can clearly identify each object and their unique properties. 
+\subsection{LO\_Explores}
+\hspace*{1cm}For software system, image processing module is the most controversial part. One of the design solution regarding object detection was periodically capturing frames and keep storing in the database. Instead of capturing new frames after detecting movements, it is capable of dealing with situation where multiple movements detected at the same time. But the tradeoff is processing time consuming and overflow of the data storage. The advantage for the current selected design is faster processing time for searching objects and stabilized behavior for long-time working. 
+\\\hspace*{1cm}For hardware system, the choice of motor selection and design of mount has also changed. One solution for the motor is using spherical motor which makes it easy to design the mount. But the real-time control is hard to implement. Current selected design choice using two stepper motors to achieve the spherical motion coverage which is easier to control and debug. The intention for choosing this design is the solution after comparing the effort put in disng of electronic system and mechanical system.
 
-The information in this section will be used to evaluate the team members on the
-graduate attribute of Problem Analysis and Design.  Please answer the following questions:
-
-\begin{enumerate}
-  \item What are the limitations of your solution?  Put another way, given
-  unlimited resources, what could you do to make the project better? (LO\_ProbSolutions)
-  \item Give a brief overview of other design solutions you considered.  What
-  are the benefits and tradeoffs of those other designs compared with the chosen
-  design?  From all the potential options, why did you select documented design?
-  (LO\_Explores)
-\end{enumerate}
 
 \end{document}
