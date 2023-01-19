@@ -31,7 +31,7 @@ urlcolor=cyan          % color of external links
 
 \usepackage{array}
 
-\externaldocument{../../SRS/SRS}
+%\externaldocument{../../SRS/SRS}
 
 \input{../../Comments}
 \input{../../Common}
@@ -122,9 +122,10 @@ described by giving their type signature followed by their specification.
 
 \section{Module Decomposition}
 
-The following table is taken directly from the Module Guide document for this project.
+The Whole projet is decomposed into two main part: Hardware Module and Software Module. The Hardware Module is mainly designed for motor control and Hardware-Software Communication. The Software Module is designed for main human interface. It is the main part of the design of the project. These two modules are further divided into seven parts. The first part of the decomposition is Communication Port 2 which is used for sending signals to the software part of the project. The second decomposition of Hardware Module is Motor Control, it is used to control the real-time position of the camera so that the human body is within the center of the screen taken by the camera.\\ 
+When it comes to the Software Module, The first part is Login Module, it is designed ask the user log into the running program. It can also be treated as the first barrier of protection of the user's privacy. If the person does not enter the correct username and password, he or she cannot enter the search window, which means the private information is blocked from the user. The second part is the Information Storage Module. It is used to store the screenshot of the images taken by the camera, which shown the position information of the object. The third part is Image Processing Module. It helps analyze the image to get the key information that is useful to the user. Currently this module contains human body detection method and object movement method. The forth part is  Information Extraction Module. It is related to the Information Storage Module and is used to choose pictures from the database which meets the information required by the user. The fifth part decomposed from the Software Module is Communication Port 1. It can be treated as the connection bbridge between the hardware software. 
 
-\begin{table}[h!]
+\begin{table}[H]
 \centering
 \begin{tabular}{p{0.3\textwidth} p{0.6\textwidth}}
 \toprule
@@ -151,7 +152,6 @@ Login  \\
 \end{table}
 
 \newpage
-~\newpage
 
 \section{MIS of Login Module} 
 
@@ -162,17 +162,35 @@ N/A
 
 \subsection{Syntax}
 
-\subsubsection{Exported Constants}
-N/A
+\subsubsection{Constants}
+\begin{center}
+\begin{tabular}{|p{8cm}|p{6cm}|}
+\hline
+\textbf{Name of Constants} & \textbf{Value}\\
+\hline
+Username & Determined by the user.\\
+\hline
+Password & Determined by the user.\\
+\hline
+Technical Support Window Geometry & 450*300\\
+\hline
+Login Window Geometry & 450*300\\
+\hline
+\end{tabular}
+\end{center}
 
 \subsubsection{Access Programs}
 
 \begin{center}
-\begin{tabular}{p{4cm} p{8cm} }
+\begin{tabular}{|l|l|l| p{10cm} |}
 \hline
-\textbf{Name} & \textbf{Description}  \\
+\textbf{Name} & \textbf{Input} & \textbf{Output} & \textbf{Description}  \\
 \hline
-loginInfo & Ask user to enter username and password \\
+submitact & N/A & N/A & This is used to get the input of username and password. By verifying the correctness it decides if the user can enter the search window.\\
+\hline
+tec\_create & N/A & N/A & This is used to create the Technical Support Window.\\
+\hline
+login\_create & N/A & N/A & This is used to create the main Login Window.\\
 \hline
 
 \end{tabular}
@@ -181,13 +199,23 @@ loginInfo & Ask user to enter username and password \\
 \subsection{Semantics}
 
 \subsubsection{State Variables}
+
 N/A
 
-
 \subsubsection{Environment Variables}
-technicalSupportButton: Button for technical support and contact informations
 
+\begin{center}
+\begin{tabular}{|p{8cm}|p{6cm}|}
+\hline
+\textbf{Environment Variables} & \textbf{Description}\\
+\hline
+Input Username & The input value in Username Box\\
+\hline
+Input Password & The input value in Password Box\\
+\hline
 
+\end{tabular}
+\end{center}
 
 \subsubsection{Assumptions}
 
@@ -195,24 +223,41 @@ N/A
 
 \subsubsection{Access Routine Semantics}
 
-\noindent loginInfo:
+\noindent User\_input.get():
 \begin{itemize} 
-\item transition: corrext username and password entered 
-\item output: display searching interface and transition into information extraction module
+\item transition: N/A
+\item output: The input value of username entered by user.
 \item exception: N/A 
 \end{itemize}
-\noindent technicalSupportButton 
+\noindent Pass\_input.get()
 \begin{itemize} 
-\item transition: Button clicked
-\item output: display technical support screen
+\item transition: N/A
+\item output: The input value of password entered by user.
 \item exception: N/A 
 \end{itemize}
-
-
+\noindent Tk()
+\begin{itemize} 
+\item transition: Creating a new window.
+\item output: The output window.
+\item exception: N/A 
+\end{itemize}
+\noindent tk.label()
+\begin{itemize} 
+\item transition: Adding text on the window.
+\item output: The text that presented on the window.
+\item exception: N/A 
+\end{itemize}
+\noindent text.place()
+\begin{itemize} 
+\item transition: Placing the text at desired location on the window.
+\item output: N/A
+\item exception: N/A 
+\end{itemize}
 
 \subsubsection{Local Functions}
 
 N/A
+
 
 \newpage
 
@@ -223,13 +268,14 @@ N/A
 
 
 \subsection{Uses}
-Image Processing Module
-
+\begin{itemize}
+\item Image Processing Module
+\item Information Extraction Module
+\end{itemize}
 \subsection{Syntax}
 
 \subsubsection{Constants}
-
-
+maxNumOfStorage: The constant is set to ensure the storage to be small and keep the data precise and clear.\\
 \subsubsection{Exported Access Programs}
 
 \begin{center}
@@ -244,17 +290,19 @@ checkRecord & check object in frame is on record or needs a new entry\\
 \subsection{Semantics}
 
 \subsubsection{State Variables}
-objectMotion: signal received from Image Processing Module 
-
-
+\begin{itemize}
+\item objectMotion: Signal received from Image Processing Module \\
+\item photoTakenDate: Variables used to record when the picture is captured\\
+\item recordT: Record the picture and move it to the storage\\
+\item recordF: Do nothing\\
+\end{itemize}
 \subsubsection{Environment Variables}
-
-
-
+N/A
 \subsubsection{Assumptions}
-
-\wss{Try to minimize assumptions and anticipate programmer errors via
-  exceptions, but for practical purposes assumptions are sometimes appropriate.}
+\begin{itemize}
+\item The module may not always capture the expected information. Since the product is designed to assist people to make their room organized instead of replacing them to memorize everything they lost.\\
+\item photoTakenDate: The system shall have good network signal during operation \\
+\end{itemize}
 
 \subsubsection{Access Routine Semantics}
 
@@ -277,12 +325,10 @@ objectMotion: signal received from Image Processing Module
 
 
 \subsubsection{Local Functions}
-
-\wss{As appropriate} \wss{These functions are for the purpose of specification.
-  They are not necessarily something that is going to be implemented
-  explicitly.  Even if they are implemented, they are not exported; they only
-  have local scope.}
-
+\begin{itemize}
+\item photoT(): This function will take the photo once the command is operated.
+\item photoNot(): This function will not take the photo even if the command is operated.
+\end{itemize}
 \newpage
 \section{MIS of Information Extraction Module} 
 
@@ -294,7 +340,12 @@ information Extraction Module
 \subsection{Syntax}
 
 \subsubsection{Constants}
-
+\begin{itemize}
+\item byColor: Click the button and search by color.
+\item bySize: Click the button and search by size.
+\item byShape: Click the button and search by shape.
+\item maxLoop: To ensure the infinite loop occur, the system will stop once it reach the max limitation.
+\end{itemize}
 
 \subsubsection{Access Programs}
 
@@ -315,8 +366,13 @@ displayConformation & window for displaying result\\
 \subsection{Semantics}
 
 \subsubsection{State Variables}
+\begin{itemize}
+\item timeEntered: boolean variable for whether user has enter a time or not.
+\item attr\_color: The color of the desired item.
+\item attr\_size: The size of the desired item.
+\item attr\_shape: The shape of the desired item.
+\end{itemize}
 
-timeEntered: boolean variable for whether user has enter a time or not.
 
 \subsubsection{Environment Variables}
 
@@ -324,9 +380,9 @@ searchButton: button for entering the time. User can use this button with empty 
 
 \subsubsection{Assumptions}
 
-\wss{Try to minimize assumptions and anticipate programmer errors via
-  exceptions, but for practical purposes assumptions are sometimes appropriate.}
-
+\begin{itemize}
+\item The module may not always find out the exactly matched object. Since the attributes are not large enough and the training for machine learning is not mature enough to do complicated computation.
+\end{itemize}
 \subsubsection{Access Routine Semantics}
 
 \noindent timeEntered():
@@ -349,16 +405,11 @@ searchButton: button for entering the time. User can use this button with empty 
 
 \subsubsection{Local Functions}
 
-\wss{As appropriate} \wss{These functions are for the purpose of specification.
-  They are not necessarily something that is going to be implemented
-  explicitly.  Even if they are implemented, they are not exported; they only
-  have local scope.}
-
-\newpage
-
-\bibliographystyle {plainnat}
-\bibliography {../../../refs/References}
-
+\begin{itemize}
+\item research\_color(): The function of which could search the desired item about the specific color.
+\item research\_size(): The function of which could search the desired item about the specific size.
+\item research\_shape(): The function of which could search the desired item about the specific shape.
+\end{itemize}
 \newpage
 \section{MIS of Image Processing Module} 
 
@@ -372,18 +423,49 @@ Communication Port 1
 
 \subsubsection{Constants}
 
-N/A
+\begin{center}
+\begin{tabular}{|p{8cm}|p{6cm}|}
+\hline
+\textbf{Name of Constants} & \textbf{Value}\\
+\hline
+min\_detection\_confidence & 0.5\\
+\hline
+Search Window Geometry & 1500*800\\
+\hline
+\end{tabular}
+\end{center}
 
 \subsubsection{Access Programs}
 
-N/A
+\begin{center}
+\begin{tabular}{|l|l|l| p{7cm} |}
+\hline
+\textbf{Name} & \textbf{Input} & \textbf{Output} & \textbf{Description}  \\
+\hline
+\_\_init\_\_ & self, window, cap, label & N/A & set the initial condition of the module\\
+\hline
+hand\_detect & self& N/A & detect the hand of the human ody from the image.\\
+\hline
+\end{tabular}
+\end{center}
 
 \subsection{Semantics}
 
 \subsubsection{State Variables}
 
-humanDetected: Boolean variable representing whether human is detected in the frame \\
-objectMotion: Boolen variable representing whether an object is moved by human
+\begin{center}
+\begin{tabular}{|p{4cm}|p{4cm}|l|}
+\hline
+\textbf{Name} & textbf{value} & \textbf{Description}\\
+\hline
+window & N/A & The Search Window\\
+\hline
+window.title & Main Window & The title of teh Search Window in the program.\\
+\hline
+hand\_detect & N/A & The hand detection method.\\
+\hline
+\end{tabular}
+\end{center}
 
 
 \subsubsection{Environment Variables}
@@ -398,16 +480,40 @@ N/A
 
 \subsubsection{Access Routine Semantics}
 
-\noindent humanDetected:
+\noindent humanDetected():
 \begin{itemize}
 \item transition: If True 
 \item output: start object motion detection and send signal to Communication Transmit Module
 \item exception: N/A
 \end{itemize}
-\noindent objectMotion:
+\noindent objectMotion():
 \begin{itemize}
 \item transition: If True 
 \item output: send signal to Information Storage Module 
+\item exception: N/A
+\end{itemize}
+\noindent img.resize():
+\begin{itemize}
+\item transition: Resizing the image taken by the camera. 
+\item output: The image after resizing.
+\item exception: N/A
+\end{itemize}
+\noindent cv2.flip():
+\begin{itemize}
+\item transition: Flip the whole image taken by the camera.
+\item output: The output image after fliping.
+\item exception: N/A
+\end{itemize}
+\noindent cv2.cvtColor():
+\begin{itemize}
+\item transition: The color of the image is converted from BGR to RGB.
+\item output: The output image after color conversion.
+\item exception: N/A
+\end{itemize}
+\noindent mp\_drawing.draw\_landmarks():
+\begin{itemize}
+\item transition: The shape of hand is shown on image.
+\item output: The output image after the shape of hand has been detected in the image.
 \item exception: N/A
 \end{itemize}
 
@@ -637,5 +743,13 @@ posistionReached: Boolean variable representing whether camera has reached desir
 \section{Appendix} \label{Appendix}
 
 \wss{Extra information if required}
+
+
+\newpage
+
+\bibliographystyle {plainnat}
+\bibliography {../../../refs/References}
+
+\newpage
 
 \end{document}
