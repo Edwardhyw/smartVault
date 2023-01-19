@@ -134,15 +134,9 @@ SmartVault will start operating once the user login successfully and provide tec
 \end{table}
 \subsection{Undesired Event Handling}
 
+The undesired event can happen in both software and hardware part. In the software part, the undesired event may happen when two pictures with the almost the same shapes may be presented to user and it makes the user hard to decide which one is the object the user want to find. In this case, the program will keep the search window and let the user to choose both of the pictures and find their final locations to find which is the desired one. It may also happens that the on the reported location the user cannot find the desired object. In this case the user can ask the program to show the whole picture of the final movement of the object to see where is the final appearance of that object.\\
+When it comes to the hardware part of the object,the undesired event may happen when the camera does not follow the movement of the user. To solve this problem, a constant is set to determine the maximum distance between the human body and the center of the picture. When the distance is over the threshold the program will force the camera to move. When other undesired event happends during the using of the project, the user can report the error to the program developer through the Technical Support Window. 
 
-\subsubsection{Lost Serial Communication}
-If the serial communication stop by accident, the software will detect it and try to reconnect the communication
-
-\subsubsection{Loosen Physical Connection}
-If the physical connection between software system and hardware system is detected, the program will set an alert to remind user to reset the connections.
-
-\subsubsection{Loosen Assembly}
-If the physical joints of motor or mount get loosen, user will need to repair the part or ask for technical help.
 
 \subsection{Component Diagram}
 The picture shown below presents different components known as modules in this project. All the modules are divided into two big module group: Software Module and Hardware Module. 
@@ -313,48 +307,54 @@ The hardware part consists of motor, Arduino contoller board, camera and mount.A
 \subsection{Stepper Motors}
 Stepper motors are directly connected to the Arduino controller board to receive corresponding signal and rotate to the assigned position. In this section, its physical dimensions will be mainly described. The dimension figure is shown below.
 \begin{figure}[H]
-\caption{Motor figure}
 \centering
 \includegraphics[width=5cm]{motor_figure.jpg}
+\caption{Motor figure}
 \end{figure}
+
 \begin{figure}[H]
-\caption{Motor dimension}
 \centering
 \includegraphics[width=\textwidth]{motor.png}
+\caption{Motor dimension}
 \end{figure}
+
 \subsection{Arduino controller board}
 Arduino controller board is connected to PC and the stepper motors.It is responsible for sending signals to the stepper motors in order to move the camera to desired angle. The board is shown below. As it is not in the moving part of the hardware system, its dimensions are not taken into consideration for initial design.
 \begin{figure}[H]
-\caption{Arduino controller board}
 \centering
 \includegraphics[width=5cm]{board}
+\caption{Arduino controller board}
 \end{figure}
+
 \subsection{Camera}
 Camera is connected to the PC for video display and fixed to mounting bracket in order to be driven by the stepper motors. The camera is shown below. Under our design and cost consideration, the protruding camera part's radius is taken into consideration.
 \begin{figure}[H]
-\caption{Camera}
 \centering
 \includegraphics[width=5cm]{camera.jpg}
+\caption{Camera}
 \end{figure}
 
 \subsection{Mounting bracket}
 The mounting bracket is designed to meet the design requirement. It consists of two parts. First part is used to fix the camera and allow vertical motion. One hole is constructed on one side of the wall to fit the stepper motor's actuator. The part will be 3D-printed by using PLA material. The dimensions can be found in the  figure below.
 \begin{figure}[H]
-\caption{Mount-part1}
 \centering
 \includegraphics[width=\textwidth]{mount_part1.png}
+\caption{Mount-part1}
 \end{figure}
 Second part is used to fix the first part and driven by the second stepper motor to allow horizontal motion.One hole is constructed at the bottom to fit the stepper motor's actuator. The dimensions can be found in the figure below.
+
 \begin{figure}[H]
-\caption{Mount-part2}
 \centering
 \includegraphics[width=\textwidth]{mount_part2.png}
+\caption{Mount-part2}
 \end{figure}
+
 The whole configuration of the mounting bracket is shown below.
+
 \begin{figure}[H]
-\caption{Mount bracket}
 \centering
 \includegraphics[width=\textwidth]{whole_part.png}
+\caption{Mount bracket}
 \end{figure}
 
 
@@ -373,16 +373,16 @@ Output Voltage: 5V/3.3V
 	Output Pin Number: 5 \\
 
 	\begin{figure}[H]
-	\caption{Stepper motor driver board schematic}
 	\centering
 	\includegraphics[width=\textwidth]{ULN2003}
+	\caption{Stepper motor driver board schematic}
 	\end{figure}
 
 \subsection{Electrical Design Schematic}
 \begin{figure}[H]
-\caption{Electrical connection}
 \centering
 \includegraphics[width=\textwidth]{board-motor}
+\caption{Electrical connection}
 \end{figure}
 
 
@@ -395,8 +395,26 @@ Output Voltage: 5V/3.3V
 
 The communication protocol between the hardware and software is serial communication protocol. The software system acts as the master and the hardware acts as slave. The communication is a one direction communication, the software system sends the serial command to the Arduino controller board, and the board control the stepper following the serial commands.
 \section{Timeline}
-
-\wss{Schedule of tasks and who is responsible}
+\begin{table}[H]
+\begin{tabularx}{\textwidth}{XXX}
+  \toprule  
+  \textbf{Assigned Task} & \textbf{Designer} & \textbf{Deadline}\\
+  \midrule 
+  M1 & Cui, Peng & 1.31\\
+  M2 & He, Edward and Jin, Peihua & 1.31\\
+  M3 & He, Edward and Jin, Peihua and Zhang, Erping & 1.31\\
+  M4 & Jin, Peihua and Cui, Peng & 1.31\\
+  M5 & Cui, Peng & 1.31\\
+  M6 & Tang, Guangwei & 1.31\\
+  M7 & Zhang, Erping & 1.31\\
+  Phase 1 & All & 2.10\\
+  Phase 2 & All & 2.30\\
+  Final & All & 3.15\\
+  \bottomrule
+\end{tabularx}
+\caption{Timeline}
+\label{TableTL}
+\end{table}
 
 % \bibliographystyle {plainnat}
 % \bibliography{../../../refs/References}
@@ -407,8 +425,7 @@ The communication protocol between the hardware and software is serial communica
 
 \section{Interface}
 
-\wss{Include additional information related to the appearance of, and
-interaction with, the user interface}
+Both of the interface provide different services to the user. The Login Interface helps protect the privacy of the user and gives the user a convenient way to contect with the program developer. The Searching Interface provides an understandable searching path to let the user quickly find the object they want to search. 
 
 \section{Mechanical Hardware}
 Mechanical hardware consists of two mounting brackets. First part fix the position of the camera and connect with the stepper motor who controls vertical motion. Second part is connected with the stepper motor who controls horizontal motion. Part one is fixed to the part two by a rod. The horizontal-motion stepper motor act as the base of the system. The mounting bracket will be 3D-printed with PLA to minimize the weight.
