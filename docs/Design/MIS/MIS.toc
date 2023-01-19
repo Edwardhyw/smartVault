@@ -1,0 +1,83 @@
+\contentsline {section}{\numberline {1}Revision History}{i}{section.1}%
+\contentsline {section}{\numberline {2}Symbols, Abbreviations and Acronyms}{ii}{section.2}%
+\contentsline {section}{\numberline {3}Introduction}{1}{section.3}%
+\contentsline {section}{\numberline {4}Notation}{1}{section.4}%
+\contentsline {section}{\numberline {5}Module Decomposition}{1}{section.5}%
+\contentsline {section}{\numberline {6}MIS of Login Module}{3}{section.6}%
+\contentsline {subsection}{\numberline {6.1}Uses}{3}{subsection.6.1}%
+\contentsline {subsection}{\numberline {6.2}Syntax}{3}{subsection.6.2}%
+\contentsline {subsubsection}{\numberline {6.2.1}Constants}{3}{subsubsection.6.2.1}%
+\contentsline {subsubsection}{\numberline {6.2.2}Access Programs}{3}{subsubsection.6.2.2}%
+\contentsline {subsection}{\numberline {6.3}Semantics}{3}{subsection.6.3}%
+\contentsline {subsubsection}{\numberline {6.3.1}State Variables}{3}{subsubsection.6.3.1}%
+\contentsline {subsubsection}{\numberline {6.3.2}Environment Variables}{3}{subsubsection.6.3.2}%
+\contentsline {subsubsection}{\numberline {6.3.3}Assumptions}{3}{subsubsection.6.3.3}%
+\contentsline {subsubsection}{\numberline {6.3.4}Access Routine Semantics}{3}{subsubsection.6.3.4}%
+\contentsline {subsubsection}{\numberline {6.3.5}Local Functions}{4}{subsubsection.6.3.5}%
+\contentsline {section}{\numberline {7}MIS of Information Storage Module}{5}{section.7}%
+\contentsline {subsection}{\numberline {7.1}Uses}{5}{subsection.7.1}%
+\contentsline {subsection}{\numberline {7.2}Syntax}{5}{subsection.7.2}%
+\contentsline {subsubsection}{\numberline {7.2.1}Constants}{5}{subsubsection.7.2.1}%
+\contentsline {subsubsection}{\numberline {7.2.2}Exported Access Programs}{5}{subsubsection.7.2.2}%
+\contentsline {subsection}{\numberline {7.3}Semantics}{5}{subsection.7.3}%
+\contentsline {subsubsection}{\numberline {7.3.1}State Variables}{5}{subsubsection.7.3.1}%
+\contentsline {subsubsection}{\numberline {7.3.2}Environment Variables}{5}{subsubsection.7.3.2}%
+\contentsline {subsubsection}{\numberline {7.3.3}Assumptions}{6}{subsubsection.7.3.3}%
+\contentsline {subsubsection}{\numberline {7.3.4}Access Routine Semantics}{6}{subsubsection.7.3.4}%
+\contentsline {subsubsection}{\numberline {7.3.5}Local Functions}{6}{subsubsection.7.3.5}%
+\contentsline {section}{\numberline {8}MIS of Information Extraction Module}{7}{section.8}%
+\contentsline {subsection}{\numberline {8.1}Uses}{7}{subsection.8.1}%
+\contentsline {subsection}{\numberline {8.2}Syntax}{7}{subsection.8.2}%
+\contentsline {subsubsection}{\numberline {8.2.1}Constants}{7}{subsubsection.8.2.1}%
+\contentsline {subsubsection}{\numberline {8.2.2}Access Programs}{7}{subsubsection.8.2.2}%
+\contentsline {subsection}{\numberline {8.3}Semantics}{7}{subsection.8.3}%
+\contentsline {subsubsection}{\numberline {8.3.1}State Variables}{7}{subsubsection.8.3.1}%
+\contentsline {subsubsection}{\numberline {8.3.2}Environment Variables}{7}{subsubsection.8.3.2}%
+\contentsline {subsubsection}{\numberline {8.3.3}Assumptions}{7}{subsubsection.8.3.3}%
+\contentsline {subsubsection}{\numberline {8.3.4}Access Routine Semantics}{8}{subsubsection.8.3.4}%
+\contentsline {subsubsection}{\numberline {8.3.5}Local Functions}{8}{subsubsection.8.3.5}%
+\contentsline {section}{\numberline {9}MIS of Image Processing Module}{9}{section.9}%
+\contentsline {subsection}{\numberline {9.1}Uses}{9}{subsection.9.1}%
+\contentsline {subsection}{\numberline {9.2}Syntax}{9}{subsection.9.2}%
+\contentsline {subsubsection}{\numberline {9.2.1}Constants}{9}{subsubsection.9.2.1}%
+\contentsline {subsubsection}{\numberline {9.2.2}Access Programs}{9}{subsubsection.9.2.2}%
+\contentsline {subsection}{\numberline {9.3}Semantics}{9}{subsection.9.3}%
+\contentsline {subsubsection}{\numberline {9.3.1}State Variables}{9}{subsubsection.9.3.1}%
+\contentsline {subsubsection}{\numberline {9.3.2}Environment Variables}{9}{subsubsection.9.3.2}%
+\contentsline {subsubsection}{\numberline {9.3.3}Assumptions}{9}{subsubsection.9.3.3}%
+\contentsline {subsubsection}{\numberline {9.3.4}Access Routine Semantics}{9}{subsubsection.9.3.4}%
+\contentsline {subsubsection}{\numberline {9.3.5}Local Functions}{10}{subsubsection.9.3.5}%
+\contentsline {section}{\numberline {10}MIS of Communication Port 1 Module}{12}{section.10}%
+\contentsline {subsection}{\numberline {10.1}Uses}{12}{subsection.10.1}%
+\contentsline {subsection}{\numberline {10.2}Syntax}{12}{subsection.10.2}%
+\contentsline {subsubsection}{\numberline {10.2.1}Constants}{12}{subsubsection.10.2.1}%
+\contentsline {subsubsection}{\numberline {10.2.2}Access Programs}{12}{subsubsection.10.2.2}%
+\contentsline {subsection}{\numberline {10.3}Semantics}{12}{subsection.10.3}%
+\contentsline {subsubsection}{\numberline {10.3.1}State Variables}{12}{subsubsection.10.3.1}%
+\contentsline {subsubsection}{\numberline {10.3.2}Environment Variables}{12}{subsubsection.10.3.2}%
+\contentsline {subsubsection}{\numberline {10.3.3}Assumptions}{12}{subsubsection.10.3.3}%
+\contentsline {subsubsection}{\numberline {10.3.4}Access Routine Semantics}{12}{subsubsection.10.3.4}%
+\contentsline {subsubsection}{\numberline {10.3.5}Local Functions}{12}{subsubsection.10.3.5}%
+\contentsline {section}{\numberline {11}MIS of Communication Port 2 Module}{14}{section.11}%
+\contentsline {subsection}{\numberline {11.1}Uses}{14}{subsection.11.1}%
+\contentsline {subsection}{\numberline {11.2}Syntax}{14}{subsection.11.2}%
+\contentsline {subsubsection}{\numberline {11.2.1}Constants}{14}{subsubsection.11.2.1}%
+\contentsline {subsubsection}{\numberline {11.2.2}Access Programs}{14}{subsubsection.11.2.2}%
+\contentsline {subsection}{\numberline {11.3}Semantics}{14}{subsection.11.3}%
+\contentsline {subsubsection}{\numberline {11.3.1}State Variables}{14}{subsubsection.11.3.1}%
+\contentsline {subsubsection}{\numberline {11.3.2}Environment Variables}{14}{subsubsection.11.3.2}%
+\contentsline {subsubsection}{\numberline {11.3.3}Assumptions}{14}{subsubsection.11.3.3}%
+\contentsline {subsubsection}{\numberline {11.3.4}Access Routine Semantics}{14}{subsubsection.11.3.4}%
+\contentsline {subsubsection}{\numberline {11.3.5}Local Functions}{14}{subsubsection.11.3.5}%
+\contentsline {section}{\numberline {12}MIS of Motor Control Module}{16}{section.12}%
+\contentsline {subsection}{\numberline {12.1}Uses}{16}{subsection.12.1}%
+\contentsline {subsection}{\numberline {12.2}Syntax}{16}{subsection.12.2}%
+\contentsline {subsubsection}{\numberline {12.2.1}Constants}{16}{subsubsection.12.2.1}%
+\contentsline {subsubsection}{\numberline {12.2.2}Access Programs}{16}{subsubsection.12.2.2}%
+\contentsline {subsection}{\numberline {12.3}Semantics}{16}{subsection.12.3}%
+\contentsline {subsubsection}{\numberline {12.3.1}State Variables}{16}{subsubsection.12.3.1}%
+\contentsline {subsubsection}{\numberline {12.3.2}Environment Variables}{16}{subsubsection.12.3.2}%
+\contentsline {subsubsection}{\numberline {12.3.3}Assumptions}{16}{subsubsection.12.3.3}%
+\contentsline {subsubsection}{\numberline {12.3.4}Access Routine Semantics}{17}{subsubsection.12.3.4}%
+\contentsline {subsubsection}{\numberline {12.3.5}Local Functions}{17}{subsubsection.12.3.5}%
+\contentsline {section}{\numberline {13}Appendix}{19}{section.13}%
