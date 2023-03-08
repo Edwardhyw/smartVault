@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.11) (preloaded format=pdflatex 2020.12.3)  8 MAR 2023 17:16
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.11) (preloaded format=pdflatex 2020.12.3)  8 MAR 2023 17:28
 entering extended mode
 **./VnVReport.tex
 (VnVReport.tex
@@ -314,24 +314,24 @@ Overfull \hbox (10.07497pt too wide) in paragraph at lines 58--76
  [] 
  []
 
-
-Overfull \hbox (10.07497pt too wide) in paragraph at lines 81--98
- [] 
- []
-
 <UT1.png, id=71, 205.9695pt x 123.46124pt>
 File: UT1.png Graphic file (type png)
 <use UT1.png>
-Package pdftex.def Info: UT1.png  used on input line 115.
+Package pdftex.def Info: UT1.png  used on input line 94.
 (pdftex.def)             Requested size: 227.61998pt x 156.49825pt.
 
-Underfull \hbox (badness 5050) in paragraph at lines 115--116
+Underfull \hbox (badness 5050) in paragraph at lines 94--95
 []|\OT1/cmr/m/n/12 3 fold-ers (Fold-er-Screen-Shot, item, lo-ca-tion)
  []
 
 
-Overfull \hbox (8.75313pt too wide) in paragraph at lines 115--116
+Overfull \hbox (8.75313pt too wide) in paragraph at lines 94--95
 \OT1/cmr/m/n/12 created[]| 
+ []
+
+
+Overfull \hbox (10.07497pt too wide) in paragraph at lines 82--99
+ [] 
  []
 
 
@@ -339,20 +339,35 @@ Overfull \hbox (10.07497pt too wide) in paragraph at lines 103--120
  [] 
  []
 
+LaTeX Font Info:    Trying to load font information for OMS+cmr on input line 1
+34.
+(D:\latex\tex/latex/base\omscmr.fd
+File: omscmr.fd 2019/12/16 v2.5j Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 134.
+<UT2.png, id=73, 475.7775pt x 149.96025pt>
+File: UT2.png Graphic file (type png)
+<use UT2.png>
+Package pdftex.def Info: UT2.png  used on input line 136.
+(pdftex.def)             Requested size: 256.0884pt x 99.5873pt.
 
 Overfull \hbox (10.07497pt too wide) in paragraph at lines 124--141
  [] 
  []
 
-[3]
-LaTeX Font Info:    Trying to load font information for OMS+cmr on input line 1
-55.
- (D:\latex\tex/latex/base\omscmr.fd
-File: omscmr.fd 2019/12/16 v2.5j Standard LaTeX font definitions
-)
-LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
-(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 155.
-<UT2.png, id=78, 475.7775pt x 149.96025pt>
+[3 <./UT1.png>]
+Underfull \hbox (badness 2245) in paragraph at lines 155--156
+[]|\OT1/cmr/m/n/12 item\OMS/cmsy/m/n/12 f\OT1/cmr/m/n/12 num\OMS/cmsy/m/n/12 g[
+]f\OT1/cmr/m/n/12 date and time\OMS/cmsy/m/n/12 g\OT1/cmr/m/n/12 .png is stored
+ in
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 157--157
+[]|\OT1/cmr/m/n/12 item1[]2023[]3[]8[]12[]23[]41[]945208.png is within
+ []
+
 File: UT2.png Graphic file (type png)
 <use UT2.png>
 Package pdftex.def Info: UT2.png  used on input line 157.
@@ -362,40 +377,19 @@ Overfull \hbox (10.07497pt too wide) in paragraph at lines 145--162
  [] 
  []
 
-
-Underfull \hbox (badness 2245) in paragraph at lines 176--177
-[]|\OT1/cmr/m/n/12 item\OMS/cmsy/m/n/12 f\OT1/cmr/m/n/12 num\OMS/cmsy/m/n/12 g[
-]f\OT1/cmr/m/n/12 date and time\OMS/cmsy/m/n/12 g\OT1/cmr/m/n/12 .png is stored
- in
- []
-
-
-Underfull \hbox (badness 10000) in paragraph at lines 178--178
-[]|\OT1/cmr/m/n/12 item1[]2023[]3[]8[]12[]23[]41[]945208.png is within
- []
-
-File: UT2.png Graphic file (type png)
-<use UT2.png>
-Package pdftex.def Info: UT2.png  used on input line 178.
-(pdftex.def)             Requested size: 256.0884pt x 99.5873pt.
-
-Overfull \hbox (10.07497pt too wide) in paragraph at lines 166--183
- [] 
- []
-
-[4 <./UT1.png>] [5 <./UT2.png>]
+[4 <./UT2.png>] [5]
 <UT3.png, id=90, 473.3685pt x 134.30174pt>
 File: UT3.png Graphic file (type png)
 <use UT3.png>
-Package pdftex.def Info: UT3.png  used on input line 201.
+Package pdftex.def Info: UT3.png  used on input line 180.
 (pdftex.def)             Requested size: 256.08467pt x 93.89581pt.
 
-Overfull \hbox (10.07497pt too wide) in paragraph at lines 189--206
+Overfull \hbox (10.07497pt too wide) in paragraph at lines 168--185
  [] 
  []
 
 
-Underfull \hbox (badness 10000) in paragraph at lines 220--221
+Underfull \hbox (badness 10000) in paragraph at lines 199--200
 []|\OT1/cmr/m/n/12 item1[]\OMS/cmsy/m/n/12 f\OT1/cmr/m/n/12 date and time\OMS/c
 msy/m/n/12 g\OT1/cmr/m/n/12 .png should re-main,
  []
@@ -403,15 +397,15 @@ msy/m/n/12 g\OT1/cmr/m/n/12 .png should re-main,
 <UT41.png, id=91, 251.13824pt x 125.268pt>
 File: UT41.png Graphic file (type png)
 <use UT41.png>
-Package pdftex.def Info: UT41.png  used on input line 222.
+Package pdftex.def Info: UT41.png  used on input line 201.
 (pdftex.def)             Requested size: 256.08481pt x 130.88347pt.
 <UT42.png, id=92, 243.91125pt x 138.5175pt>
 File: UT42.png Graphic file (type png)
 <use UT42.png>
-Package pdftex.def Info: UT42.png  used on input line 222.
+Package pdftex.def Info: UT42.png  used on input line 201.
 (pdftex.def)             Requested size: 253.2337pt x 136.57263pt.
 
-Overfull \hbox (10.07497pt too wide) in paragraph at lines 210--227
+Overfull \hbox (10.07497pt too wide) in paragraph at lines 189--206
  [] 
  []
 
@@ -419,10 +413,10 @@ Overfull \hbox (10.07497pt too wide) in paragraph at lines 210--227
 <UIR11.png, id=100, 341.02406pt x 249.93375pt>
 File: UIR11.png Graphic file (type png)
 <use UIR11.png>
-Package pdftex.def Info: UIR11.png  used on input line 245.
+Package pdftex.def Info: UIR11.png  used on input line 224.
 (pdftex.def)             Requested size: 227.62633pt x 156.49423pt.
 
-Overfull \hbox (10.07497pt too wide) in paragraph at lines 233--250
+Overfull \hbox (10.07497pt too wide) in paragraph at lines 212--229
  [] 
  []
 
@@ -430,97 +424,112 @@ Overfull \hbox (10.07497pt too wide) in paragraph at lines 233--250
 <UIR12.png, id=108, 340.64766pt x 248.80453pt>
 File: UIR12.png Graphic file (type png)
 <use UIR12.png>
-Package pdftex.def Info: UIR12.png  used on input line 267.
+Package pdftex.def Info: UIR12.png  used on input line 246.
 (pdftex.def)             Requested size: 227.62459pt x 156.4933pt.
 
-Overfull \hbox (10.07497pt too wide) in paragraph at lines 255--272
+Overfull \hbox (10.07497pt too wide) in paragraph at lines 234--251
  [] 
  []
 
 [8 <./UIR11.png>]
-Overfull \hbox (10.07497pt too wide) in paragraph at lines 277--294
+Overfull \hbox (10.07497pt too wide) in paragraph at lines 256--273
  [] 
  []
 
 
-Overfull \hbox (10.07497pt too wide) in paragraph at lines 299--316
+Overfull \hbox (10.07497pt too wide) in paragraph at lines 278--295
  [] 
  []
 
 [9 <./UIR12.png>]
-Overfull \hbox (10.07497pt too wide) in paragraph at lines 321--338
+Overfull \hbox (10.07497pt too wide) in paragraph at lines 300--317
  [] 
  []
 
 
-Overfull \hbox (10.07497pt too wide) in paragraph at lines 343--360
+Overfull \hbox (10.07497pt too wide) in paragraph at lines 322--339
  [] 
  []
 
 <UIR41.png, id=119, 376.40625pt x 248.80453pt>
 File: UIR41.png Graphic file (type png)
 <use UIR41.png>
-Package pdftex.def Info: UIR41.png  used on input line 378.
+Package pdftex.def Info: UIR41.png  used on input line 357.
 (pdftex.def)             Requested size: 227.62596pt x 156.4933pt.
 
-Overfull \hbox (10.07497pt too wide) in paragraph at lines 366--383
+Overfull \hbox (10.07497pt too wide) in paragraph at lines 345--362
  [] 
  []
 
 [10]
-Overfull \hbox (10.07497pt too wide) in paragraph at lines 392--409
+Overfull \hbox (10.07497pt too wide) in paragraph at lines 371--388
  [] 
  []
 
 
-Overfull \hbox (10.07497pt too wide) in paragraph at lines 414--431
+Overfull \hbox (10.07497pt too wide) in paragraph at lines 393--410
  [] 
  []
 
 [11 <./UIR41.png>]
-Overfull \hbox (10.07497pt too wide) in paragraph at lines 436--453
+Overfull \hbox (10.07497pt too wide) in paragraph at lines 415--432
  [] 
  []
 
 
-Overfull \hbox (10.07497pt too wide) in paragraph at lines 458--475
+Overfull \hbox (10.07497pt too wide) in paragraph at lines 437--454
  [] 
  []
 
 
-Overfull \hbox (10.07497pt too wide) in paragraph at lines 480--497
+Overfull \hbox (10.07497pt too wide) in paragraph at lines 459--476
  [] 
  []
 
 [12]
-Overfull \hbox (10.07497pt too wide) in paragraph at lines 502--519
+Overfull \hbox (10.07497pt too wide) in paragraph at lines 481--498
  [] 
  []
 
 
-Overfull \hbox (33.70212pt too wide) in paragraph at lines 528--573
-[] 
+Overfull \hbox (10.07497pt too wide) in paragraph at lines 503--520
+ [] 
  []
 
 
-Overfull \hbox (33.70212pt too wide) in paragraph at lines 528--573
-[] 
+Overfull \hbox (10.07497pt too wide) in paragraph at lines 525--542
+ [] 
  []
 
 [13]
-Overfull \hbox (33.70212pt too wide) in paragraph at lines 575--598
+Overfull \hbox (10.07497pt too wide) in paragraph at lines 547--564
+ [] 
+ []
+
+[14]
+Overfull \hbox (33.70212pt too wide) in paragraph at lines 570--617
+[] 
+ []
+
+
+Overfull \hbox (33.70212pt too wide) in paragraph at lines 570--617
+[] 
+ []
+
+[15]
+Overfull \hbox (33.70212pt too wide) in paragraph at lines 619--644
 [] 
  []
 
 No file VnVReport.bbl.
-[14] [15] (VnVReport.aux)
+[16] [17] (VnVReport.aux)
 Package rerunfilecheck Info: File `VnVReport.out' has not changed.
 (rerunfilecheck)             Checksum: ADA92049F3330D8E65441A22DFA7A138;852.
  ) 
 Here is how much of TeX's memory you used:
- 5835 strings out of 479799
- 87703 string characters out of 2886640
- 393708 words of memory out of 3000000
+ 5837 strings out of 479799
+ 87720 string characters out of 2886640
+ 397708 words of memory out of 3000000
  22685 multiletter control sequences out of 15000+200000
  540256 words of font info for 46 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
@@ -528,9 +537,9 @@ Here is how much of TeX's memory you used:
 <D:/latex/fonts/type1/public/amsfonts/cm/cmbx12.pfb><D:/latex/fonts/type1/pub
 lic/amsfonts/cm/cmr12.pfb><D:/latex/fonts/type1/public/amsfonts/cm/cmr17.pfb><D
 :/latex/fonts/type1/public/amsfonts/cm/cmsy10.pfb>
-Output written on VnVReport.pdf (16 pages, 360501 bytes).
+Output written on VnVReport.pdf (18 pages, 364342 bytes).
 PDF statistics:
- 172 PDF objects out of 1000 (max. 8388607)
- 36 named destinations out of 1000 (max. 500000)
+ 183 PDF objects out of 1000 (max. 8388607)
+ 38 named destinations out of 1000 (max. 500000)
  145 words of extra memory for PDF output out of 10000 (max. 10000000)
 
