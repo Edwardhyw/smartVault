@@ -3,6 +3,7 @@
 \usepackage{booktabs}
 \usepackage{tabularx}
 \usepackage{hyperref}
+\usepackage{float}
 \hypersetup{
     colorlinks,
     citecolor=black,
@@ -65,7 +66,7 @@ Date 2 & 1.1 & Notes\\
 This document ...
 
 \section{Functional Requirements Evaluation}
-\begin{table}[h]
+\begin{table}[H]
 \begin{center}
 \begin{tabular}{|p{0.25\textwidth} | p{0.75\textwidth}|}
 \hline
@@ -88,7 +89,7 @@ the environment\\
 \end{center}           
 \end{table}
 
-\begin{table}[h]
+\begin{table}[H]
 \begin{center}
 \begin{tabular}{|p{0.25\textwidth} | p{0.75\textwidth}|}
 \hline
@@ -110,56 +111,76 @@ the environment\\
 \end{center}           
 \end{table}
 
-\begin{table}[h]
-\begin{center}
-\begin{tabular}{|l | l|}
-\hline
-  Test Number & \\
-  \hline
-  Requirement Reference & \\
-  \hline
-  Requirement &  \\
-  \hline
-  Input & \\
-  \hline
-  Desired Output & \\
-  \hline
-  Actual Output & \\
-  \hline
-  Conclusion & \\
-  \hline
-\end{tabular}
-\end{center}           
-\end{table}
 
-\begin{table}[h]
-\begin{center}
-\begin{tabular}{|l | l|}
-\hline
-  Test Number & \\
-  \hline
-  Requirement Reference & \\
-  \hline
-  Requirement &  \\
-  \hline
-  Input & \\
-  \hline
-  Desired Output & \\
-  \hline
-  Actual Output & \\
-  \hline
-  Conclusion & \\
-  \hline
-\end{tabular}
-\end{center}           
-\end{table}
 
 \section{Nonfunctional Requirements Evaluation}
 
 \subsection{Usability}
-		
+\begin{table}[H]
+\begin{center}
+\begin{tabular}{|p{0.25\textwidth} | p{0.75\textwidth}|}
+\hline
+  Test Number &  APR1-1 \\
+  \hline
+  Requirement Reference & ARP1,APR2,SCR1 \\
+  \hline
+  Requirement & No electronic components should be visible and exposed. The mount should stay still without any physical changes  \\
+  \hline
+  Input & Launch the program normally and give the camera mount a physical impact \\
+  \hline
+  Desired Output & The mount should not be broken and there should not be any visible dislocation of any parts\\
+  \hline
+  Actual Output & The mount undergoes a planar movement. No visible parts broken or dislocation. The arduino board attached at the bottom stays still  \\
+  \hline
+  Conclusion & The test pass as expected\\
+  \hline
+\end{tabular}
+\end{center}           
+\end{table}
+\\
+\begin{table}[H]
+\begin{center}
+\begin{tabular}{|p{0.25\textwidth} | p{0.75\textwidth}|}
+\hline
+  Test Number & EUR1-1\\
+  \hline
+  Requirement Reference & EUR1,LER1,LER2\\
+  \hline
+  Requirement &  Users without electronics and coding background will be able to connect the hardware and use the program\\
+  \hline
+  Input & Users are asked to connect the hardware and start the program\\
+  \hline
+  Desired Output & There should not be any unclear instructions for the user to proceed. The hardware system including the Arduino board, camera and mount should be clarified for people to plug the wires\\
+  \hline
+  Actual Output & As camera,Arduino board and the motor are already attached to the mount. User just need to plug the wires to corresponding pins then they can simply start the program with one click \\
+  \hline
+  Conclusion & The test pass as expected\\
+  \hline
+\end{tabular}
+\end{center}           
+\end{table}
 \subsection{Performance}
-
+\begin{table}[H]
+\begin{center}
+\begin{tabular}{|p{0.25\textwidth} | p{0.75\textwidth}|}
+\hline
+  Test Number & SCR3-1\\
+  \hline
+  Requirement Reference & SCR3\\
+  \hline
+  Requirement &  Rotation speed of the camera should be appropriate and will not damage other parts under the condition the camera have to rotate from one end to the other\\
+  \hline
+  Input & Human walk through the camera and leave the capture region at high pace\\
+  \hline
+  Desired Output & The camera will detect the human body and starts to follow the human movement. Once the human accelerate and leave the region, the camera will stop tracking and the rotation speed will not be fast enough to damage other parts\\
+  \hline
+  Actual Output & The camera will rotate to the human position and follow the movement once it detects the existence of human body. As the human quickly leave the capture region, the camera stops tracking and take a photo of the current frame. After 2 seconds, it will rotate back to the original position. There are no parts being damaged during the movement \\
+  \hline
+  Conclusion & The test pass as expected\\
+  \hline
+\end{tabular}
+\end{center}           
+\end{table}
 \subsection{etc.}
 	
 \section{Comparison to Existing Implementation}	
