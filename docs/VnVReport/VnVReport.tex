@@ -52,7 +52,7 @@ This section will not be appropriate for every project.
 
 \subsubsection{Area of Testing1}
 		
-\paragraph{Manual Testing}{Testing shown:}
+\paragraph{Automatic Testing}{Testing shown:}
 \begin{table}[H]
 \begin{center}
 \begin{tabular}{|l | m{9cm}|}
@@ -70,7 +70,7 @@ the environment\\
   \hline
   Actual Output & Correct coordinate of the detected human body\\
   \hline
-  Conclusion & The test pass as expected\\
+  Conclusion & Pass as expected\\
   \hline
 \end{tabular}
 \end{center}           
@@ -93,7 +93,7 @@ the environment\\
   \hline
   Actual Output & Correct Coordinate of the detected new objects and outlining them with boxes\\
   \hline
-  Conclusion & The test pass as expected\\
+  Conclusion & Pass as expected\\
   \hline
 \end{tabular}
 \end{center}           
@@ -115,7 +115,7 @@ the environment\\
   \hline
   Actual Output & Correct Coordinate of the new location of detected moving objects and highlight the new location\\
   \hline
-  Conclusion & The test pass as expected\\
+  Conclusion & Pass as expected\\
   \hline
 \end{tabular}
 \end{center}           
@@ -123,49 +123,6 @@ the environment\\
 
 
 
-
-\begin{table}[H]
-\begin{center}
-\begin{tabular}{|l | m{9cm}|}
-\hline
-  Test Number & IPR4-1\\
-  \hline
-  Requirement Reference & IPR4\\
-  \hline
-  Requirement &  To create 3 folders sequentially\\
-  \hline
-  Input & createFolder() being called\\
-  \hline
-  Desired Output & 3 folders (FolderScreenShot, item, location) created\\
-  \hline
-  Actual Output & 3 folders (FolderScreenShot, item, location) created\includegraphics[width=80mm, height=55mm]{UT1.png}\\
-  \hline
-  Conclusion & Pass\\
-  \hline
-\end{tabular}
-\end{center}           
-\end{table}
-\begin{table}[H]
-\begin{center}
-\begin{tabular}{|l | m{9cm}|}
-\hline
-  Test Number & IPR4-2\\
-  \hline
-  Requirement Reference & IPR4\\
-  \hline
-  Requirement &  Do nothing if they have already existed\\
-  \hline
-  Input & createFolder() being called\\
-  \hline
-  Desired Output & No change\\
-  \hline
-  Actual Output & No change\\
-  \hline
-  Conclusion & Pass\\
-  \hline
-\end{tabular}
-\end{center}           
-\end{table}
 \begin{table}[H]
 \begin{center}
 \begin{tabular}{|l | m{9cm}|}
@@ -208,13 +165,54 @@ the environment\\
 \end{tabular}
 \end{center}           
 \end{table}
-~\newpage
-\paragraph{Automatic Testing}{Testing shown:}
+
 \begin{table}[H]
 \begin{center}
 \begin{tabular}{|l | m{9cm}|}
 \hline
   Test Number & IPR6-1\\
+  \hline
+  Requirement Reference & IPR6\\
+  \hline
+  Requirement &  To create 3 folders sequentially\\
+  \hline
+  Input & createFolder() being called\\
+  \hline
+  Desired Output & 3 folders (FolderScreenShot, item, location) created\\
+  \hline
+  Actual Output & 3 folders (FolderScreenShot, item, location) created\includegraphics[width=80mm, height=55mm]{UT1.png}\\
+  \hline
+  Conclusion & Pass\\
+  \hline
+\end{tabular}
+\end{center}           
+\end{table}
+\begin{table}[H]
+\begin{center}
+\begin{tabular}{|l | m{9cm}|}
+\hline
+  Test Number & IPR6-2\\
+  \hline
+  Requirement Reference & IPR6\\
+  \hline
+  Requirement &  Do nothing if they have already existed\\
+  \hline
+  Input & createFolder() being called\\
+  \hline
+  Desired Output & No change\\
+  \hline
+  Actual Output & No change\\
+  \hline
+  Conclusion & Pass\\
+  \hline
+\end{tabular}
+\end{center}           
+\end{table}
+\begin{table}[H]
+\begin{center}
+\begin{tabular}{|l | m{9cm}|}
+\hline
+  Test Number & IPR6-3\\
   \hline
   Requirement Reference & IPR5, IPR6\\
   \hline
@@ -226,7 +224,7 @@ the environment\\
   \hline
   Actual Output & Added as:\\&\includegraphics[width=90mm, height=33mm]{UT3.png}\\
   \hline
-  Conclusion & pass\\
+  Conclusion & Pass\\
   \hline
 \end{tabular}
 \end{center}           
@@ -235,7 +233,7 @@ the environment\\
 \begin{center}
 \begin{tabular}{|l | m{9cm}|}
 \hline
-  Test Number & IPR6-2\\
+  Test Number & IPR6-4\\
   \hline
   Requirement Reference & IPR4, IPR6\\
   \hline
@@ -443,13 +441,13 @@ the environment\\
   \hline
   Requirement Reference & EUR1\\
   \hline
-  Requirement & The User is able to use the hardware without help\\
+  Requirement &  Users without electronics and coding background will be able to connect the hardware and use the program\\
   \hline
-  Input & The servy paper\\
+  Input & Users are asked to connect the hardware and start the program\\
   \hline
-  Desired Output & An average of high rating shown on the paper\\
+  Desired Output & There should not be any unclear instructions for the user to proceed. The hardware system including the Arduino board, camera and mount should be clarified for people to plug the wires\\
   \hline
-  Actual Output &\\
+  Actual Output & As camera,Arduino board and the motor are already attached to the mount. User just need to plug the wires to corresponding pins then they can simply start the program with one click \\
   \hline
   Conclusion & The test is successful\\
   \hline
@@ -567,27 +565,7 @@ the environment\\
 \end{center}           
 \end{table}
 
-\begin{table}[H]
-\begin{center}
-\begin{tabular}{|l | m{9cm}|}
-\hline
-  Test Number & EUR1-1\\
-  \hline
-  Requirement Reference & EUR1\\
-  \hline
-  Requirement &  Users without electronics and coding background will be able to connect the hardware and use the program\\
-  \hline
-  Input & Users are asked to connect the hardware and start the program\\
-  \hline
-  Desired Output & There should not be any unclear instructions for the user to proceed. The hardware system including the Arduino board, camera and mount should be clarified for people to plug the wires\\
-  \hline
-  Actual Output & As camera,Arduino board and the motor are already attached to the mount. User just need to plug the wires to corresponding pins then they can simply start the program with one click \\
-  \hline
-  Conclusion & The test is successful\\
-  \hline
-\end{tabular}
-\end{center}           
-\end{table}
+
 
 \begin{table}[H]
 \begin{center}
@@ -620,19 +598,23 @@ the environment\\
 
 \hline Test Method&Requirement&Test Number\\
 
-\hline Manual&IPR1&IPR1-1\\
+\hline Automatic&IPR1&IPR1-1\\
 
-\hline Manual&IPR4&IPR4-1\\
+\hline Automatic&IPR3&IPR3-1\\
 
-\hline Manual&IPR4&IPR4-2\\
+\hline Automatic&IPR4&IPR4-1\\
 
-\hline Manual&IPR5&IPR5-1\\
+\hline Automatic&IPR5&IPR5-1\\
 
-\hline Manual&IPR5&IPR5-2\\
+\hline Automatic&IPR5&IPR5-2\\
 
-\hline Automatic&IPR5, IPR6&IPR6-1\\
+\hline Automatic&IPR6&IPR6-1\\
 
-\hline Automatic&IPR4, IPR6&IPR6-2\\
+\hline Automatic&IPR6&IPR6-2\\
+
+\hline Automatic&IPR5, IPR6&IPR6-3\\
+
+\hline Automatic&IPR4, IPR6&IPR6-4\\
 
 \hline
 
@@ -669,21 +651,21 @@ the environment\\
 
 \hline Test Method&Requirement&Test Number\\
 
-\hline Manual&APR1&APR1-1\\
+\hline Automatic&APR1&APR1-1\\
 
-\hline Manual&EUR1&EUR1-1\\
+\hline Automatic&EUR1&EUR1-1\\
 
-\hline Manual&EUR2&EUR2-1\\
+\hline Automatic&EUR2&EUR2-1\\
 
-\hline Manual&LER1&LER1-1\\
+\hline Automatic&LER1&LER1-1\\
 
-\hline Manual&LER2&LER2-1\\
+\hline Automatic&LER2&LER2-1\\
 
-\hline Manual&UPR1&UPR1-1\\
+\hline Automatic&UPR1&UPR1-1\\
 
-\hline Manual&UIR4&UIR4-1\\
+\hline Automatic&APR1&APR1-1\\
 
-\hline Manual&SCR3&SCR3-1\\
+\hline Automatic&SCR3&SCR3-1\\
 
 \hline
 
