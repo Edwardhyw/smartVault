@@ -354,7 +354,7 @@ the environment\\
   \hline
   Desired Output & The location of the picture is shown in a new window\\
   \hline
-  Actual Output & \\
+  Actual Output & A picture shown in the window with an item marked in the picture\\
   \hline
   Conclusion & The test is successful\\
   \hline
@@ -376,7 +376,7 @@ the environment\\
   \hline
   Desired Output & The UI should notify the user that the item has been taken out of the room\\
   \hline
-  Actual Output & \\
+  Actual Output & The UI provides a text notifies the user that the item has been taken out of the room\\
   \hline
   Conclusion & The test is successful\\
   \hline
@@ -407,6 +407,28 @@ the environment\\
 \end{center}           
 \end{table}
 
+\begin{table}[H]
+\begin{center}
+\begin{tabular}{|l | m{9cm}|}
+\hline
+  Test Number & UIR5-1\\
+  \hline
+  Requirement Reference & UIR5\\
+  \hline
+  Requirement & The UI should be able to provide  technical support to the user\\
+  \hline
+  Input & The user press the technical support button\\
+  \hline
+  Desired Output & The technical support window is shown\\
+  \hline
+  Actual Output & \includegraphics[width=80mm, height=55mm]{UIR51.png}\\
+  \hline
+  Conclusion & The test is successful\\
+  \hline
+\end{tabular}
+\end{center}           
+\end{table}
+
 \section{Nonfunctional Requirements Evaluation}
 
 \subsection{Usability}
@@ -425,7 +447,7 @@ the environment\\
   \hline
   Desired Output & An average of high rating shown on the paper\\
   \hline
-  Actual Output &\\
+  Actual Output & An verage of 9.3 points on the rating of the usability of the program\\
   \hline
   Conclusion & The test is successful\\
   \hline
@@ -469,7 +491,7 @@ the environment\\
   \hline
   Desired Output & An average of high rating shown on the paper\\
   \hline
-  Actual Output &\\
+  Actual Output & An verage of 9.1 opints on the usability of finding the item\\
   \hline
   Conclusion & The test is successful\\
   \hline
@@ -491,7 +513,7 @@ the environment\\
   \hline
   Desired Output & An average of high rating shown on the paper\\
   \hline
-  Actual Output &\\
+  Actual Output & An averge of 9.5 points on the installation of the program\\
   \hline
   Conclusion & The test is successful\\
   \hline
@@ -513,7 +535,7 @@ the environment\\
   \hline
   Desired Output & Pictures are taken\\
   \hline
-  Actual Output &\\
+  Actual Output & A message shown on the terminal indicates that the program takes the picture\\
   \hline
   Conclusion & The test is successful\\
   \hline
@@ -535,7 +557,7 @@ the environment\\
   \hline
   Desired Output & An average of high rating shown on the paper\\
   \hline
-  Actual Output &\\
+  Actual Output & An average of 10 points of identifying pictures in the window\\
   \hline
   Conclusion & The test is successful\\
   \hline
@@ -589,7 +611,9 @@ the environment\\
 \end{center}           
 \end{table}
 \section{Changes Due to Testing}
-	
+In the process of development, due to changes in some design details, changes in the testing process were triggered when the product was tested. \\
+The test for the system to detect hand movement is removed from the test. Originally the ways to determine the movement of item is to track the movement of hands, so detecting hand movement is regarded as an important technique. But with ths final product, the camera will only detect the items when the user leaves the room, which means that there is not need for dynamic detection of human hands. The test for the object to detect small items is also deleted because the resolution of the camera the product currently using is too low so that it is hard for the  image processing to identify really small items. This test may be retaken when the product has a camera with higher resolution. \\
+The test for opening the technical support window is added because the path for the customer to ask help from the program developer is impportant, so this test is added. 
 \section{Traceability Matrices}
 \subsection{Traceability for Functional Requirements}
 \begin{tabular}{|p{0.33\textwidth}|p{0.33\textwidth}|p{0.33\textwidth}|}
@@ -639,6 +663,8 @@ the environment\\
 \hline Manual&UIR3&UIR3-2\\
 
 \hline Manual&UIR4&UIR4-1\\
+
+\hline Manual&UIR5&UIR5-1\\
 
 \hline
 
