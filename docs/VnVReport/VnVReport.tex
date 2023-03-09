@@ -76,6 +76,28 @@ the environment\\
 \end{center}           
 \end{table}
 
+\begin{table}[H]
+\begin{center}
+\begin{tabular}{|l | m{9cm}|}
+\hline
+  Test Number & IPR7-1\\
+  \hline
+  Requirement Reference & IPR7\\
+  \hline
+  Requirement &  The camera should rotate back to initial position when no human detected\\
+  \hline
+  Input & Images of the working environment and a human show up in and then disappear in
+the environment\\
+  \hline
+  Desired Output & Camera rotate back to the initial position after user disappear\\
+  \hline
+  Actual Output & Camera rotate back to the initial position after user disappear\\
+  \hline
+  Conclusion & Pass as expected\\
+  \hline
+\end{tabular}
+\end{center}           
+\end{table}
 
 \begin{table}[H]
 \begin{center}
@@ -643,6 +665,8 @@ Based on the feedback from Rev 0 demo, we have conducted our test case based on 
 
 \hline Automatic&IPR4, IPR6&IPR6-4\\
 
+\hline Automatic&IPR7&IPR7-1\\
+
 \hline
 
 \end{tabular}
@@ -722,7 +746,10 @@ graduate attribute of Lifelong Learning.  Please answer the following questions:
   
   
 \end{enumerate}
- One of the biggest area of difference between VnV plan and VnV report is from some of the changes to the functional requirements. Our system is no longer tracking human hands, which reflected in the VnV report where we did not test that specific requirement. What's more, The test for opening the technical support window is added because the path for the customer to ask help from the program developer is impportant. Since VnV plan was made prior to us finalizing the implementation, we had made several assumptions that were later modified. However, most of our VnV plan turned out to be feasible and essential for the validation of our project. Since we developed our testing plan based on input/outcome, the change to our anticipated algorithm did not affect the general path for our VnV report. The proposed testing case in VnV plan were tested and validated.
+ One of the biggest area of difference between VnV plan and VnV report is from some of the changes to the functional requirements. Our system is no longer tracking human hands, which reflected in the VnV report where we did not test that specific requirement. Another difference is that we modified the logic of camera and motor movement. The purpose of this modification is to satisfy the image process requirement, which cause we add a new requirement and test case compare with the VnV plan. What's more, The test for opening the technical support window is added because the path for the customer to ask help from the program developer is important. Since VnV plan was made prior to us finalizing the implementation, we had made several assumptions that were later modified. However, most of our VnV plan turned out to be feasible and essential for the validation of our project. Since we developed our testing plan based on input/outcome, the change to our anticipated algorithm did not affect the general path for our VnV report. The proposed testing case in VnV plan were tested and validated.
+ 
+ 
+
 
 
 \end{document}
