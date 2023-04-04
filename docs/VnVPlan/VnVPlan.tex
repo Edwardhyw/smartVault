@@ -389,7 +389,7 @@ Output: The graphical displays to the user.
 
 Test Case Derivation: After user highlight a certain photo, the item on the display should change to another color.
 					
-How test will be performed: User turn on the system and user interface. Operate the system to highlight a object.		
+How test will be performed: User turns on the system and user interface. Operate the system to highlight a object.		
 	
 	
 \item{UIR2-1\\}
@@ -404,8 +404,7 @@ Output: The graphical displays to the user.
 
 Test Case Derivation: After user change the sorting method, the system should give the certain response.
 					
-How test will be performed: User turn on the system and user interface. Operate the system to change the sorting method.
-
+How test will be performed: User turns on the system and user interface. Operate the system to change the sorting method.
 
 \item{UIR3-1\\}
 
@@ -413,13 +412,27 @@ Control: Manual
 					
 Initial State: Turn on the system and User interface show up in the device.
 					
-Input: User types in his/her username and password.
+Input: User types in his/her username and password correctly.
 					
 Output: The graphical displays to the user.
 
 Test Case Derivation: After user clicks the 'login in' button, the system should give the certain response. He/She will not be allowed to access the application unless the username and password are correct.
 					
-How test will be performed: User turn on the system and user interface. Try to type out the personal username and password. Once both of them are correct, he/she will successfully get into the main menu.
+How test will be performed: User turns on the system and user interface. Try to type out the personal username and password. Once both of them are correct, he/she will successfully get into the main menu.
+
+\item{UIR3-2\\}
+
+Control: Manual
+					
+Initial State: Turn on the system and User interface show up in the device.
+					
+Input: User types in his/her username and password incorrectly.
+					
+Output: The graphical displays to the user.
+
+Test Case Derivation: After user clicks the 'login in' button, he/she will be notified that the username or the password is wrong. User shall then retry the login process until the username and password are correct.
+					
+How test will be performed: User turns on the system and user interface. Try to type out the wrong username and password. He/She will have no access into the application.
 	
 \item{UIR4-1\\}
 
@@ -433,7 +446,7 @@ Output: The graphical displays to the user.
 
 Test Case Derivation: After user unplug the camera, the system should give the response on status identifier.
 					
-How test will be performed: User turn on the system and user interface. Unplug the camera, the system status identifier will change.
+How test will be performed: User turns on the system and user interface. Unplug the camera, the system status identifier will change.
 
 \item{UIR5-1\\}
 
@@ -448,7 +461,7 @@ Output: The Technical Support Window is shown.
 Test Case Derivation: After pressing the button, the user can see the technical support window.
 					
 How test will be performed: 
-User turn on the system and user interface. After pressing the technical support window, the UI shows a window  with contact information of the program developers. 
+User turns on the system and user interface. After pressing the technical support window, the UI shows a window  with contact information of the program developers. 
 
 \end{enumerate}
 
@@ -620,6 +633,8 @@ How test will be performed: User will be asked to enter wrong parameters in corr
     UIR2&UIR2-1\\
     \hline
     UIR3&UIR3-1\\
+    \hline
+    UIR3&UIR3-2\\
     \hline
     UIR4&UIR4-1\\
     \hline
