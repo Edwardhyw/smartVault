@@ -33,6 +33,17 @@
 2022-11-2 & Edward He, Erping Zhang & Revision 0\\
 & Guangwei Tang, Peng Cui & \\
 & Peihua Jin & \\
+\\
+2022-3-15 & Peihua Jin & Revision 1.0, re-edit the tests requirements according to the Rev0 demo\\
+\\
+2022-3-18 & Peihua Jin & Revision 1.1, add new tests requirement for Functional Requirements\\
+\\
+2022-3-22 & Peng Cui & Revision 1.2, describe certain tests in a more specific way according to the feedback, such as adding units and ranges\\
+\\
+2022-4-2 & Peihua Jin & Revision 1.3, revise RAR1-1 to match with SRS doc, revise the table for traceability\\
+
+
+
 \bottomrule
 \end{tabularx}
 
@@ -146,7 +157,7 @@ Software validation will be mostly conducted by team members. External validatio
 	
 \subsection{Tests for Functional Requirements}
 
-\subsubsection{Area of Testing1}
+\subsubsection{Image Processing and Storage Functional Requirements}
 		
 \paragraph{Manual Testing}
 
@@ -156,45 +167,100 @@ Software validation will be mostly conducted by team members. External validatio
 
 Control: Manual
 					
-Initial State: The system is turned on, the working environment should be empty
+Initial State: The system is turned on, the working environment should be empty.
 					
-Input: Images of the working environment and a human show up in the environment
+Input: Images of the working environment and a human shows up in the environment.
 					
-Output: Coordinate of the detected human body
+Output: Coordinate of the detected human body and an output information as "human coming".
 
-Test Case Derivation: The output coordinate of the detected human body should located on the human body in the image
+Test Case Derivation: The output coordinate of the detected human body should located on the human body in the image.
 					
 How test will be performed: Turn on the system. Start running the system without the human showed up in the environment. Then the human should move into the environment and the system will put a square shape on the human body in the image.
+
+\item{IPR1-2\\}
+
+Control: Manual
+					
+Initial State: The system is turned on, the working environment should be empty.
+					
+Input: Images of the working environment and a human walks around the frame.
+					
+Output: Coordinate of the detected human body.
+
+Test Case Derivation: The output coordinate of the detected human body should keep updating the location on the human body in the image. And the camera should keep following the human movement.
+					
+How test will be performed: Turn on the system. Start running the system with the human showed up in the environment. Then the human should walk around the environment and the system will put a square shape on the human body in the image.
+
+\item{IPR1-3\\}
+
+Control: Manual
+					
+Initial State: The system is turned on, the working environment should be empty
+					
+Input: Images of the working environment and a human leaves the frame
+					
+Output: An output information as "human leaving".
+
+Test Case Derivation: The output coordinate of the detected human body should stop updating once human leaves the frame.
+					
+How test will be performed: Turn on the system. Start running the system with the human showed up in the environment. Then the human should leave the environment and the system will wait for a certain period.
 
 
 \item{IPR2-1\\}
 
 Control: Manual
 					
-Initial State: The system is turned on, the working environment should be empty
+Initial State: The system is turned on, the working environment includes at least one item.
 					
-Input: Images of the working environment and a hand show up in the environment
+Input: Images of the working environment and a new object was placed in the environment.
 					
-Output: Coordinate of the detected hand and each joints
+Output: A image highlighted with newly-added objects after the process of image subtraction being applied .
 
-Test Case Derivation: The output coordinate of the detected hand and joints should located on the joints in the image
+Test Case Derivation: The movement shall be captured and the differences between the two frames will be illustrated.
 					
-How test will be performed: Turn on the system. Start running the system without the hand showed up in the environment. Then the hand should move into the environment and the system will put dots on each joints of the hand in the image.
+How test will be performed: Turn on the system. The tool will call the image subtraction algorithms and pass the photos and parameter into the module. Then the module will generate the image highlighted with desired differences
+
+\item{IPR2-2\\}
+
+Control: Manual
+					
+Initial State: The system is turned on, the working environment includes at least one item.
+					
+Input: Images of the working environment and object being removed out of the environment.
+					
+Output: A image with nothing after the process of image subtraction being applied .
+
+Test Case Derivation: The movement shall be captured and the differences between the two frames will be illustrated.
+					
+How test will be performed: Turn on the system. The tool will call the image subtraction algorithms and pass the photos and parameter into the module. Then the module will generate the image highlighted with desired differences
+
+\item{IPR2-3\\}
+
+Control: Manual
+					
+Initial State: The system is turned on, the working environment includes at least one item.
+					
+Input: Images of the working environment and object being moved within the environment.
+					
+Output: A image updated with moved objects after the process of image subtraction being applied .
+
+Test Case Derivation: The movement shall be captured and the differences between the two frames will be illustrated.
+					
+How test will be performed: Turn on the system. The tool will call the image subtraction algorithms and pass the photos and parameter into the module. Then the module will generate the image highlighted with desired differences
 
 \item{IPR3-1\\}
 
 Control: Manual
 					
-Initial State: The system is turned on, the working environment should be empty
+Initial State: The system is turned on, and human starts to leave the working environment.
 					
-Input: Images of the working environment and few objects in the environment
+Input: Images of the working environment and the system detected human's leaving.
 					
-Output: Coordinate of the detected objects
+Output: The mounted camera shall be back to the default position, and takes a photo after 5 seconds.
 
-Test Case Derivation: The output coordinate of the detected objects should located on the object in the image
+Test Case Derivation: The camera will smoothly rotate back to the default position and does not affect the image subtraction.
 					
-How test will be performed: Turn on the system. Start running the system without the objects showed up in the environment. Then the objects should move into the environment and the system will put square on each object in the image.
-
+How test will be performed: Turn on the system. The tool will call the picturing function and pass the photos after human's leaving. Then the module will generate a photo and temporarily save it for further comparisons during the test.
 
 \item{IPR4-1\\}
 
@@ -204,9 +270,9 @@ Initial State: The system is turned on, the working environment should include a
 					
 Input: Images of the working environment and object in the environment. Different Images should have different location of the object in the environment.
 					
-Output: The re-location mode should be activated
+Output: The re-location mode should be activated.
 
-Test Case Derivation: The re-location mode should be activated when the object location change
+Test Case Derivation: The re-location mode should be activated when the object location change.
 					
 How test will be performed: Turn on the system. Start running the system with the objects showed up in the environment. Then change the location of object in the environment, the system should activated the re-location mode.
 
@@ -215,17 +281,17 @@ How test will be performed: Turn on the system. Start running the system with th
 
 Control: Manual
 					
-Initial State: The system is turned on, the working environment should include at least two items.
+Initial State:The system is turned on, camera works properly. 
 					
-Input: Images of the working environment and at least two different objects in the environment. 
+Input: The automatic testing tool will activate the photo storage function. 
 					
-Output: The system should record two different objects into the database
+Output: The photos taken by the camera with create date/time.
 
-Test Case Derivation: The database should have the correct record according to the testing cases
+Test Case Derivation: The photo should have the detailed time information.
 					
-How test will be performed: Turn on the system. Start running the system with the different two objects showed up in the environment. Then check the record in database, it should have two different records of the objects.
+How test will be performed: Turn on the system. Start running the fileStorage function with the parameter, 'i', as insertion. Then check the record in the local folder, it should store two photos in total, one with create data/time information shall be inside the 'item' folder, and the other will be inside the 'location' folder.
 
-				
+
 
 \end{enumerate}
 
@@ -238,29 +304,30 @@ How test will be performed: Turn on the system. Start running the system with th
 
 Control: Automatic
 					
-Initial State:The system is turned on, camera works properly. 
+Initial State: The system is turned on, the working environment should include at least two items.
 					
-Input: The automatic testing tool will activate the photo storage function. 
+Input: Images of the working environment and at least two different objects in the environment. 
 					
-Output: The photos taken by the camera with create date/time
+Output: The system should only make any update inside the location folder.
 
-Test Case Derivation: The photo should have the time information
+Test Case Derivation: The folder should have the correct updating according to the testing cases.
 					
-How test will be performed:
-Turn on the system, make sure the camera working as required. Then run the automatic testing tool, the tool will force the system to store the photos with create data/time information with it.
+How test will be performed: Turn on the system. Start running the fileStorage function with the parameter, 'u', as updating. Then check the record in the local folder, it should only update the 'location' folder for the desired item.
+
+				
 
 
 \item{IPR7-1\\}
 
 Control: Automatic
 					
-Initial State:The system is turned on.
+Initial State: The system is turned on.
 					
-Input: The automatic testing tool will call the data storage module and send the object information to the module. 
+Input: The automatic testing tool will call the file storage module and send the object information to the module. 
 					
-Output: The different objects information will be stored in the database with unique ID
+Output: The different objects information will be stored in the folder with unique ID.
 
-Test Case Derivation: The object information in the database should have unique IDs
+Test Case Derivation: The object information in the file folder should have unique IDs.
 					
 How test will be performed:
 Turn on the system. Then run the automatic testing tool, the tool will call the data storage module and pass the parameter into the module. Then the module will store the objects information with unique IDs.
@@ -274,9 +341,9 @@ Initial State:The system is turned on.
 					
 Input: The automatic testing tool will call the photo storage function and send the photo to the module. 
 					
-Output: The photos in the data storage module should be in ascending or descending order of time
+Output: The photos in the data storage module should be in ascending or descending order of time.
 
-Test Case Derivation: The photos in the database should be sorted
+Test Case Derivation: The photos in the file folder should be sorted.
 					
 How test will be performed:
 Turn on the system. Then run the automatic testing tool, the tool will call the data storage module and pass the photos and parameter into the module. Then the module will sort the photos according to the create time.
@@ -286,13 +353,13 @@ Turn on the system. Then run the automatic testing tool, the tool will call the 
 
 Control: Automatic
 					
-Initial State:The system is turned on.
+Initial State: The system is turned on.
 					
 Input: The automatic testing tool will call the photo storage function and send the photo to the module. 
 					
-Output: The photos in the data storage module should be in ascending or descending order of objects IDs
+Output: The photos in the data storage module should be in ascending or descending order of objects IDs.
 
-Test Case Derivation: The photos in the database should be sorted
+Test Case Derivation: The photos in the file folder should be sorted.
 					
 How test will be performed:
 Turn on the system. Then run the automatic testing tool, the tool will call the data storage module and pass the photos and parameter into the module. Then the module will sort the photos according to the objects IDs.
@@ -303,7 +370,7 @@ Turn on the system. Then run the automatic testing tool, the tool will call the 
 \end{enumerate}
 
 
-\subsubsection{UI Interface Menu}
+\subsubsection{UI Menu Functional Requirements}
 
 
 \paragraph{Manual Testing}
@@ -314,75 +381,71 @@ Turn on the system. Then run the automatic testing tool, the tool will call the 
 
 Control: Manual
 					
-Initial State: Turn on the system and User interface show up in the laptop
+Initial State: Turn on the system and User interface show up in the device.
 					
-Input: User's manipulation to the user interface
+Input: User's manipulation to the user interface.
 					
-Output: The graphical display to the user
+Output: The graphical displays to the user.
 
 Test Case Derivation: After user highlight a certain photo, the item on the display should change to another color.
 					
-How test will be performed: 
-	User turn on the system and user interface. Operate the system to highlight a object.		
+How test will be performed: User turn on the system and user interface. Operate the system to highlight a object.		
 	
 	
 \item{UIR2-1\\}
 
 Control: Manual
 					
-Initial State: Turn on the system and User interface show up in the laptop
+Initial State: Turn on the system and User interface show up in the device.
 					
-Input: User's manipulation to the user interface
+Input: User's manipulation to the user interface.
 					
-Output: The graphical display to the user
+Output: The graphical displays to the user.
 
-Test Case Derivation: After user change the sorting method, the system should give the certain response
+Test Case Derivation: After user change the sorting method, the system should give the certain response.
 					
-How test will be performed: 
-	User turn on the system and user interface. Operate the system to change the sorting method.
+How test will be performed: User turn on the system and user interface. Operate the system to change the sorting method.
 
 
 \item{UIR3-1\\}
 
 Control: Manual
 					
-Initial State: Turn on the system and User interface show up in the laptop
+Initial State: Turn on the system and User interface show up in the device.
 					
-Input: User change the signal strength of WiFi
+Input: User types in his/her username and password.
 					
-Output: The graphical display to the user
+Output: The graphical displays to the user.
 
-Test Case Derivation: After user change the Wifi strength, the system should give the certain response
+Test Case Derivation: After user clicks the 'login in' button, the system should give the certain response. He/She will not be allowed to access the application unless the username and password are correct.
 					
-How test will be performed: 
-	User turn on the system and user interface. Switch the network connection to a weak strength Wifi, the system will give an alert.
+How test will be performed: User turn on the system and user interface. Try to type out the personal username and password. Once both of them are correct, he/she will successfully get into the main menu.
 	
 \item{UIR4-1\\}
 
 Control: Manual
 					
-Initial State: Turn on the system and User interface show up in the laptop
+Initial State: Turn on the system and User interface show up in the device.
 					
-Input: User change the unplug the camera to insert a fault
+Input: User changes the unplugs the camera to insert a fault.
 					
-Output: The graphical display to the user
+Output: The graphical displays to the user.
 
-Test Case Derivation: After user unplug the camera, the system should give the response on status identifier
+Test Case Derivation: After user unplug the camera, the system should give the response on status identifier.
 					
-How test will be performed: 
-	User turn on the system and user interface. Unplug the camera, the system status identifier will change.
+How test will be performed: User turn on the system and user interface. Unplug the camera, the system status identifier will change.
 
 \item{UIR5-1\\}
 
 Control: Manual
 					
-Initial State: Turn on the system and User interface show up in the laptop
+Initial State: Turn on the system and User interface show up in the device.
 					
-Input: User press the Technical Suport button
+Input: User presses the Technical Support button.
 					
-Output: The Technical Support Window is shown
+Output: The Technical Support Window is shown.
 
-Test Case Derivation: After pressing the button, the user can see the technical support window
+Test Case Derivation: After pressing the button, the user can see the technical support window.
 					
 How test will be performed: 
 User turn on the system and user interface. After pressing the technical support window, the UI shows a window  with contact information of the program developers. 
@@ -402,24 +465,24 @@ User turn on the system and user interface. After pressing the technical support
 
 Type: Structural, Manual
 					
-Initial State: The camera and its mount is connected to the laptop and stay stationary on a flat platform.
+Initial State: The camera and its mount is connected to the device and stay stationary on a flat platform.
 					
-Input/Condition: Launch the program normally and provide a physical impact during functioning
+Input/Condition: Launch the program normally and provide a physical impact during functioning.
 					
-Output/Result: No electronic components should be exposed and the shell should stay still
+Output/Result: No electronic components should be exposed and the shell should stay still.
 					
-How test will be performed: Test is proceeded during a normal working period where a physical impact will be applied to the hardware. The impact level is trying to simulate the damage that could possibily be done during normal functional period including dropping from the desk, over twisting the camera. After the impact, the appearance will be checked to see if the non-functional
+How test will be performed: Test is proceeded during a normal working period where a physical impact will be applied to the hardware. The impact level is trying to simulate the damage that could possibly be done during normal functional period including dropping from the desk, over twisting the camera. After the impact, the appearance will be checked to see if the non-functional
 requirements APR1 and APR2 are satisfied. There will be also be a survey question regarding if the product is physically safe in the sight
 					
 \item{EUR1-1\\}
 
 Type: Functional, Manual
 					
-Initial State: The program are stored properly in a USB and hardware parts are ready to be assembled
+Initial State: The program is packed properly as an executable file and hardware parts are ready to be assembled.
 					
-Input: Users are asked to launch the program and connect the hardware 
+Input: Users are asked to launch the program and connect the hardware. 
 					
-Output: Users are able to successfully finish the set up and ready to use the system without any assistance
+Output: Users are able to successfully finish the set up and ready to use the system without any assistance.
 					
 How test will be performed: A group of people who do not have any electronics and coding background are asked to set up the system. Brief instructions regarding the functionality of the system will be given in advance and users will be asked to launch the program and connect the hardware. A survey question regarding the difficulty of setting up the system will be asked at the end of test. A score from 0 to 10 will be used to show user's experience. The majority of users should have no serious difficulty finishing the set up.
 
@@ -427,11 +490,11 @@ How test will be performed: A group of people who do not have any electronics an
 
 Type: Functional, Manual
 					
-Initial State: The program are set up properly and ready to use
+Initial State: The program is set up properly and ready to use.
 					
-Input: Users are asked to use the program to find assigned object
+Input: Users are asked to use the program to find assigned object.
 					
-Output: Users are able to enter inputs into correct fields and proceed the function
+Output: Users are able to enter inputs into correct fields and proceed the function.
 					
 How test will be performed: A group of people who do not have any electronics and coding background are asked to use the system with brief instructions being told in advance. The number of people who successfully find the assigned object with the program will be noted. A survey question regarding the difficulty of using the program will be asked at the end of test.A score from 0 to 10 will be used to show user's experience. The majority of users should be able to clearly see input boxes and enter corresponding inputs.
 
@@ -445,12 +508,14 @@ How test will be performed: A group of people who do not have any electronics an
 \item{SLR1-1\\}
 
 Type: Functional, Manual
+
+Unit: Seconds
 					
-Initial State: The program are set up properly and ready to use, no further settings are required.
+Initial State: The program is set up properly and ready to use, no further settings are required.
 					
-Input: Information of the object is entered properly 
+Input: Information of the object is entered properly.
 					
-Output: The response time of the system to show the location of the object should be less than 5 second
+Output: The response time of the system to show the location of the object should be less than 5 second.
 					
 How test will be performed: Users will be asked to use the system to find different objects in the same assigned area and tester will record the time the system response. Then users will enter the same searching information while the objects are placed into another area (objects are all placed into the assigned area). Distance and number of items in the environment will be adjusted for each test condition. For objects with the largest distance and placed into the messiest environment , the response time must be below 5 seconds.
 
@@ -459,25 +524,29 @@ How test will be performed: Users will be asked to use the system to find differ
 \item{SCR3-1\\}
 
 Type: Functional, Manual
+
+Units: Degree/seconds
+
+Ranges: -30 to 30 degree/seconds
 					
-Initial State: The program are set up properly and ready to use, no further settings are required.
+Initial State: The program is set up properly and ready to use, no further settings are required.
 					
-Input: Information of two objects at the edge of the assigned area will be entered 
+Input: Information of two objects at the edge of the assigned area will be entered.
 					
-Output: The rotation speed where the camera rotate from one edge to the other is slow enough
+Output: The rotation speed where the camera rotates from one edge to the other is slow and smooth.
 					
 How test will be performed: Users will be asked to enter information of two objects at the edge of the assigned area one after another. As the area is assigned and the response time is restricted to less than 5 seconds, the speed that the camera rotate from edge to edge will be the maximum speed can be applied. The maximum rotation speed must be slow enough such that it will not 
 cause any security concern.
 
-\item{PAR1-1\\}
+\item{PAR2-1\\}
 
 Type: Functional, Manual
 					
 Initial State: The program are set up properly and ready to use, no further settings are required.
 					
-Input: The targer object will be moved one small step at a time 
+Input: The target object will be moved one small step at a time.
 					
-Output: The location value displayed should always be whole number
+Output: The location value displayed should always be whole number.
 					
 How test will be performed: Users will be asked to enter the information of one object and the tester will adjust the location of the object one small step at a time and observe the location value displayed in the program. Any value displayed in the program must be whole number and time value must be displayed with an accuracy of minute.
 
@@ -485,21 +554,25 @@ How test will be performed: Users will be asked to enter the information of one 
 \item{RAR1-1\\}
 
 Type: Functional, Manual
+
+Units: Degree
+
+Ranges: -180 to 180 degree
 					
-Initial State: The program are set up properly and ready to use, no further settings are required.
+Initial State: The program is set up properly and ready to use, no further settings are required.
 					
-Input: Part of the object to be searching for will be placed outside the assigned area 
+Input: The camera will keep rotating. 
 					
-Output: The device should return NOT FOUND if the portion of the object showing in the camera is not representative enough
+Output: The camera would never exceed the range of -180 degrees and +180 degrees.
 					
-How test will be performed: User will be asked to enter the information of one object where part of it is not in the camera. As the rotation angle is restricted, the camera must not over-rotate to an unexpected angle. If the partial information is not representative, the program should return NOT FOUND.
+How test will be performed: Human will be asked to walk around the testing environment. Once the angle reaches -180 or 180 degrees, the camera will stop rotating.
 
 
 \item{RFR2-1\\}
 
 Type: Functional, Manual
 					
-Initial State: The program are set up properly and ready to use, no further settings are required.
+Initial State: The program is set up properly and ready to use, no further settings are required.
 					
 Input: wrong parameters will be entered into input boxes 
 					
@@ -518,7 +591,15 @@ How test will be performed: User will be asked to enter wrong parameters in corr
     \hline
     IPR1&IPR1-1\\
     \hline
+    IPR1&IPR1-2\\
+    \hline
+    IPR1&IPR1-3\\
+    \hline
     IPR2&IPR2-1\\
+    \hline
+    IPR2&IPR2-2\\
+    \hline
+    IPR2&IPR2-3\\
     \hline
     IPR3&IPR3-1\\
     \hline
@@ -542,7 +623,7 @@ How test will be performed: User will be asked to enter wrong parameters in corr
     \hline
     UIR4&UIR4-1\\
     \hline
-	UIR5&UIR5-1\\
+    UIR5&UIR5-1\\
     \hline
     APR1,APR2,SCR1 & APR1-1\\
     \hline
@@ -554,7 +635,7 @@ How test will be performed: User will be asked to enter wrong parameters in corr
     \hline
     SCR3 & SCR3-1\\
     \hline
-    PAR1,PAR2,PAR3 & PAR1-1\\
+    PAR1,PAR2,PAR3 & PAR2-1\\
     \hline
     RAR1 & RAR1-1\\
     \hline
@@ -599,33 +680,32 @@ Initial State: User is in the screen\\
 Input: User randomly walk around the room\\
 Output: The camera rotates and follows the user, and the user is identified with a yellow rectangle shown in the screen. In addition, the location of the rectangle also moves depending on the movement of the user.\\
 \end{itemize}
-The prototype will try to test item identification secondly. Five cases will be applied for the proof-of-concept testing.
+The prototype will try to test item identification secondly. Four cases will be applied for the proof-of-concept testing.
 \begin{itemize}
 \item{test \#5\\}
 Type: Functional, dynamic, automatic\\
 Initial State: Null\\
-Input: Two identical images with no difference.\\
-Output: Nothing to do with SmartVault.\\ 
+Input: Item A being newly added into the working environment.\\
+Output: SmartVault will first compare two frames and record the changes. Item A will be recorded in 'item' folder with detailed date and time, its ID, item\_0 in this case, will be stored in 'location' folder.\\ 
+Goal: To demonstrate the function for the insertion of new item.\\
 \item{test \#6\\}
 Type: Functional, dynamic, automatic\\
 Initial State: Null\\
-Input: Two images with the same item, but the location of the item is changed.\\
-Output: The difference of the location is identified. SmartVault will record these change and upload to the local file.\\ 
+Input: Two frames with the same item, but the location of item A is changed.\\
+Output: The difference of the location is identified. SmartVault will record these change and upload to the local file. The only change will be updated in 'location' folder.\\ 
+Goal: To demonstrate the function for updating the recorded items.\\
 \item{test \#7\\}
 Type: Functional, dynamic, automatic\\
 Initial State: Null\\
-Input: Two images with different items, but the locations of the items are the same.\\
-Output: The difference of the items is identified. SmartVault will record these change and upload to the local file.\\ 
+Input: Item B being newly added into the working environment.\\
+Output: SmartVault will first compare two frames and record the changes. In addition, SmartVault would compare item B with all recorded items inside the list, item A in this case, and try to find as many match points as possible. Again, item B will be recorded in 'item' folder with detailed date and time, its ID, item\_1 in this case, will be stored in 'location' folder.\\ 
+Goal: To demonstrate the function for differentiate different items.\\
 \item{test \#8\\}
 Type: Functional, dynamic, automatic\\
 Initial State: Null\\
-Input: A image with 6 small items.\\
-Output: SmartVault will identify each item with a yellow rectangle around it. In other words, there should be 6 rectangles in total.\\ 
-\item{test \#9\\}
-Type: Functional, dynamic, automatic\\
-Initial State: Null\\
-Input: A image with 1 small item and it will keep moving during the test.\\
-Output: SmartVault will identify this item with a yellow rectangle around it. In addition, the rectangle will move depending on the movement of the object\\ 
+Input: Both item A and B will be taken away from the testing environment.\\
+Output: SmartVault will identify the changes and update new frames respectively into 'location' folder. In other words, both of item\_0 and item\_1 will be shown as being already taken away.\\
+Goal: To demonstrate the function for capturing the movement of two items concurrently.\\
 \end{itemize}
 
 \section{Unit Test Description}
