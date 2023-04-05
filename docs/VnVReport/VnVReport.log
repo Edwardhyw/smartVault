@@ -1,0 +1,533 @@
+This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.7) (preloaded format=pdflatex 2022.9.24)  5 APR 2023 13:21
+entering extended mode
+ restricted \write18 enabled.
+ %&-line parsing enabled.
+**./VnVReport.tex
+(VnVReport.tex
+LaTeX2e <2022-06-01> patch level 5
+L3 programming layer <2022-07-04> (D:\LaTex\tex/latex/base\article.cls
+Document Class: article 2021/10/04 v1.4n Standard LaTeX document class
+(D:\LaTex\tex/latex/base\size12.clo
+File: size12.clo 2021/10/04 v1.4n Standard LaTeX file (size option)
+)
+\c@part=\count185
+\c@section=\count186
+\c@subsection=\count187
+\c@subsubsection=\count188
+\c@paragraph=\count189
+\c@subparagraph=\count190
+\c@figure=\count191
+\c@table=\count192
+\abovecaptionskip=\skip47
+\belowcaptionskip=\skip48
+\bibindent=\dimen138
+) (D:\LaTex\tex/latex/graphics\graphicx.sty
+Package: graphicx 2021/09/16 v1.2d Enhanced LaTeX Graphics (DPC,SPQR)
+(D:\LaTex\tex/latex/graphics\keyval.sty
+Package: keyval 2022/05/29 v1.15 key=value parser (DPC)
+\KV@toks@=\toks16
+)
+(D:\LaTex\tex/latex/graphics\graphics.sty
+Package: graphics 2022/03/10 v1.4e Standard LaTeX Graphics (DPC,SPQR)
+ (D:\LaTex\tex/latex/graphics\trig.sty
+Package: trig 2021/08/11 v1.11 sin cos tan (DPC)
+) (D:\LaTex\tex/latex/graphics-cfg\graphics.cfg
+File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
+)
+Package graphics Info: Driver file: pdftex.def on input line 107.
+
+(D:\LaTex\tex/latex/graphics-def\pdftex.def
+File: pdftex.def 2020/10/05 v1.2a Graphics/color driver for pdftex
+))
+\Gin@req@height=\dimen139
+\Gin@req@width=\dimen140
+)
+(D:\LaTex\tex/latex/float\float.sty
+Package: float 2001/11/08 v1.3d Float enhancements (AL)
+\c@float@type=\count193
+\float@exts=\toks17
+\float@box=\box51
+\@float@everytoks=\toks18
+\@floatcapt=\box52
+) (D:\LaTex\tex/latex/booktabs\booktabs.sty
+Package: booktabs 2020/01/12 v1.61803398 Publication quality tables
+\heavyrulewidth=\dimen141
+\lightrulewidth=\dimen142
+\cmidrulewidth=\dimen143
+\belowrulesep=\dimen144
+\belowbottomsep=\dimen145
+\aboverulesep=\dimen146
+\abovetopsep=\dimen147
+\cmidrulesep=\dimen148
+\cmidrulekern=\dimen149
+\defaultaddspace=\dimen150
+\@cmidla=\count194
+\@cmidlb=\count195
+\@aboverulesep=\dimen151
+\@belowrulesep=\dimen152
+\@thisruleclass=\count196
+\@lastruleclass=\count197
+\@thisrulewidth=\dimen153
+) (D:\LaTex\tex/latex/tools\tabularx.sty
+Package: tabularx 2020/01/15 v2.11c `tabularx' package (DPC)
+ (D:\LaTex\tex/latex/tools\array.sty
+Package: array 2021/10/04 v2.5f Tabular extension package (FMi)
+\col@sep=\dimen154
+\ar@mcellbox=\box53
+\extrarowheight=\dimen155
+\NC@list=\toks19
+\extratabsurround=\skip49
+\backup@length=\skip50
+\ar@cellbox=\box54
+)
+\TX@col@width=\dimen156
+\TX@old@table=\dimen157
+\TX@old@col=\dimen158
+\TX@target=\dimen159
+\TX@delta=\dimen160
+\TX@cols=\count198
+\TX@ftn=\toks20
+)
+(D:\LaTex\tex/latex/hyperref\hyperref.sty
+Package: hyperref 2022-06-20 v7.00s Hypertext links for LaTeX
+
+(D:\LaTex\tex/generic/ltxcmds\ltxcmds.sty
+Package: ltxcmds 2020-05-10 v1.25 LaTeX kernel commands for general use (HO)
+)
+(D:\LaTex\tex/generic/iftex\iftex.sty
+Package: iftex 2022/02/03 v1.0f TeX engine tests
+)
+(D:\LaTex\tex/generic/pdftexcmds\pdftexcmds.sty
+Package: pdftexcmds 2020-06-27 v0.33 Utility functions of pdfTeX for LuaTeX (HO
+)
+
+(D:\LaTex\tex/generic/infwarerr\infwarerr.sty
+Package: infwarerr 2019/12/03 v1.5 Providing info/warning/error messages (HO)
+)
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode found.
+)
+(D:\LaTex\tex/generic/kvsetkeys\kvsetkeys.sty
+Package: kvsetkeys 2019/12/15 v1.18 Key value parser (HO)
+)
+(D:\LaTex\tex/generic/kvdefinekeys\kvdefinekeys.sty
+Package: kvdefinekeys 2019-12-19 v1.6 Define keys (HO)
+)
+(D:\LaTex\tex/generic/pdfescape\pdfescape.sty
+Package: pdfescape 2019/12/09 v1.15 Implements pdfTeX's escape features (HO)
+)
+(D:\LaTex\tex/latex/hycolor\hycolor.sty
+Package: hycolor 2020-01-27 v1.10 Color options for hyperref/bookmark (HO)
+)
+(D:\LaTex\tex/latex/letltxmacro\letltxmacro.sty
+Package: letltxmacro 2019/12/03 v1.6 Let assignment for LaTeX macros (HO)
+)
+(D:\LaTex\tex/latex/auxhook\auxhook.sty
+Package: auxhook 2019-12-17 v1.6 Hooks for auxiliary files (HO)
+)
+(D:\LaTex\tex/latex/hyperref\nameref.sty
+Package: nameref 2022-05-17 v2.50 Cross-referencing by name of section
+
+(D:\LaTex\tex/latex/refcount\refcount.sty
+Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
+)
+(D:\LaTex\tex/generic/gettitlestring\gettitlestring.sty
+Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
+
+(D:\LaTex\tex/latex/kvoptions\kvoptions.sty
+Package: kvoptions 2022-06-15 v3.15 Key value format for package options (HO)
+))
+\c@section@level=\count199
+)
+\@linkdim=\dimen161
+\Hy@linkcounter=\count266
+\Hy@pagecounter=\count267
+
+(D:\LaTex\tex/latex/hyperref\pd1enc.def
+File: pd1enc.def 2022-06-20 v7.00s Hyperref: PDFDocEncoding definition (HO)
+Now handling font encoding PD1 ...
+... no UTF-8 mapping file for font encoding PD1
+)
+(D:\LaTex\tex/generic/intcalc\intcalc.sty
+Package: intcalc 2019/12/15 v1.3 Expandable calculations with integers (HO)
+)
+(D:\LaTex\tex/generic/etexcmds\etexcmds.sty
+Package: etexcmds 2019/12/15 v1.7 Avoid name clashes with e-TeX commands (HO)
+)
+\Hy@SavedSpaceFactor=\count268
+
+(D:\LaTex\tex/latex/hyperref\puenc.def
+File: puenc.def 2022-06-20 v7.00s Hyperref: PDF Unicode definition (HO)
+Now handling font encoding PU ...
+... no UTF-8 mapping file for font encoding PU
+)
+Package hyperref Info: Hyper figures OFF on input line 4162.
+Package hyperref Info: Link nesting OFF on input line 4167.
+Package hyperref Info: Hyper index ON on input line 4170.
+Package hyperref Info: Plain pages OFF on input line 4177.
+Package hyperref Info: Backreferencing OFF on input line 4182.
+Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
+Package hyperref Info: Bookmarks ON on input line 4408.
+\c@Hy@tempcnt=\count269
+ (D:\LaTex\tex/latex/url\url.sty
+\Urlmuskip=\muskip16
+Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
+)
+LaTeX Info: Redefining \url on input line 4746.
+\XeTeXLinkMargin=\dimen162
+
+(D:\LaTex\tex/generic/bitset\bitset.sty
+Package: bitset 2019/12/09 v1.3 Handle bit-vector datatype (HO)
+
+(D:\LaTex\tex/generic/bigintcalc\bigintcalc.sty
+Package: bigintcalc 2019/12/15 v1.5 Expandable calculations on big integers (HO
+)
+))
+\Fld@menulength=\count270
+\Field@Width=\dimen163
+\Fld@charsize=\dimen164
+Package hyperref Info: Hyper figures OFF on input line 6024.
+Package hyperref Info: Link nesting OFF on input line 6029.
+Package hyperref Info: Hyper index ON on input line 6032.
+Package hyperref Info: backreferencing OFF on input line 6039.
+Package hyperref Info: Link coloring OFF on input line 6044.
+Package hyperref Info: Link coloring with OCG OFF on input line 6049.
+Package hyperref Info: PDF/A mode OFF on input line 6054.
+
+(D:\LaTex\tex/latex/base\atbegshi-ltx.sty
+Package: atbegshi-ltx 2021/01/10 v1.0c Emulation of the original atbegshi
+package with kernel methods
+)
+\Hy@abspage=\count271
+\c@Item=\count272
+\c@Hfootnote=\count273
+)
+Package hyperref Info: Driver (autodetected): hpdftex.
+
+(D:\LaTex\tex/latex/hyperref\hpdftex.def
+File: hpdftex.def 2022-06-20 v7.00s Hyperref driver for pdfTeX
+
+(D:\LaTex\tex/latex/base\atveryend-ltx.sty
+Package: atveryend-ltx 2020/08/19 v1.0a Emulation of the original atveryend pac
+kage
+with kernel methods
+)
+\Fld@listcount=\count274
+\c@bookmark@seq@number=\count275
+
+(D:\LaTex\tex/latex/rerunfilecheck\rerunfilecheck.sty
+Package: rerunfilecheck 2022-07-10 v1.10 Rerun checks for auxiliary files (HO)
+
+(D:\LaTex\tex/generic/uniquecounter\uniquecounter.sty
+Package: uniquecounter 2019/12/15 v1.4 Provide unlimited unique counter (HO)
+)
+Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
+85.
+)
+\Hy@SectionHShift=\skip51
+)
+Package hyperref Info: Option `colorlinks' set `true' on input line 14.
+
+(D:\LaTex\tex/latex/natbib\natbib.sty
+Package: natbib 2010/09/13 8.31b (PWD, AO)
+\bibhang=\skip52
+\bibsep=\skip53
+LaTeX Info: Redefining \cite on input line 694.
+\c@NAT@ctr=\count276
+) (../Comments.tex
+(D:\LaTex\tex/latex/graphics\color.sty
+Package: color 2022/01/06 v1.3d Standard LaTeX Color (DPC)
+
+(D:\LaTex\tex/latex/graphics-cfg\color.cfg
+File: color.cfg 2016/01/02 v1.6 sample color configuration
+)
+Package color Info: Driver file: pdftex.def on input line 149.
+
+(D:\LaTex\tex/latex-dev/graphics\mathcolor.ltx))) (../Common.tex
+Package hyperref Info: Option `colorlinks' set `true' on input line 13.
+Package hyperref Info: Option `unicode' set `false' on input line 13.
+)
+(D:\LaTex\tex/latex/l3backend\l3backend-pdftex.def
+File: l3backend-pdftex.def 2022-07-01 L3 backend support: PDF output (pdfTeX)
+\l__color_backend_stack_int=\count277
+\l__pdf_internal_box=\box55
+)
+No file VnVReport.aux.
+\openout1 = `VnVReport.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 20.
+LaTeX Font Info:    ... okay on input line 20.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 20.
+LaTeX Font Info:    ... okay on input line 20.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 20.
+LaTeX Font Info:    ... okay on input line 20.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 20.
+LaTeX Font Info:    ... okay on input line 20.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 20.
+LaTeX Font Info:    ... okay on input line 20.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 20.
+LaTeX Font Info:    ... okay on input line 20.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 20.
+LaTeX Font Info:    ... okay on input line 20.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 20.
+LaTeX Font Info:    ... okay on input line 20.
+LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 20.
+LaTeX Font Info:    ... okay on input line 20.
+(D:\LaTex\tex/context/base/mkii\supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count278
+\scratchdimen=\dimen165
+\scratchbox=\box56
+\nofMPsegments=\count279
+\nofMParguments=\count280
+\everyMPshowfont=\toks21
+\MPscratchCnt=\count281
+\MPscratchDim=\dimen166
+\MPnumerator=\count282
+\makeMPintoPDFobject=\count283
+\everyMPtoPDFconversion=\toks22
+) (D:\LaTex\tex/latex/epstopdf-pkg\epstopdf-base.sty
+Package: epstopdf-base 2020-01-24 v2.11 Base part for package epstopdf
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
+85.
+
+(D:\LaTex\tex/latex/00miktex\epstopdf-sys.cfg
+File: epstopdf-sys.cfg 2021/03/18 v2.0 Configuration of epstopdf for MiKTeX
+))
+Package hyperref Info: Link coloring ON on input line 20.
+\@outlinefile=\write3
+\openout3 = `VnVReport.out'.
+
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <14.4> on input line 27.
+LaTeX Font Info:    External font `cmex10' loaded for size
+(Font)              <7> on input line 27.
+ [1
+
+{C:/Users/74446/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}] [1]
+No file VnVReport.toc.
+\tf@toc=\write4
+\openout4 = `VnVReport.toc'.
+
+No file VnVReport.lot.
+\tf@lot=\write5
+\openout5 = `VnVReport.lot'.
+
+[2]
+pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has 
+been already used, duplicate ignored
+<to be read again> 
+                   \relax 
+l.57 ~\newpage
+               [1]
+
+Package hyperref Warning: Difference (2) between bookmark levels is greater 
+(hyperref)                than one, level fixed on input line 60.
+
+
+Overfull \hbox (10.07497pt too wide) in paragraph at lines 65--83
+ [] 
+ []
+
+
+Overfull \hbox (10.07497pt too wide) in paragraph at lines 89--107
+ [] 
+ []
+
+
+Overfull \hbox (10.07497pt too wide) in paragraph at lines 113--131
+ [] 
+ []
+
+[2]
+Overfull \hbox (10.07497pt too wide) in paragraph at lines 137--154
+ [] 
+ []
+
+
+Overfull \hbox (10.07497pt too wide) in paragraph at lines 160--177
+ [] 
+ []
+
+[3]
+Overfull \hbox (10.07497pt too wide) in paragraph at lines 183--200
+ [] 
+ []
+
+
+Overfull \hbox (10.07497pt too wide) in paragraph at lines 206--224
+ [] 
+ []
+
+[4]
+Overfull \hbox (10.07497pt too wide) in paragraph at lines 230--247
+ [] 
+ []
+
+
+Underfull \hbox (badness 2189) in paragraph at lines 259--260
+[]|\OT1/cmr/m/n/12 To check the record in the lo-cal folder, it
+ []
+
+<UT2.png, id=50, 475.7775pt x 149.96025pt>
+File: UT2.png Graphic file (type png)
+<use UT2.png>
+Package pdftex.def Info: UT2.png  used on input line 265.
+(pdftex.def)             Requested size: 256.0884pt x 99.5873pt.
+
+Overfull \hbox (10.07497pt too wide) in paragraph at lines 253--270
+ [] 
+ []
+
+[5] [6 <./UT2.png>]
+<UT41.png, id=64, 251.13824pt x 125.268pt>
+File: UT41.png Graphic file (type png)
+<use UT41.png>
+Package pdftex.def Info: UT41.png  used on input line 290.
+(pdftex.def)             Requested size: 256.08481pt x 130.88347pt.
+<UT42.png, id=65, 243.91125pt x 138.5175pt>
+File: UT42.png Graphic file (type png)
+<use UT42.png>
+Package pdftex.def Info: UT42.png  used on input line 290.
+(pdftex.def)             Requested size: 253.2337pt x 136.57263pt.
+
+Overfull \hbox (10.07497pt too wide) in paragraph at lines 278--295
+ [] 
+ []
+
+
+Overfull \hbox (10.07497pt too wide) in paragraph at lines 301--318
+ [] 
+ []
+
+[7 <./UT41.png> <./UT42.png>]
+Overfull \hbox (10.07497pt too wide) in paragraph at lines 324--341
+ [] 
+ []
+
+
+Overfull \hbox (10.07497pt too wide) in paragraph at lines 347--364
+ [] 
+ []
+
+[8]
+<11.png, id=80, 602.25pt x 376.40625pt>
+File: 11.png Graphic file (type png)
+<use 11.png>
+Package pdftex.def Info: 11.png  used on input line 385.
+(pdftex.def)             Requested size: 227.62596pt x 156.49284pt.
+
+Overfull \hbox (10.07497pt too wide) in paragraph at lines 373--390
+ [] 
+ []
+
+
+Overfull \hbox (10.07497pt too wide) in paragraph at lines 396--413
+ [] 
+ []
+
+[9 <./11.png>]
+Overfull \hbox (10.07497pt too wide) in paragraph at lines 419--436
+ [] 
+ []
+
+<UIR11.png, id=90, 341.02406pt x 249.93375pt>
+File: UIR11.png Graphic file (type png)
+<use UIR11.png>
+Package pdftex.def Info: UIR11.png  used on input line 454.
+(pdftex.def)             Requested size: 227.62633pt x 156.49423pt.
+
+Overfull \hbox (10.07497pt too wide) in paragraph at lines 442--459
+ [] 
+ []
+
+[10]
+Overfull \hbox (10.07497pt too wide) in paragraph at lines 467--484
+ [] 
+ []
+
+<UIR51.png, id=98, 337.26pt x 248.80453pt>
+File: UIR51.png Graphic file (type png)
+<use UIR51.png>
+Package pdftex.def Info: UIR51.png  used on input line 502.
+(pdftex.def)             Requested size: 227.62523pt x 156.4933pt.
+
+Overfull \hbox (10.07497pt too wide) in paragraph at lines 490--507
+ [] 
+ []
+
+[11 <./UIR11.png>]
+Overfull \hbox (10.07497pt too wide) in paragraph at lines 517--534
+ [] 
+ []
+
+[12 <./UIR51.png>]
+Overfull \hbox (10.07497pt too wide) in paragraph at lines 540--557
+ [] 
+ []
+
+
+Overfull \hbox (10.07497pt too wide) in paragraph at lines 563--580
+ [] 
+ []
+
+[13]
+Overfull \hbox (10.07497pt too wide) in paragraph at lines 587--604
+ [] 
+ []
+
+
+Overfull \hbox (10.07497pt too wide) in paragraph at lines 610--627
+ [] 
+ []
+
+[14]
+Overfull \hbox (10.07497pt too wide) in paragraph at lines 633--650
+ [] 
+ []
+
+[15]
+Overfull \hbox (10.07497pt too wide) in paragraph at lines 656--673
+ [] 
+ []
+
+
+Overfull \hbox (10.07497pt too wide) in paragraph at lines 679--696
+ [] 
+ []
+
+LaTeX Font Info:    Trying to load font information for OMS+cmr on input line 7
+14.
+(D:\LaTex\tex/latex/base\omscmr.fd
+File: omscmr.fd 2019/12/16 v2.5j Standard LaTeX font definitions
+)
+LaTeX Font Info:    Font shape `OMS/cmr/m/n' in size <12> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 714.
+File: UT2.png Graphic file (type png)
+<use UT2.png>
+Package pdftex.def Info: UT2.png  used on input line 716.
+(pdftex.def)             Requested size: 256.0884pt x 99.5873pt.
+
+Overfull \hbox (10.07497pt too wide) in paragraph at lines 704--721
+ [] 
+ []
+
+[16]
+Underfull \hbox (badness 2245) in paragraph at lines 736--737
+[]|\OT1/cmr/m/n/12 item\OMS/cmsy/m/n/12 f\OT1/cmr/m/n/12 num\OMS/cmsy/m/n/12 g[
+]f\OT1/cmr/m/n/12 date and time\OMS/cmsy/m/n/12 g\OT1/cmr/m/n/12 .png is stored
+ in
+ []
+
+
+Underfull \hbox (badness 10000) in paragraph at lines 738--738
+[]|\OT1/cmr/m/n/12 item1[]2023[]3[]8[]12[]23[]41[]945208.png is within
+ []
+
+File: UT2.png Graphic file (type png)
+<use UT2.png>
+Package pdftex.def Info: UT2.png  used on input line 738.
+(pdftex.def)             Requested size: 256.0884pt x 99.5873pt.
+
+Overfull \hbox (10.07497pt too wide) in paragraph at lines 726
