@@ -30,17 +30,17 @@
 \begin{tabularx}{\textwidth}{p{3cm}p{3cm}X}
 \toprule {\bf Date} & {\bf Version} & {\bf Notes}\\
 \midrule
-2022-11-2 & Edward He, Erping Zhang & Revision 0\\
-& Guangwei Tang, Peng Cui & \\
+2022-11-2 & Edward He, Erping Zhang, & Revision 0\\
+& Guangwei Tang, Peng Cui, & \\
 & Peihua Jin & \\
 \\
 2022-3-15 & Peihua Jin & Revision 1.0, re-edit the tests requirements according to the Rev0 demo\\
 \\
 2022-3-18 & Peihua Jin & Revision 1.1, add new tests requirement for Functional Requirements\\
 \\
-2022-3-22 & Peng Cui & Revision 1.2, describe certain tests in a more specific way according to the feedback, such as adding units and ranges\\
+2022-3-22 & Peng Cui, Guangwei Tang & Revision 1.2, describe certain tests in a more specific way according to the feedback, such as adding units and ranges\\
 \\
-2022-4-2 & Peihua Jin & Revision 1.3, revise RAR1-1 to match with SRS doc, revise the table for traceability\\
+2022-4-2 & Peihua Jin, Edward He & Revision 1.3, revise RAR1-1 to match with SRS doc, revise the table for traceability\\
 
 
 
@@ -214,7 +214,7 @@ Initial State: The system is turned on, the working environment includes at leas
 					
 Input: Images of the working environment and a new object was placed in the environment.
 					
-Output: A image highlighted with newly-added objects after the process of image subtraction being applied .
+Output: A image highlighted with newly-added objects after the process of image subtraction being applied.
 
 Test Case Derivation: The movement shall be captured and the differences between the two frames will be illustrated.
 					
@@ -228,7 +228,7 @@ Initial State: The system is turned on, the working environment includes at leas
 					
 Input: Images of the working environment and object being removed out of the environment.
 					
-Output: A image with nothing after the process of image subtraction being applied .
+Output: A image with nothing after the process of image subtraction being applied.
 
 Test Case Derivation: The movement shall be captured and the differences between the two frames will be illustrated.
 					
@@ -242,7 +242,7 @@ Initial State: The system is turned on, the working environment includes at leas
 					
 Input: Images of the working environment and object being moved within the environment.
 					
-Output: A image updated with moved objects after the process of image subtraction being applied .
+Output: A image updated with moved objects after the process of image subtraction being applied.
 
 Test Case Derivation: The movement shall be captured and the differences between the two frames will be illustrated.
 					
@@ -587,7 +587,7 @@ Type: Functional, Manual
 					
 Initial State: The program is set up properly and ready to use, no further settings are required.
 					
-Input: wrong parameters will be entered into input boxes 
+Input: Wrong parameters will be entered into input boxes 
 					
 Output: The program will return error messages 
 					
@@ -595,8 +595,8 @@ How test will be performed: User will be asked to enter wrong parameters in corr
 
 \end{enumerate}
 
-
 \subsection{Traceability Between Test Cases and Requirements}
+\begin{table}
 \begin{center}
     \begin{tabular}{||c | c ||}
     \hline
@@ -656,10 +656,11 @@ How test will be performed: User will be asked to enter wrong parameters in corr
     \hline
     RFR2 & RFR2-1\\
     \hline
-    \end{tabular}
-    
+    \end{tabular}    
 \end{center}
-
+\caption{Traceability Between Test Cases and Requirements} 
+\end{table}
+ \newpage
 \section{Proof of Concept Testing}
 Before any serious development of the game starts, a proof-of-concept test would be carried out to show the undertaking is feasible. The remaining of this section describes the proof-of-concept test in detail.
 
