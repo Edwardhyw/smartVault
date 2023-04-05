@@ -1,27 +1,27 @@
-This is pdfTeX, Version 3.141592653-2.6-1.40.24 (MiKTeX 22.7) (preloaded format=pdflatex 2022.9.24)  5 APR 2023 13:11
+This is pdfTeX, Version 3.14159265-2.6-1.40.21 (MiKTeX 20.11) (preloaded format=pdflatex 2020.12.3)  5 APR 2023 16:11
 entering extended mode
- restricted \write18 enabled.
- %&-line parsing enabled.
 **./VnVPlan.tex
 (VnVPlan.tex
-LaTeX2e <2022-06-01> patch level 5
-L3 programming layer <2022-07-04> (D:\LaTex\tex/latex/base\article.cls
-Document Class: article 2021/10/04 v1.4n Standard LaTeX document class
-(D:\LaTex\tex/latex/base\size12.clo
-File: size12.clo 2021/10/04 v1.4n Standard LaTeX file (size option)
+LaTeX2e <2020-10-01> patch level 2
+L3 programming layer <2020-10-27> xparse <2020-03-03>
+(D:\latex\tex/latex/base\article.cls
+Document Class: article 2020/04/10 v1.4m Standard LaTeX document class
+(D:\latex\tex/latex/base\size12.clo
+File: size12.clo 2020/04/10 v1.4m Standard LaTeX file (size option)
 )
-\c@part=\count185
-\c@section=\count186
-\c@subsection=\count187
-\c@subsubsection=\count188
-\c@paragraph=\count189
-\c@subparagraph=\count190
-\c@figure=\count191
-\c@table=\count192
+\c@part=\count175
+\c@section=\count176
+\c@subsection=\count177
+\c@subsubsection=\count178
+\c@paragraph=\count179
+\c@subparagraph=\count180
+\c@figure=\count181
+\c@table=\count182
 \abovecaptionskip=\skip47
 \belowcaptionskip=\skip48
 \bibindent=\dimen138
-) (D:\LaTex\tex/latex/booktabs\booktabs.sty
+)
+(C:\Users\123\AppData\Roaming\MiKTeX\tex/latex/booktabs\booktabs.sty
 Package: booktabs 2020/01/12 v1.61803398 Publication quality tables
 \heavyrulewidth=\dimen139
 \lightrulewidth=\dimen140
@@ -33,169 +33,158 @@ Package: booktabs 2020/01/12 v1.61803398 Publication quality tables
 \cmidrulesep=\dimen146
 \cmidrulekern=\dimen147
 \defaultaddspace=\dimen148
-\@cmidla=\count193
-\@cmidlb=\count194
+\@cmidla=\count183
+\@cmidlb=\count184
 \@aboverulesep=\dimen149
 \@belowrulesep=\dimen150
-\@thisruleclass=\count195
-\@lastruleclass=\count196
+\@thisruleclass=\count185
+\@lastruleclass=\count186
 \@thisrulewidth=\dimen151
-) (D:\LaTex\tex/latex/tools\tabularx.sty
+)
+(D:\latex\tex/latex/tools\tabularx.sty
 Package: tabularx 2020/01/15 v2.11c `tabularx' package (DPC)
- (D:\LaTex\tex/latex/tools\array.sty
-Package: array 2021/10/04 v2.5f Tabular extension package (FMi)
+ (D:\latex\tex/latex/tools\array.sty
+Package: array 2019/08/31 v2.4l Tabular extension package (FMi)
 \col@sep=\dimen152
-\ar@mcellbox=\box51
+\ar@mcellbox=\box47
 \extrarowheight=\dimen153
-\NC@list=\toks16
+\NC@list=\toks15
 \extratabsurround=\skip49
 \backup@length=\skip50
-\ar@cellbox=\box52
+\ar@cellbox=\box48
 )
 \TX@col@width=\dimen154
 \TX@old@table=\dimen155
 \TX@old@col=\dimen156
 \TX@target=\dimen157
 \TX@delta=\dimen158
-\TX@cols=\count197
-\TX@ftn=\toks17
+\TX@cols=\count187
+\TX@ftn=\toks16
 )
-(D:\LaTex\tex/latex/hyperref\hyperref.sty
-Package: hyperref 2022-06-20 v7.00s Hypertext links for LaTeX
+(D:\latex\tex/latex/hyperref\hyperref.sty
+Package: hyperref 2020-05-15 v7.00e Hypertext links for LaTeX
 
-(D:\LaTex\tex/generic/ltxcmds\ltxcmds.sty
+(C:\Users\123\AppData\Roaming\MiKTeX\tex/generic/ltxcmds\ltxcmds.sty
 Package: ltxcmds 2020-05-10 v1.25 LaTeX kernel commands for general use (HO)
 )
-(D:\LaTex\tex/generic/iftex\iftex.sty
-Package: iftex 2022/02/03 v1.0f TeX engine tests
+(D:\latex\tex/generic/iftex\iftex.sty
+Package: iftex 2020/03/06 v1.0d TeX engine tests
 )
-(D:\LaTex\tex/generic/pdftexcmds\pdftexcmds.sty
+(D:\latex\tex/generic/pdftexcmds\pdftexcmds.sty
 Package: pdftexcmds 2020-06-27 v0.33 Utility functions of pdfTeX for LuaTeX (HO
 )
 
-(D:\LaTex\tex/generic/infwarerr\infwarerr.sty
+(C:\Users\123\AppData\Roaming\MiKTeX\tex/generic/infwarerr\infwarerr.sty
 Package: infwarerr 2019/12/03 v1.5 Providing info/warning/error messages (HO)
 )
 Package pdftexcmds Info: \pdf@primitive is available.
 Package pdftexcmds Info: \pdf@ifprimitive is available.
 Package pdftexcmds Info: \pdfdraftmode found.
 )
-(D:\LaTex\tex/latex/graphics\keyval.sty
-Package: keyval 2022/05/29 v1.15 key=value parser (DPC)
-\KV@toks@=\toks18
+(D:\latex\tex/latex/graphics\keyval.sty
+Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
+\KV@toks@=\toks17
 )
-(D:\LaTex\tex/generic/kvsetkeys\kvsetkeys.sty
+(C:\Users\123\AppData\Roaming\MiKTeX\tex/generic/kvsetkeys\kvsetkeys.sty
 Package: kvsetkeys 2019/12/15 v1.18 Key value parser (HO)
 )
-(D:\LaTex\tex/generic/kvdefinekeys\kvdefinekeys.sty
+(C:\Users\123\AppData\Roaming\MiKTeX\tex/generic/kvdefinekeys\kvdefinekeys.sty
 Package: kvdefinekeys 2019-12-19 v1.6 Define keys (HO)
-)
-(D:\LaTex\tex/generic/pdfescape\pdfescape.sty
+) (C:\Users\123\AppData\Roaming\MiKTeX\tex/generic/pdfescape\pdfescape.sty
 Package: pdfescape 2019/12/09 v1.15 Implements pdfTeX's escape features (HO)
 )
-(D:\LaTex\tex/latex/hycolor\hycolor.sty
+(C:\Users\123\AppData\Roaming\MiKTeX\tex/latex/hycolor\hycolor.sty
 Package: hycolor 2020-01-27 v1.10 Color options for hyperref/bookmark (HO)
 )
-(D:\LaTex\tex/latex/letltxmacro\letltxmacro.sty
+(C:\Users\123\AppData\Roaming\MiKTeX\tex/latex/letltxmacro\letltxmacro.sty
 Package: letltxmacro 2019/12/03 v1.6 Let assignment for LaTeX macros (HO)
 )
-(D:\LaTex\tex/latex/auxhook\auxhook.sty
+(C:\Users\123\AppData\Roaming\MiKTeX\tex/latex/auxhook\auxhook.sty
 Package: auxhook 2019-12-17 v1.6 Hooks for auxiliary files (HO)
 )
-(D:\LaTex\tex/latex/hyperref\nameref.sty
-Package: nameref 2022-05-17 v2.50 Cross-referencing by name of section
-
-(D:\LaTex\tex/latex/refcount\refcount.sty
-Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
-)
-(D:\LaTex\tex/generic/gettitlestring\gettitlestring.sty
-Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
-
-(D:\LaTex\tex/latex/kvoptions\kvoptions.sty
+(C:\Users\123\AppData\Roaming\MiKTeX\tex/latex/kvoptions\kvoptions.sty
 Package: kvoptions 2022-06-15 v3.15 Key value format for package options (HO)
-))
-\c@section@level=\count198
 )
 \@linkdim=\dimen159
-\Hy@linkcounter=\count199
-\Hy@pagecounter=\count266
+\Hy@linkcounter=\count188
+\Hy@pagecounter=\count189
 
-(D:\LaTex\tex/latex/hyperref\pd1enc.def
-File: pd1enc.def 2022-06-20 v7.00s Hyperref: PDFDocEncoding definition (HO)
+(D:\latex\tex/latex/hyperref\pd1enc.def
+File: pd1enc.def 2020-05-15 v7.00e Hyperref: PDFDocEncoding definition (HO)
 Now handling font encoding PD1 ...
 ... no UTF-8 mapping file for font encoding PD1
 )
-(D:\LaTex\tex/generic/intcalc\intcalc.sty
+(C:\Users\123\AppData\Roaming\MiKTeX\tex/generic/intcalc\intcalc.sty
 Package: intcalc 2019/12/15 v1.3 Expandable calculations with integers (HO)
 )
-(D:\LaTex\tex/generic/etexcmds\etexcmds.sty
+(C:\Users\123\AppData\Roaming\MiKTeX\tex/generic/etexcmds\etexcmds.sty
 Package: etexcmds 2019/12/15 v1.7 Avoid name clashes with e-TeX commands (HO)
 )
-\Hy@SavedSpaceFactor=\count267
-
-(D:\LaTex\tex/latex/hyperref\puenc.def
-File: puenc.def 2022-06-20 v7.00s Hyperref: PDF Unicode definition (HO)
-Now handling font encoding PU ...
-... no UTF-8 mapping file for font encoding PU
-)
-Package hyperref Info: Hyper figures OFF on input line 4162.
-Package hyperref Info: Link nesting OFF on input line 4167.
-Package hyperref Info: Hyper index ON on input line 4170.
-Package hyperref Info: Plain pages OFF on input line 4177.
-Package hyperref Info: Backreferencing OFF on input line 4182.
+\Hy@SavedSpaceFactor=\count190
+Package hyperref Info: Hyper figures OFF on input line 4464.
+Package hyperref Info: Link nesting OFF on input line 4469.
+Package hyperref Info: Hyper index ON on input line 4472.
+Package hyperref Info: Plain pages OFF on input line 4479.
+Package hyperref Info: Backreferencing OFF on input line 4484.
 Package hyperref Info: Implicit mode ON; LaTeX internals redefined.
-Package hyperref Info: Bookmarks ON on input line 4408.
-\c@Hy@tempcnt=\count268
- (D:\LaTex\tex/latex/url\url.sty
+Package hyperref Info: Bookmarks ON on input line 4717.
+\c@Hy@tempcnt=\count191
+
+(D:\latex\tex/latex/url\url.sty
 \Urlmuskip=\muskip16
 Package: url 2013/09/16  ver 3.4  Verb mode for urls, etc.
 )
-LaTeX Info: Redefining \url on input line 4746.
+LaTeX Info: Redefining \url on input line 5076.
 \XeTeXLinkMargin=\dimen160
 
-(D:\LaTex\tex/generic/bitset\bitset.sty
+(C:\Users\123\AppData\Roaming\MiKTeX\tex/generic/bitset\bitset.sty
 Package: bitset 2019/12/09 v1.3 Handle bit-vector datatype (HO)
 
-(D:\LaTex\tex/generic/bigintcalc\bigintcalc.sty
+(C:\Users\123\AppData\Roaming\MiKTeX\tex/generic/bigintcalc\bigintcalc.sty
 Package: bigintcalc 2019/12/15 v1.5 Expandable calculations on big integers (HO
 )
 ))
-\Fld@menulength=\count269
+\Fld@menulength=\count192
 \Field@Width=\dimen161
 \Fld@charsize=\dimen162
-Package hyperref Info: Hyper figures OFF on input line 6024.
-Package hyperref Info: Link nesting OFF on input line 6029.
-Package hyperref Info: Hyper index ON on input line 6032.
-Package hyperref Info: backreferencing OFF on input line 6039.
-Package hyperref Info: Link coloring OFF on input line 6044.
-Package hyperref Info: Link coloring with OCG OFF on input line 6049.
-Package hyperref Info: PDF/A mode OFF on input line 6054.
+Package hyperref Info: Hyper figures OFF on input line 6347.
+Package hyperref Info: Link nesting OFF on input line 6352.
+Package hyperref Info: Hyper index ON on input line 6355.
+Package hyperref Info: backreferencing OFF on input line 6362.
+Package hyperref Info: Link coloring OFF on input line 6367.
+Package hyperref Info: Link coloring with OCG OFF on input line 6372.
+Package hyperref Info: PDF/A mode OFF on input line 6377.
+LaTeX Info: Redefining \ref on input line 6417.
+LaTeX Info: Redefining \pageref on input line 6421.
 
-(D:\LaTex\tex/latex/base\atbegshi-ltx.sty
-Package: atbegshi-ltx 2021/01/10 v1.0c Emulation of the original atbegshi
-package with kernel methods
+(D:\latex\tex/latex/base\atbegshi-ltx.sty
+Package: atbegshi-ltx 2020/08/17 v1.0a Emulation of the original atbegshi packa
+ge
+with kernel methods
 )
-\Hy@abspage=\count270
-\c@Item=\count271
-\c@Hfootnote=\count272
+\Hy@abspage=\count193
+\c@Item=\count194
+\c@Hfootnote=\count195
 )
 Package hyperref Info: Driver (autodetected): hpdftex.
 
-(D:\LaTex\tex/latex/hyperref\hpdftex.def
-File: hpdftex.def 2022-06-20 v7.00s Hyperref driver for pdfTeX
+(D:\latex\tex/latex/hyperref\hpdftex.def
+File: hpdftex.def 2020-05-15 v7.00e Hyperref driver for pdfTeX
 
-(D:\LaTex\tex/latex/base\atveryend-ltx.sty
-Package: atveryend-ltx 2020/08/19 v1.0a Emulation of the original atveryend pac
-kage
+(D:\latex\tex/latex/base\atveryend-ltx.sty
+Package: atveryend-ltx 2020/08/19 v1.0a Emulation of the original atvery packag
+e
 with kernel methods
 )
-\Fld@listcount=\count273
-\c@bookmark@seq@number=\count274
+\Fld@listcount=\count196
+\c@bookmark@seq@number=\count197
 
-(D:\LaTex\tex/latex/rerunfilecheck\rerunfilecheck.sty
+(C:\Users\123\AppData\Roaming\MiKTeX\tex/latex/rerunfilecheck\rerunfilecheck.st
+y
 Package: rerunfilecheck 2022-07-10 v1.10 Rerun checks for auxiliary files (HO)
 
-(D:\LaTex\tex/generic/uniquecounter\uniquecounter.sty
+(C:\Users\123\AppData\Roaming\MiKTeX\tex/generic/uniquecounter\uniquecounter.st
+y
 Package: uniquecounter 2019/12/15 v1.4 Provide unlimited unique counter (HO)
 )
 Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
@@ -204,33 +193,31 @@ Package uniquecounter Info: New unique counter `rerunfilecheck' on input line 2
 \Hy@SectionHShift=\skip51
 )
 Package hyperref Info: Option `colorlinks' set `true' on input line 12.
-
-(D:\LaTex\tex/latex/natbib\natbib.sty
+ (C:\Users\123\AppData\Roaming\MiKTeX\tex/latex/natbib\natbib.sty
 Package: natbib 2010/09/13 8.31b (PWD, AO)
 \bibhang=\skip52
 \bibsep=\skip53
 LaTeX Info: Redefining \cite on input line 694.
-\c@NAT@ctr=\count275
-) (../Comments.tex
-(D:\LaTex\tex/latex/graphics\color.sty
-Package: color 2022/01/06 v1.3d Standard LaTeX Color (DPC)
+\c@NAT@ctr=\count198
+)
+(../Comments.tex (D:\latex\tex/latex/graphics\color.sty
+Package: color 2020/02/24 v1.2b Standard LaTeX Color (DPC)
 
-(D:\LaTex\tex/latex/graphics-cfg\color.cfg
+(D:\latex\tex/latex/graphics-cfg\color.cfg
 File: color.cfg 2016/01/02 v1.6 sample color configuration
 )
-Package color Info: Driver file: pdftex.def on input line 149.
+Package color Info: Driver file: pdftex.def on input line 147.
 
-(D:\LaTex\tex/latex/graphics-def\pdftex.def
+(D:\latex\tex/latex/graphics-def\pdftex.def
 File: pdftex.def 2020/10/05 v1.2a Graphics/color driver for pdftex
-)
-(D:\LaTex\tex/latex-dev/graphics\mathcolor.ltx))) (../Common.tex
+))) (../Common.tex
 Package hyperref Info: Option `colorlinks' set `true' on input line 13.
 Package hyperref Info: Option `unicode' set `false' on input line 13.
 )
-(D:\LaTex\tex/latex/l3backend\l3backend-pdftex.def
-File: l3backend-pdftex.def 2022-07-01 L3 backend support: PDF output (pdfTeX)
-\l__color_backend_stack_int=\count276
-\l__pdf_internal_box=\box53
+(D:\latex\tex/latex/l3backend\l3backend-pdftex.def
+File: l3backend-pdftex.def 2020-09-24 L3 backend support: PDF output (pdfTeX)
+\l__kernel_color_stack_int=\count199
+\l__pdf_internal_box=\box49
 ) (VnVPlan.aux)
 \openout1 = `VnVPlan.aux'.
 
@@ -250,26 +237,40 @@ LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 18.
 LaTeX Font Info:    ... okay on input line 18.
 LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 18.
 LaTeX Font Info:    ... okay on input line 18.
-LaTeX Font Info:    Checking defaults for PU/pdf/m/n on input line 18.
-LaTeX Font Info:    ... okay on input line 18.
 Package hyperref Info: Link coloring ON on input line 18.
+
+(D:\latex\tex/latex/hyperref\nameref.sty
+Package: nameref 2019/09/16 v2.46 Cross-referencing by name of section
+
+(C:\Users\123\AppData\Roaming\MiKTeX\tex/latex/refcount\refcount.sty
+Package: refcount 2019/12/15 v3.6 Data extraction from label references (HO)
+)
+(C:\Users\123\AppData\Roaming\MiKTeX\tex/generic/gettitlestring\gettitlestring.
+sty
+Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
+)
+\c@section@level=\count266
+)
+LaTeX Info: Redefining \ref on input line 18.
+LaTeX Info: Redefining \pageref on input line 18.
+LaTeX Info: Redefining \nameref on input line 18.
  (VnVPlan.out) (VnVPlan.out)
 \@outlinefile=\write3
 \openout3 = `VnVPlan.out'.
 
- (D:\LaTex\tex/context/base/mkii\supp-pdf.mkii
+ (D:\latex\tex/context/base/mkii\supp-pdf.mkii
 [Loading MPS to PDF converter (version 2006.09.02).]
-\scratchcounter=\count277
+\scratchcounter=\count267
 \scratchdimen=\dimen163
-\scratchbox=\box54
-\nofMPsegments=\count278
-\nofMParguments=\count279
-\everyMPshowfont=\toks19
-\MPscratchCnt=\count280
+\scratchbox=\box50
+\nofMPsegments=\count268
+\nofMParguments=\count269
+\everyMPshowfont=\toks18
+\MPscratchCnt=\count270
 \MPscratchDim=\dimen164
-\MPnumerator=\count281
-\makeMPintoPDFobject=\count282
-\everyMPtoPDFconversion=\toks20
+\MPnumerator=\count271
+\makeMPintoPDFobject=\count272
+\everyMPtoPDFconversion=\toks19
 )
 LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <14.4> on input line 25.
@@ -277,7 +278,7 @@ LaTeX Font Info:    External font `cmex10' loaded for size
 (Font)              <7> on input line 25.
  [1
 
-{C:/Users/74446/AppData/Local/MiKTeX/fonts/map/pdftex/pdftex.map}]
+{C:/Users/123/AppData/Local/MiKTeX/pdftex/config/pdftex.map}]
 Underfull \hbox (badness 10000) in paragraph at lines 48--48
 []|\OT1/cmr/m/n/12 Peng Cui,
  []
@@ -303,7 +304,6 @@ Underfull \hbox (badness 10000) in paragraph at lines 62--71
 [4]
 
 LaTeX Warning: `h' float specifier changed to `ht'.
-
 
 pdfTeX warning (ext4): destination with the same identifier (name{page.1}) has 
 been already used, duplicate ignored
@@ -502,20 +502,20 @@ Package rerunfilecheck Info: File `VnVPlan.out' has not changed.
 (rerunfilecheck)             Checksum: 08C7F841412BCE1CEAE9095CF7164B25;2074.
  ) 
 Here is how much of TeX's memory you used:
- 8542 strings out of 478338
- 131843 string characters out of 2853584
- 436154 words of memory out of 3000000
- 26788 multiletter control sequences out of 15000+600000
- 474764 words of font info for 46 fonts, out of 8000000 for 9000
+ 5515 strings out of 479799
+ 83036 string characters out of 2886640
+ 381009 words of memory out of 3000000
+ 22330 multiletter control sequences out of 15000+200000
+ 540593 words of font info for 47 fonts, out of 3000000 for 9000
  1141 hyphenation exceptions out of 8191
- 72i,8n,77p,977b,403s stack positions out of 10000i,1000n,20000p,200000b,80000s
- <C:\Users\74446\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm
-1200.pk><D:/LaTex/fonts/type1/public/amsfonts/cm/cmbx12.pfb><D:/LaTex/fonts/typ
-e1/public/amsfonts/cm/cmr12.pfb><D:/LaTex/fonts/type1/public/amsfonts/cm/cmr17.
-pfb>
-Output written on VnVPlan.pdf (27 pages, 122756 bytes).
+ 66i,8n,72p,959b,403s stack positions out of 5000i,500n,10000p,200000b,50000s
+ <C:\Users\123\AppData\Local\MiKTeX\fonts/pk/ljfour/jknappen/ec/dpi600\tcrm12
+00.pk><D:/latex/fonts/type1/public/amsfonts/cm/cmbx12.pfb><D:/latex/fonts/type1
+/public/amsfonts/cm/cmr12.pfb><D:/latex/fonts/type1/public/amsfonts/cm/cmr17.pf
+b>
+Output written on VnVPlan.pdf (27 pages, 120174 bytes).
 PDF statistics:
- 353 PDF objects out of 1000 (max. 8388607)
+ 350 PDF objects out of 1000 (max. 8388607)
  97 named destinations out of 1000 (max. 500000)
  233 words of extra memory for PDF output out of 10000 (max. 10000000)
 
