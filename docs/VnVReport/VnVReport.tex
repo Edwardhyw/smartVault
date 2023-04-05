@@ -32,13 +32,20 @@
 \begin{tabularx}{\textwidth}{p{3cm}p{2cm}X}
 \toprule {\bf Date} & {\bf Version} & {\bf Notes}\\
 \midrule
-2023/3/7 & 1.0 & Finish the required parts\\
-2023/3/8 & 1.1 & Fix errors\\
+2023-3-7 & 0 & Finish the required parts\\\\
+2022-3-28 & 1.0 & Add missing elements, such as list of content, list of figures, and list of tables\\\\
+2022-3-30 & 1.1 & Add section 7 for better understanding\\\\
+2022-3-31 & 1.2 & Revise Section 5, 6 to match with the content in VnVPlan doc\\\\
+2022-4-3 & 1.3 & Revise the traceability table in section 9 to match with SRS and VnVPlan doc\\
 \bottomrule
 \end{tabularx}
+\newpage
 
+\tableofcontents
+
+\listoftables
 ~\newpage
-
+\pagenumbering{arabic}
 
 \section{Purpose}
 This document is intended to support the systematic plan for testing the functionality of the system. It meant to show the system has met the requirements in both software and hardware aspects mentioned in requirements document. In particular, this document will describe the testing results. By the end of testing process, it can be shown that the system is working properly and available for usage.
@@ -50,9 +57,9 @@ This section will not be appropriate for every project.
 ~\newpage
 \section{Functional Requirements Evaluation}
 
-\subsubsection{Area of Testing1}
+\subsubsection{Image Processing and Storage Functional Requirements}
 		
-\paragraph{Automatic Testing}{Testing shown:}
+\paragraph{Manual Testing}{Testing shown:}
 \begin{table}[H]
 \begin{center}
 \begin{tabular}{|l | m{9cm}|}
@@ -66,23 +73,141 @@ This section will not be appropriate for every project.
   Input & Images of the working environment and a human show up in
 the environment\\
   \hline
-  Desired Output & Coordinate of the detected human body\\
+  Desired Output & Coordinate of the detected human body, terminal shows "human coming"\\
   \hline
-  Actual Output & Correct coordinate of the detected human body\\
+  Actual Output & Correct coordinate of the detected human body, terminal shows "human coming"\\
   \hline
   Conclusion & Pass as expected\\
   \hline
 \end{tabular}
-\end{center}           
+\end{center}   
+\caption{IPR1-1}
 \end{table}
 
 \begin{table}[H]
 \begin{center}
 \begin{tabular}{|l | m{9cm}|}
 \hline
-  Test Number & IPR7-1\\
+  Test Number & IPR1-2\\
   \hline
-  Requirement Reference & IPR7\\
+  Requirement Reference & IPR1\\
+  \hline
+  Requirement &  The camera should keep following the human\\
+  \hline
+  Input & Images of the working environment and a human show up in and then walk around in
+the environment\\
+  \hline
+  Desired Output & Coordinate of the detected human body, terminal continuously updating the coordinate\\
+  \hline
+  Actual Output & Coordinate of the detected human body, terminal continuously updating the coordinate\\
+  \hline
+  Conclusion & Pass as expected\\
+  \hline
+\end{tabular}
+\end{center}
+\caption{IPR1-2}
+\end{table}
+
+\begin{table}[H]
+\begin{center}
+\begin{tabular}{|l | m{9cm}|}
+\hline
+  Test Number & IPR1-3\\
+  \hline
+  Requirement Reference & IPR1\\
+  \hline
+  Requirement &  The system should be able to detect human's leaving\\
+  \hline
+  Input & Images of the working environment and a human show up in and then disappear in
+the environment\\
+  \hline
+  Desired Output & Terminal said "human leaving"\\
+  \hline
+  Actual Output & Terminal said "human leaving"\\
+  \hline
+  Conclusion & Pass as expected\\
+  \hline
+\end{tabular}
+\end{center}
+\caption{IPR1-3}
+\end{table}
+
+\begin{table}[H]
+\begin{center}
+\begin{tabular}{|l | m{9cm}|}
+\hline
+  Test Number & IPR2-1\\
+  \hline
+  Requirement Reference & IPR2\\
+  \hline
+  Requirement &  The system should be able to identify new objects introduced in the area\\
+  \hline
+  Input & Images of the working environment and a new object was placed in the environment\\
+  \hline
+  Desired Output & A image highlighted with newly-added objects after the process of image subtraction being applied\\
+  \hline
+  Actual Output & Correct Coordinate of the detected new objects and outlining them with boxes\\
+  \hline
+  Conclusion & Pass as expected\\
+  \hline
+\end{tabular}
+\end{center}   
+\caption{IPR2-1}
+\end{table}
+
+\begin{table}[H]
+\begin{center}
+\begin{tabular}{|l | m{9cm}|}
+\hline
+  Test Number & IPR2-2\\
+  \hline
+  Requirement Reference & IPR2\\
+  \hline
+  Requirement & The system should be able to identify removed or lost objects in the area\\
+  \hline
+  Input & Images of the working environment and object being removed out of the environment\\
+  \hline
+  Desired Output & A image with nothing after the process of image subtraction being applied\\
+  \hline
+  Actual Output & An output where the removed item can not be found inside the figure\\
+  \hline
+  Conclusion & Pass as expected\\
+  \hline
+\end{tabular}
+\end{center}   
+\caption{IPR2-2}
+\end{table}
+
+\begin{table}[H]
+\begin{center}
+\begin{tabular}{|l | m{9cm}|}
+\hline
+  Test Number & IPR2-3\\
+  \hline
+  Requirement Reference & IPR2\\
+  \hline
+  Requirement & The system should be able to identify the recorded objects updated in the area\\
+  \hline
+  Input & Images of the working environment with object in different location in the environment\\
+  \hline
+  Desired Output & Coordinate of the new location of detected moving objects and highlight the new location\\
+  \hline
+  Actual Output & Correct Coordinate of the new location of detected moving objects and highlight the new location\\
+  \hline
+  Conclusion & Pass as expected\\
+  \hline
+\end{tabular}
+\end{center}
+\caption{IPR2-3}
+\end{table}
+
+\begin{table}[H]
+\begin{center}
+\begin{tabular}{|l | m{9cm}|}
+\hline
+  Test Number & IPR3-1\\
+  \hline
+  Requirement Reference & IPR3\\
   \hline
   Requirement &  The camera should rotate back to initial position when no human detected\\
   \hline
@@ -96,29 +221,8 @@ the environment\\
   Conclusion & Pass as expected\\
   \hline
 \end{tabular}
-\end{center}           
-\end{table}
-
-\begin{table}[H]
-\begin{center}
-\begin{tabular}{|l | m{9cm}|}
-\hline
-  Test Number & IPR3-1\\
-  \hline
-  Requirement Reference & IPR3\\
-  \hline
-  Requirement &  The system should be able to identify new objects introduced in the area\\
-  \hline
-  Input & Images of the working environment with new objects in the environment\\
-  \hline
-  Desired Output & Coordinate of the detected new objects and outlining them with boxes\\
-  \hline
-  Actual Output & Correct Coordinate of the detected new objects and outlining them with boxes\\
-  \hline
-  Conclusion & Pass as expected\\
-  \hline
-\end{tabular}
-\end{center}           
+\end{center}   
+\caption{IPR3-1}
 \end{table}
 
 \begin{table}[H]
@@ -129,21 +233,20 @@ the environment\\
   \hline
   Requirement Reference & IPR4\\
   \hline
-  Requirement &  The system should be able to identify moving objects in the area\\
+  Requirement & Different Images should have different location of the object in the environment\\
   \hline
-  Input & Images of the working environment with object in different location in the environment\\
+  Input & Images of the working environment and object in the environment\\
   \hline
-  Desired Output & Coordinate of the new location of detected moving objects and highlight the new location\\
+  Desired Output & The re-location mode should be activated\\
   \hline
-  Actual Output & Correct Coordinate of the new location of detected moving objects and highlight the new location\\
+  Actual Output & The re-location mode is activated\\
   \hline
   Conclusion & Pass as expected\\
   \hline
 \end{tabular}
-\end{center}           
+\end{center}       
+\caption{IPR4-1}
 \end{table}
-
-
 
 \begin{table}[H]
 \begin{center}
@@ -153,40 +256,22 @@ the environment\\
   \hline
   Requirement Reference & IPR5\\
   \hline
-  Requirement &  To store the initial frame\\
+  Requirement & To check the record in the local folder, it should store two photos in total, one with create data/time information shall be inside the 'item' folder, and the other will be inside the 'location' folder\\
   \hline
-  Input & (1, 'i')\\
+  Input & The automatic testing tool will activate the photo storage function\\
   \hline
-  Desired Output & Adding item1\_\{date and time\}.png,  item1.png\\
+  Desired Output & The photos taken by the camera with create date/time\\
   \hline
-  Actual Output & Added as:\\&\includegraphics[width=90mm, height=35mm]{UT2.png}\\
+  Actual Output & \includegraphics[width=90mm, height=35mm]{UT2.png}\\
   \hline
-  Conclusion & Pass\\
-  \hline
-\end{tabular}
-\end{center}           
-\end{table}
-\begin{table}[H]
-\begin{center}
-\begin{tabular}{|l | m{9cm}|}
-\hline
-  Test Number & IPR5-2\\
-  \hline
-  Requirement Reference & IPR5\\
-  \hline
-  Requirement &  To check whether the frame is stored in the correct path\\
-  \hline
-  Input & (1, 'i')\\
-  \hline
-  Desired Output &  item\{num\}\_\{date and time\}.png is stored in 'item', item\{num\}.png is stored in 'location'\\
-  \hline
-  Actual Output &  item1\_2023\_3\_8\_12\_23\_41\_945208.png is within 'item', item1.png is inside 'location'\\&\includegraphics[width=90mm, height=35mm]{UT2.png}\\
-  \hline
-  Conclusion & Pass\\
+  Conclusion & Pass as expected\\
   \hline
 \end{tabular}
-\end{center}           
+\end{center}       
+\caption{IPR5-1}
 \end{table}
+\newpage
+\paragraph{Automatic Testing}{Testing shown:}
 
 \begin{table}[H]
 \begin{center}
@@ -196,84 +281,93 @@ the environment\\
   \hline
   Requirement Reference & IPR6\\
   \hline
-  Requirement &  To create 3 folders sequentially\\
+  Requirement & The system should only make any update inside the location folder\\
   \hline
-  Input & createFolder() being called\\
+  Input & Start running the fileStorage function with the parameter, 'u', as updating\\
   \hline
-  Desired Output & 3 folders (FolderScreenShot, item, location) created\\
-  \hline
-  Actual Output & 3 folders (FolderScreenShot, item, location) created\includegraphics[width=80mm, height=55mm]{UT1.png}\\
-  \hline
-  Conclusion & Pass\\
-  \hline
-\end{tabular}
-\end{center}           
-\end{table}
-\begin{table}[H]
-\begin{center}
-\begin{tabular}{|l | m{9cm}|}
-\hline
-  Test Number & IPR6-2\\
-  \hline
-  Requirement Reference & IPR6\\
-  \hline
-  Requirement &  Do nothing if they have already existed\\
-  \hline
-  Input & createFolder() being called\\
-  \hline
-  Desired Output & No change\\
-  \hline
-  Actual Output & No change\\
-  \hline
-  Conclusion & Pass\\
-  \hline
-\end{tabular}
-\end{center}           
-\end{table}
-\begin{table}[H]
-\begin{center}
-\begin{tabular}{|l | m{9cm}|}
-\hline
-  Test Number & IPR6-3\\
-  \hline
-  Requirement Reference & IPR5, IPR6\\
-  \hline
-  Requirement & To check whether the frame for the second item is captured\\
-  \hline
-  Input & (2, 'i')\\
-  \hline
-  Desired Output & Adding item2\_\{date and time\}.png, item2.png\\
-  \hline
-  Actual Output & Added as:\\&\includegraphics[width=90mm, height=33mm]{UT3.png}\\
-  \hline
-  Conclusion & Pass\\
-  \hline
-\end{tabular}
-\end{center}           
-\end{table}
-\begin{table}[H]
-\begin{center}
-\begin{tabular}{|l | m{9cm}|}
-\hline
-  Test Number & IPR6-4\\
-  \hline
-  Requirement Reference & IPR4, IPR6\\
-  \hline
-  Requirement &  To check whether the location frame for the first item is updated, meanwhile the second item won't get affected\\
-  \hline
-  Input & (1, 'u')\\
-  \hline
-  Desired Output & item1\_\{date and time\}.png should remain, item1.png shall be updated\\
+  Desired Output & Only item1 get updated\\
   \hline
   Actual Output & Only item1.png get updated\\&Comparison shown:\\&\includegraphics[width=90mm, height=46mm]{UT41.png}\\&\includegraphics[width=89mm, height=48mm]{UT42.png}\\
   \hline
-  Conclusion & Pass\\
+  Conclusion & Pass as expected\\
   \hline
 \end{tabular}
-\end{center}           
+\end{center}       
+\caption{IPR6-1}
 \end{table}
+
+\begin{table}[H]
+\begin{center}
+\begin{tabular}{|l | m{9cm}|}
+\hline
+  Test Number & IPR7-1\\
+  \hline
+  Requirement Reference & IPR7\\
+  \hline
+  Requirement & The object information in the file folder should have unique IDs\\
+  \hline
+  Input & The automatic testing tool will call the file storage module and send the object information to the module\\
+  \hline
+  Desired Output & The different objects information will be stored in the folder with unique ID\\
+  \hline
+  Actual Output & The different objects information are stored in the folder with unique ID\\
+  \hline
+  Conclusion & Pass as expected\\
+  \hline
+\end{tabular}
+\end{center}       
+\caption{IPR7-1}
+\end{table}
+
+\begin{table}[H]
+\begin{center}
+\begin{tabular}{|l | m{9cm}|}
+\hline
+  Test Number & IPR8-1\\
+  \hline
+  Requirement Reference & IPR8\\
+  \hline
+  Requirement & The photos in the file folder should be sorted\\
+  \hline
+  Input & The automatic testing tool will call the photo storage function and send the photo to the module\\
+  \hline
+  Desired Output & The photos in the data storage module should be in ascending order of time\\
+  \hline
+  Actual Output & The photos in the data storage module are in ascending order of time\\
+  \hline
+  Conclusion & Pass as expected\\
+  \hline
+\end{tabular}
+\end{center}       
+\caption{IPR8-1}
+\end{table}
+
+\begin{table}[H]
+\begin{center}
+\begin{tabular}{|l | m{9cm}|}
+\hline
+  Test Number & IPR9-1\\
+  \hline
+  Requirement Reference & IPR9\\
+  \hline
+  Requirement & The photos in the file folder should be sorted\\
+  \hline
+  Input & The automatic testing tool will call the photo storage function and send the photo to the module\\
+  \hline
+  Desired Output & The photos in the data storage module should be in ascending or descending order of objects IDs\\
+  \hline
+  Actual Output & The photos in the data storage module are in ascending or descending order of objects IDs\\
+  \hline
+  Conclusion & Pass as expected\\
+  \hline
+\end{tabular}
+\end{center}       
+\caption{IPR9-1}
+\end{table}
+
 \subsubsection{UI Interface Menu}
 \paragraph{Manual Testing}{Testing shown:}
+
 \begin{table}[H]
 \begin{center}
 \begin{tabular}{|l | m{9cm}|}
@@ -281,6 +375,75 @@ the environment\\
   Test Number & UIR1-1\\
   \hline
   Requirement Reference & UIR1\\
+  \hline
+  Requirement & The UI should notify the user when the user highlights certain item\\
+  \hline
+  Input & User's manipulation to the user interface\\
+  \hline
+  Desired Output & The graphical displays to the user\\
+  \hline
+  Actual Output & \includegraphics[width=80mm, height=55mm]{11.png}\\
+  \hline
+  Conclusion & The test is successful\\
+  \hline
+\end{tabular}
+\end{center}    
+\caption{UIR1-1}
+\end{table}
+
+\begin{table}[H]
+\begin{center}
+\begin{tabular}{|l | m{9cm}|}
+\hline
+  Test Number & UIR2-1\\
+  \hline
+  Requirement Reference & UIR2\\
+  \hline
+  Requirement & The UI should be able to let the user to change the sorting method\\
+  \hline
+  Input & User chooses another sorting method\\
+  \hline
+  Desired Output & The change between ascending and descending order\\
+  \hline
+  Actual Output & The change between ascending and descending order\\
+  \hline
+  Conclusion & The test is successful\\
+  \hline
+\end{tabular}
+\end{center}   
+\caption{UIR2-1}
+\end{table}
+
+\begin{table}[H]
+\begin{center}
+\begin{tabular}{|l | m{9cm}|}
+\hline
+  Test Number & UIR3-1\\
+  \hline
+  Requirement Reference & UIR3\\
+  \hline
+  Requirement & The UI should let the user have an access to the main menu\\
+  \hline
+  Input & The correct input of the password\\
+  \hline
+  Desired Output & Show the main menu in the UI window\\
+  \hline
+  Actual Output & Show the main menu in the UI window\\
+  \hline
+  Conclusion & The test is successful\\
+  \hline
+\end{tabular}
+\end{center}   
+\caption{UIR3-1}
+\end{table}
+
+\begin{table}[H]
+\begin{center}
+\begin{tabular}{|l | m{9cm}|}
+\hline
+  Test Number & UIR3-2\\
+  \hline
+  Requirement Reference & UIR3\\
   \hline
   Requirement & The UI should notify the user when the user has a wrong password input \\
   \hline
@@ -293,118 +456,10 @@ the environment\\
   Conclusion & The test is successful\\
   \hline
 \end{tabular}
-\end{center}           
+\end{center}   
+\caption{UIR3-2}
 \end{table}
 
-\begin{table}[H]
-\begin{center}
-\begin{tabular}{|l | m{9cm}|}
-\hline
-  Test Number & UIR1-2\\
-  \hline
-  Requirement Reference & UIR1\\
-  \hline
-  Requirement & The UI should notify the user when the user has a wrong username input \\
-  \hline
-  Input & The wrong input of the username\\
-  \hline
-  Desired Output & There should be a text notification shown on the window\\
-  \hline
-  Actual Output & \includegraphics[width=80mm, height=55mm]{UIR12.png}\\
-  \hline
-  Conclusion & The test is successful\\
-  \hline
-\end{tabular}
-\end{center}           
-\end{table}
-
-\begin{table}[H]
-\begin{center}
-\begin{tabular}{|l | m{9cm}|}
-\hline
-  Test Number & UIR2-1\\
-  \hline
-  Requirement Reference & UIR2\\
-  \hline
-  Requirement & The UI should be able to let the user to switch the pictures shown in the window \\
-  \hline
-  Input & The next button is clicked\\
-  \hline
-  Desired Output & A different picture is shown\\
-  \hline
-  Actual Output & A different picture is shown in the window\\
-  \hline
-  Conclusion & The test is successful\\
-  \hline
-\end{tabular}
-\end{center}           
-\end{table}
-
-\begin{table}[H]
-\begin{center}
-\begin{tabular}{|l | m{9cm}|}
-\hline
-  Test Number & UIR2-2\\
-  \hline
-  Requirement Reference & UIR2\\
-  \hline
-  Requirement & The UI should be able to let the user to switch the pictures shown in the window \\
-  \hline
-  Input & The previous button is clicked\\
-  \hline
-  Desired Output & A different picture is shown\\
-  \hline
-  Actual Output & A different picture is shown in the window \\
-  \hline
-  Conclusion & The test is successful\\
-  \hline
-\end{tabular}
-\end{center}           
-\end{table}
-
-\begin{table}[H]
-\begin{center}
-\begin{tabular}{|l | m{9cm}|}
-\hline
-  Test Number & UIR3-1\\
-  \hline
-  Requirement Reference & UIR3\\
-  \hline
-  Requirement & The UI should be able to provide information about the location of the item \\
-  \hline
-  Input & The user select the item picture\\
-  \hline
-  Desired Output & The location of the picture is shown in a new window\\
-  \hline
-  Actual Output & A picture shown in the window with an item marked in the picture\\
-  \hline
-  Conclusion & The test is successful\\
-  \hline
-\end{tabular}
-\end{center}           
-\end{table}
-
-\begin{table}[H]
-\begin{center}
-\begin{tabular}{|l | m{9cm}|}
-\hline
-  Test Number & UIR3-2\\
-  \hline
-  Requirement Reference & UIR3\\
-  \hline
-  Requirement & The UI should be able to provide information about the location of the item \\
-  \hline
-  Input & The user select the item picture\\
-  \hline
-  Desired Output & The UI should notify the user that the item has been taken out of the room\\
-  \hline
-  Actual Output & The UI provides a text notifies the user that the item has been taken out of the room\\
-  \hline
-  Conclusion & The test is successful\\
-  \hline
-\end{tabular}
-\end{center}           
-\end{table}
 
 
 \begin{table}[H]
@@ -415,18 +470,19 @@ the environment\\
   \hline
   Requirement Reference & UIR4\\
   \hline
-  Requirement & The UI should be able to let the user to choose the information input\\
+  Requirement & The system should give the response on status identifier\\
   \hline
-  Input & The user select the choose box\\
+  Input & User changes and unplugs the camera to insert a fault\\
   \hline
-  Desired Output & The UI provides choices to the user\\
+  Desired Output & The graphical displays to the user\\
   \hline
-  Actual Output & \includegraphics[width=80mm, height=55mm]{UIR41.png}\\
+  Actual Output & The application cannot be allowed to run since the camera is unplugged.\\
   \hline
   Conclusion & The test is successful\\
   \hline
 \end{tabular}
-\end{center}           
+\end{center}   
+\caption{UIR4-1}
 \end{table}
 
 \begin{table}[H]
@@ -448,7 +504,8 @@ the environment\\
   Conclusion & The test is successful\\
   \hline
 \end{tabular}
-\end{center}           
+\end{center}   
+\caption{UIR5-1}
 \end{table}
 
 \section{Nonfunctional Requirements Evaluation}
@@ -465,16 +522,17 @@ the environment\\
   \hline
   Requirement & The User is able to launch the program without help\\
   \hline
-  Input & The servy paper\\
+  Input & The survey paper\\
   \hline
   Desired Output & An average of high rating shown on the paper\\
   \hline
-  Actual Output & An verage of 9.3 points on the rating of the usability of the program\\
+  Actual Output & An average of 9.3 points on the rating of the usability of the program\\
   \hline
   Conclusion & The test is successful\\
   \hline
 \end{tabular}
-\end{center}           
+\end{center}   
+\caption{APR1-1}
 \end{table}
 
 \begin{table}[H]
@@ -496,7 +554,8 @@ the environment\\
   Conclusion & The test is successful\\
   \hline
 \end{tabular}
-\end{center}           
+\end{center}  
+\caption{EUR1-1}
 \end{table}
 
 \begin{table}[H]
@@ -509,107 +568,42 @@ the environment\\
   \hline
   Requirement & The User is able to find the desired item without help\\
   \hline
-  Input & The servy paper\\
+  Input & The survey paper\\
   \hline
   Desired Output & An average of high rating shown on the paper\\
   \hline
-  Actual Output & An verage of 9.1 opints on the usability of finding the item\\
+  Actual Output & An average of 9.1 points on the usability of finding the item\\
   \hline
   Conclusion & The test is successful\\
   \hline
 \end{tabular}
-\end{center}           
+\end{center}     
+\caption{EUR2-1}
 \end{table}
 \subsection{Performance}
-\begin{table}[H]
-\begin{center}
-\begin{tabular}{|l | m{9cm}|}
-\hline
-  Test Number & LER1-1\\
-  \hline
-  Requirement Reference & LER1\\
-  \hline
-  Requirement & The User is able to install the software without help\\
-  \hline
-  Input & The servy paper\\
-  \hline
-  Desired Output & An average of high rating shown on the paper\\
-  \hline
-  Actual Output & An averge of 9.5 points on the installation of the program\\
-  \hline
-  Conclusion & The test is successful\\
-  \hline
-\end{tabular}
-\end{center}           
-\end{table}
 
 \begin{table}[H]
 \begin{center}
 \begin{tabular}{|l | m{9cm}|}
 \hline
-  Test Number & LER2-1\\
+  Test Number & SLR1-1\\
   \hline
-  Requirement Reference & LER2\\
+  Requirement Reference & SLR1\\
   \hline
-  Requirement & The program can take pictures after the user has been leave the room\\
+  Requirement & The User is able to find the desired item within certain time constraint\\
   \hline
-  Input & The user leave the room\\
+  Input & Information of the object is entered properly\\
   \hline
-  Desired Output & Pictures are taken\\
+  Desired Output & The response time of the system to show the location of the object should be less than 5 second\\
   \hline
-  Actual Output & A message shown on the terminal indicates that the program takes the picture\\
-  \hline
-  Conclusion & The test is successful\\
-  \hline
-\end{tabular}
-\end{center}           
-\end{table}
-
-\begin{table}[H]
-\begin{center}
-\begin{tabular}{|l | m{9cm}|}
-\hline
-  Test Number & UPR1-1\\
-  \hline
-  Requirement Reference & UPR1\\
-  \hline
-  Requirement & The user is able to see each picture clearly\\
-  \hline
-  Input & The servy paper\\
-  \hline
-  Desired Output & An average of high rating shown on the paper\\
-  \hline
-  Actual Output & An average of 10 points of identifying pictures in the window\\
+  Actual Output & The average seconds is below 5 seconds\\
   \hline
   Conclusion & The test is successful\\
   \hline
 \end{tabular}
-\end{center}           
+\end{center}     
+\caption{SLR1-1}
 \end{table}
-
-\begin{table}[H]
-\begin{center}
-\begin{tabular}{|l | m{9cm}|}
-\hline
-  Test Number &  APR1-1 \\
-  \hline
-  Requirement Reference & ARP1 \\
-  \hline
-  Requirement & No electronic components should be visible and exposed. The mount should stay still without any physical changes  \\
-  \hline
-  Input & Launch the program normally and give the camera mount a physical impact \\
-  \hline
-  Desired Output & The mount should not be broken and there should not be any visible dislocation of any parts\\
-  \hline
-  Actual Output & The mount undergoes a planar movement. No visible parts broken or dislocation. The arduino board attached at the bottom stays still  \\
-  \hline
-  Conclusion & The test is successful\\
-  \hline
-\end{tabular}
-\end{center}           
-\end{table}
-
-
 
 \begin{table}[H]
 \begin{center}
@@ -625,13 +619,220 @@ the environment\\
   \hline
   Desired Output & The camera will detect the human body and starts to follow the human movement. Once the human accelerate and leave the region, the camera will stop tracking and the rotation speed will not be fast enough to damage other parts\\
   \hline
-  Actual Output & The camera will rotate to the human position and follow the movement once it detects the existence of human body. As the human quickly leave the capture region, the camera stops tracking and take a photo of the current frame. After 2 seconds, it will rotate back to the original position. There are no parts being damaged during the movement \\
+  Actual Output & The camera will rotate to the human position and follow the movement once it detects the existence of human body. As the human quickly leave the capture region, the camera stops tracking and take a photo of the current frame. After 5 seconds, it will rotate back to the original position. There are no parts being damaged during the movement. And the angular velocity is under 30 degree/seconds \\
   \hline
   Conclusion & The test pass as expected\\
   \hline
 \end{tabular}
-\end{center}           
+\end{center}   
+\caption{SCR3-1}
 \end{table}
+
+\begin{table}[H]
+\begin{center}
+\begin{tabular}{|l | m{9cm}|}
+\hline
+  Test Number & PAR2-1\\
+  \hline
+  Requirement Reference & PAR2\\
+  \hline
+  Requirement & The location value displayed should always be whole number\\
+  \hline
+  Input & The target object will be moved one small step at a time\\
+  \hline
+  Desired Output & The location value displayed should always be whole number\\
+  \hline
+  Actual Output & The displayed value is a whole number\\
+  \hline
+  Conclusion & The test is successful\\
+  \hline
+\end{tabular}
+\end{center}     
+\caption{PAR2-1}
+\end{table}
+
+\begin{table}[H]
+\begin{center}
+\begin{tabular}{|l | m{9cm}|}
+\hline
+  Test Number & RAR1-1\\
+  \hline
+  Requirement Reference & RAR1\\
+  \hline
+  Requirement & The user's work space is limited by certain angles\\
+  \hline
+  Input & The camera will keep rotating\\
+  \hline
+  Desired Output & The camera would never exceed the range of -180 degrees and +180 degrees\\
+  \hline
+  Actual Output & The motor stops at 180 degrees even if the human is still moving in a certain direction.\\
+  \hline
+  Conclusion & The test is successful\\
+  \hline
+\end{tabular}
+\end{center}     
+\caption{RAR1-1}
+\end{table}
+
+\begin{table}[H]
+\begin{center}
+\begin{tabular}{|l | m{9cm}|}
+\hline
+  Test Number & RFR2-1\\
+  \hline
+  Requirement Reference & RFR2\\
+  \hline
+  Requirement & The user is required to give appropriate instruction\\
+  \hline
+  Input & Wrong parameters will be entered into input boxes\\
+  \hline
+  Desired Output & The program will return error messages\\
+  \hline
+  Actual Output & Errors detected\\
+  \hline
+  Conclusion & The test is successful\\
+  \hline
+\end{tabular}
+\end{center}     
+\caption{RFR2-1}
+\end{table}
+
+\section{Demonstration Testing Requirement}
+This section is aimed to test the stability and basic functionality for Revision-0 Demonstration.
+\begin{table}[H]
+\begin{center}
+\begin{tabular}{|l | m{9cm}|}
+\hline
+  Test Number & DTR1\\
+  \hline
+  Requirement Reference & IPR5\\
+  \hline
+  Requirement &  To store the initial frame\\
+  \hline
+  Input & (1, 'i')\\
+  \hline
+  Desired Output & Adding item1\_\{date and time\}.png,  item1.png\\
+  \hline
+  Actual Output & Added as:\\&\includegraphics[width=90mm, height=35mm]{UT2.png}\\
+  \hline
+  Conclusion & Pass\\
+  \hline
+\end{tabular}
+\end{center}    
+\caption{DTR1}
+\end{table}
+\begin{table}[H]
+\begin{center}
+\begin{tabular}{|l | m{9cm}|}
+\hline
+  Test Number & DTR2\\
+  \hline
+  Requirement Reference & IPR5, IPR7\\
+  \hline
+  Requirement &  To check whether the frame is stored in the correct path\\
+  \hline
+  Input & (1, 'i')\\
+  \hline
+  Desired Output &  item\{num\}\_\{date and time\}.png is stored in 'item', item\{num\}.png is stored in 'location'\\
+  \hline
+  Actual Output &  item1\_2023\_3\_8\_12\_23\_41\_945208.png is within 'item', item1.png is inside 'location'\\&\includegraphics[width=90mm, height=35mm]{UT2.png}\\
+  \hline
+  Conclusion & Pass\\
+  \hline
+\end{tabular}
+\end{center}  
+\caption{DTR2}
+\end{table}
+
+\begin{table}[H]
+\begin{center}
+\begin{tabular}{|l | m{9cm}|}
+\hline
+  Test Number & DTR3\\
+  \hline
+  Requirement Reference & N/A\\
+  \hline
+  Requirement &  To create 3 folders sequentially\\
+  \hline
+  Input & createFolder() being called\\
+  \hline
+  Desired Output & 3 folders (FolderScreenShot, item, location) created\\
+  \hline
+  Actual Output & 3 folders (FolderScreenShot, item, location) created\includegraphics[width=80mm, height=55mm]{UT1.png}\\
+  \hline
+  Conclusion & Pass\\
+  \hline
+\end{tabular}
+\end{center}   
+\caption{DTR3}
+\end{table}
+\begin{table}[H]
+\begin{center}
+\begin{tabular}{|l | m{9cm}|}
+\hline
+  Test Number & DTR4\\
+  \hline
+  Requirement Reference & N/A\\
+  \hline
+  Requirement &  Do nothing if they have already existed\\
+  \hline
+  Input & createFolder() being called\\
+  \hline
+  Desired Output & No change\\
+  \hline
+  Actual Output & No change\\
+  \hline
+  Conclusion & Pass\\
+  \hline
+\end{tabular}
+\end{center}    
+\caption{DTR4}
+\end{table}
+\begin{table}[H]
+\begin{center}
+\begin{tabular}{|l | m{9cm}|}
+\hline
+  Test Number & DTR5\\
+  \hline
+  Requirement Reference & IPR5, IPR6\\
+  \hline
+  Requirement & To check whether the frame for the second item is captured\\
+  \hline
+  Input & (2, 'i')\\
+  \hline
+  Desired Output & Adding item2\_\{date and time\}.png, item2.png\\
+  \hline
+  Actual Output & Added as:\\&\includegraphics[width=90mm, height=33mm]{UT3.png}\\
+  \hline
+  Conclusion & Pass\\
+  \hline
+\end{tabular}
+\end{center}   
+\caption{DTR5}
+\end{table}
+\begin{table}[H]
+\begin{center}
+\begin{tabular}{|l | m{9cm}|}
+\hline
+  Test Number & DTR6\\
+  \hline
+  Requirement Reference & IPR4, IPR6\\
+  \hline
+  Requirement &  To check whether the location frame for the first item is updated, meanwhile the second item won't get affected\\
+  \hline
+  Input & (1, 'u')\\
+  \hline
+  Desired Output & item1\_\{date and time\}.png should remain, item1.png shall be updated\\
+  \hline
+  Actual Output & Only item1.png get updated\\&Comparison shown:\\&\includegraphics[width=90mm, height=46mm]{UT41.png}\\&\includegraphics[width=89mm, height=48mm]{UT42.png}\\
+  \hline
+  Conclusion & Pass\\
+  \hline
+\end{tabular}
+\end{center} 
+\caption{DTR6}
+\end{table}
+
 \section{Changes Due to Testing}
 Based on the feedback from Rev 0 demo, we have conducted our test case based on larger room with more complex background environments. During the early stages of testing process, performance reliability issues were found, which led to changes to the main algorithm which aims to lower the light sensitivity to increase the repeatability of the test cases.  \\
  
@@ -640,50 +841,52 @@ Based on the feedback from Rev 0 demo, we have conducted our test case based on 
  Another point noted was that users would like to have more detailed time for searching specific items. This will be implemented in the upcoming milestone where some other quality of life update will be implemented. \\
 
 \section{Traceability Matrices}
-\subsection{Traceability for Functional Requirements}
+\subsection{Traceability for Image Processing and Functional Requirements}
+\begin{table}[H]
 \begin{tabular}{|p{0.33\textwidth}|p{0.33\textwidth}|p{0.33\textwidth}|}
-
-\hline \multicolumn{3}{|c|}{Table 1: Traceability for Area of Testing 1}\\
 
 \hline Test Method&Requirement&Test Number\\
 
-\hline Automatic&IPR1&IPR1-1\\
+\hline Manual&IPR1&IPR1-1\\
 
-\hline Automatic&IPR3&IPR3-1\\
+\hline Manual&IPR1&IPR1-2\\
 
-\hline Automatic&IPR4&IPR4-1\\
+\hline Manual&IPR1&IPR1-3\\
 
-\hline Automatic&IPR5&IPR5-1\\
+\hline Manual&IPR2&IPR2-1\\
 
-\hline Automatic&IPR5&IPR5-2\\
+\hline Manual&IPR2&IPR2-2\\
+
+\hline Manual&IPR2&IPR2-3\\
+
+\hline Manual&IPR3&IPR3-1\\
+
+\hline Manual&IPR4&IPR4-1\\
+
+\hline Manual&IPR5&IPR5-1\\
 
 \hline Automatic&IPR6&IPR6-1\\
 
-\hline Automatic&IPR6&IPR6-2\\
-
-\hline Automatic&IPR5, IPR6&IPR6-3\\
-
-\hline Automatic&IPR4, IPR6&IPR6-4\\
-
 \hline Automatic&IPR7&IPR7-1\\
+
+\hline Automatic&IPR8&IPR8-1\\
+
+\hline Automatic&IPR9&IPR9-1\\
 
 \hline
 
 \end{tabular}
+\caption{Traceability for Image Processing and File Storage Testing}
+\end{table}
 \\
+\begin{table}[H]
 \begin{tabular}{|p{0.33\textwidth}|p{0.33\textwidth}|p{0.33\textwidth}|}
-
-\hline \multicolumn{3}{|c|}{Table 2: Traceability for UI Interface Menu}\\
 
 \hline Test Method&Requirement&Test Number\\
 
 \hline Manual&UIR1&UIR1-1\\
 
-\hline Manual&UIR1&UIR1-2\\
-
 \hline Manual&UIR2&UIR2-1\\
-
-\hline Manual&UIR2&UIR2-2\\
 
 \hline Manual&UIR3&UIR3-1\\
 
@@ -696,33 +899,53 @@ Based on the feedback from Rev 0 demo, we have conducted our test case based on 
 \hline
 
 \end{tabular}
+\caption{Traceability for UI Interface Menu}
+\end{table}
 \subsection{Traceability for Nonfunctional Requirements}
 
+\begin{table}[H]
 \begin{tabular}{|p{0.33\textwidth}|p{0.33\textwidth}|p{0.33\textwidth}|}
-
-\hline \multicolumn{3}{|c|}{Table 3: Traceability for Usability and Humanity Requirements}\\
 
 \hline Test Method&Requirement&Test Number\\
 
-\hline Automatic&APR1&APR1-1\\
+\hline Structural, Manual&APR1&APR1-1\\
 
-\hline Automatic&EUR1&EUR1-1\\
+\hline Functional, Manual&EUR1&EUR1-1\\
 
-\hline Automatic&EUR2&EUR2-1\\
+\hline Functional, Manual&EUR2&EUR2-1\\
 
-\hline Automatic&LER1&LER1-1\\
+\hline Functional, Manual&SLR1&SLR1-1\\
 
-\hline Automatic&LER2&LER2-1\\
+\hline Functional, Manual&SCR3&SCR3-1\\
 
-\hline Automatic&UPR1&UPR1-1\\
+\hline Functional, Manual&PAR2&PAR2-1\\
 
-\hline Automatic&APR1&APR1-1\\
+\hline Functional, Manual&RAR1&RAR1-1\\
 
-\hline Automatic&SCR3&SCR3-1\\
+\hline Functional, Manual&RFR2&RFR2-1\\
 
 \hline
 
 \end{tabular}
+\caption{Traceability for Usability and Humanity Requirements}
+\end{table}
+
+\subsection{Traceability for Demonstration Testing Requirements}
+\begin{table}[H]
+\begin{tabular}{|p{0.33\textwidth}|p{0.33\textwidth}|p{0.33\textwidth}|}
+
+\hline Test Method&Requirement&Test Number\\
+\hline Manual&IPR5&DTR1\\
+\hline Manual&IPR5, IPR7&DTR2\\
+\hline Manual&N/A&DTR3\\
+\hline Manual&N/A&DTR4\\
+\hline Manual&IPR5, IPR6&DTR5\\
+\hline Manual&IPR4, IPR6&DTR6\\
+\hline
+
+\end{tabular}
+\caption{Traceability for Image Processing and File Storage Testing}
+\end{table}
 
 \bibliographystyle{plainnat}
 \bibliography{../../refs/References}
