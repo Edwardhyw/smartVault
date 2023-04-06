@@ -57,7 +57,7 @@ def item_match(item, img):
     for m, n in matches:
         if m.distance < 0.8 * n.distance:
             good.append([m])
-
+    # check for good matches, if there is enough of them, then it can be concluded that there is a matched item
     if len(good) >= 5:
         '''
         # Draw first 10 matches.
@@ -77,15 +77,19 @@ def item_match(item, img):
 def item_comp(itemList1, itemList2,img_list,img):
     first_range = len(itemList1)
     second_range = len(itemList2)
+    # situation of all items are added to room
+
     if first_range == 0:
         loc_list = [0 for x in range(second_range)]
         for i in range(second_range):
             itemList1.append(itemList2[i])
             loc_list[i] = img_list[i]
+    # situation of all items are removed from the room
     elif second_range == 0:
         loc_list = [0 for x in range(first_range)]
         for i in range(first_range):
             loc_list[i] = img
+    # situation of items being added, removed and changed position
     else:
         loc_list = [0 for x in range(first_range)]
         for i in range(second_range):
@@ -107,6 +111,7 @@ def extract_item(path, orimg1, orimg2):
     before_item = []
     current_item = []
     img_list = []
+    # preprocess images 
     img1 = cv2.cvtColor(orimg1, cv2.COLOR_BGR2GRAY)
     img2 = cv2.cvtColor(orimg2, cv2.COLOR_BGR2GRAY)
     img1 = cv2.GaussianBlur(img1, (7, 7), 0)
@@ -116,16 +121,19 @@ def extract_item(path, orimg1, orimg2):
     thresh = cv2.threshold(diff, 10, 255, cv2.THRESH_BINARY)[1]
     
     cv2.imwrite(path+'image3.jpg',diff)
+    # dilation and erosion 
     kernel = np.ones((9, 9), np.uint8)
     img_open = cv2.morphologyEx(thresh, cv2.MORPH_OPEN, kernel)
     img_close = cv2.morphologyEx(img_open, cv2.MORPH_CLOSE, kernel)
     #img_open = cv2.morphologyEx(img_close,cv2.MORPH_OPEN,kernel)
     img_Gaussian = cv2.GaussianBlur(img_close, (7, 7), 0)
     cv2.imwrite(path+'image4.jpg',img_Gaussian)
+
+    # find all contours in image
     cnts, hierarchy = cv2.findContours(img_Gaussian.copy(), cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
     contours = []
     check = []
-
+    # eliminate unwanted contours
     for a in cnts:
 
         if cv2.contourArea(a) > 1000:
@@ -145,6 +153,7 @@ def extract_item(path, orimg1, orimg2):
         # bounding box on both input images to represent where the two
         # images differ
         (x, y, w, h) = cv2.boundingRect(c)
+        # extract items
         item1 = orimg1[y:y + h, x:x + w]
         item2 = orimg2[y:y + h, x:x + w]
         grey_item1 = cv2.cvtColor(item1, cv2.COLOR_BGR2GRAY)
@@ -154,6 +163,7 @@ def extract_item(path, orimg1, orimg2):
         score2, diff2 = compare_ssim(item2, item, multichannel=True, full=True, data_range=255)
         print(score1,score2)
         #if mse(grey_item1,item) > mse(grey_item2,item):
+        # find which box contains the item we want 
         if score2 > score1:
             #cv2.rectangle(loc_image, (x, y), (x + w, y + h), (0, 0, 255), 2)
             #cv2.imwrite(os.path.join(path, "r2.jpg"), item2)
@@ -198,6 +208,7 @@ def item_store(itemList, positionList, directory):
         flag = 0
         storedItem = load_images_from_folder(folder)
         itemNum = len(storedItem)
+        # check for update or insert
         for j in range(itemNum):
             if item_match(itemList[i],storedItem[j]):
                 stored = cv2.resize(storedItem[j],resize_range)
