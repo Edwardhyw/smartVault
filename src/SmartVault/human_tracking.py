@@ -7,15 +7,15 @@ from diff import *
 
 class human_tracking:
     def __init__(self, port = None, baudrate = None, servo = None):
-        self.port = port
-        self.baudrate = baudrate
-        self.servo = servo
+        self.port = port #serial port on laptop
+        self.baudrate = baudrate #serial communication baudrate
+        self.servo = servo #use servo or not
         if self.port is None and self.baudrate is None:
             self.ser = None
         else:
             self.ser = serial.Serial(port, baudrate)
         time.sleep(2)
-        self.mpPose = mp.solutions.pose
+        self.mpPose = mp.solutions.pose #initialize the pose tracking module
         self.mpDraw = mp.solutions.drawing_utils
         self.pose = self.mpPose.Pose()
         self.cap = cv2.VideoCapture(1+cv2.CAP_DSHOW)
@@ -38,23 +38,22 @@ class human_tracking:
         result = self.pose.process(imgRGB)
         self.old_state = self.new_state
 
-        if result.pose_landmarks:
-            self.new_state = 1 #This is when human detect
-
-            self.mpDraw.draw_landmarks(img,result.pose_landmarks,self.mpPose.POSE_CONNECTIONS)
+        if result.pose_landmarks: #This is when human detect, new state become 1
+            self.new_state = 1 
+            self.mpDraw.draw_landmarks(img,result.pose_landmarks,self.mpPose.POSE_CONNECTIONS) # draw the landmark on image
             xavg = 0
             yavg = 0
             counter = 0
-            for id,lm in enumerate(result.pose_landmarks.landmark):
+            for id,lm in enumerate(result.pose_landmarks.landmark): # This for loop is to count how many joints are in the image, in order to calculate the mass center
                 h,w,c = img.shape
                 cx, cy = int(lm.x*w), int(lm.y*h)
                 if lm.visibility>0.9:
-                    xavg = xavg + int(lm.x*w)
-                    yavg = yavg + int(lm.y*h)
+                    xavg = xavg + int(lm.x*w) 
+                    yavg = yavg + int(lm.y*h) 
                     counter = counter +1
             if counter != 0:
-                xavg = xavg/counter
-                yavg = yavg/counter
+                xavg = xavg/counter #xavg is the x coordinate of mass center
+                yavg = yavg/counter #yavg is the y coordinate of mass center
             else :
                 xavg = 0
                 yavg = 0
@@ -62,6 +61,10 @@ class human_tracking:
             h, w, c = img.shape
             xcenter = w/2;
             ycenter = h/2;
+            
+            #--------------------------------------------------------------------------------------------------
+            '''If the serial port is connected, it will start the detection. When the mass center of human move out
+            of the boundary, it will send a signal to Arduino'''
             if self.port:
                 if xavg > xcenter+50:
                     self.ser.write('d'.encode('utf-8'))
@@ -83,37 +86,26 @@ class human_tracking:
 
         #if self.new_state - self.old_state == 0:
             #print("no change")
+            #-------------------------------------------------------------------------------------
+            '''Here we start detecting if the hunman come into the room or out of the room, or stay in the room'''
         if self.new_state == 1:
             self.pTime = 0
 
         if self.new_state - self.old_state == 1:
             print("human coming")
-            #self.image1 = self.image2
-            #self.image2 = img
 
         if self.new_state - self.old_state == -1:
             print("human leaving")
-            #time.sleep(2)
             
             if self.port == None:
                 self.flag = 1
-            self.pTime = time.time()
+            self.pTime = time.time() #record the time when human leave the room
 
-        #if self.flag == 1:   #control extract item function
-            #self.cTime = time.time()
-            #if (self.cTime - self.pTime) > 2 and self.pTime != 0 and self.port == None:
-                #extract_item(path, self.image1, self.image2)
-                #self.flag = 0
-                #self.pTime = 0
-                #print("extracting")
-
-        self.cTime = time.time()
-        #print("current time")
-        #print(self.cTime)
-        #print("leave time")
-        #print(self.pTime)
-
-        if (self.cTime - self.pTime) > 3 and self.pTime != 0 and self.port: #send back to origin command to arduino after human leave 3 sec
+        self.cTime = time.time() # record the current time
+        
+        '''Send back to origin command to arduino after human leave 3 sec, then send signal to Arduino to make camera rotate
+        back to the original angle. Then the camera will stay for 8 sec, then take a photo of the room'''
+        if (self.cTime - self.pTime) > 3 and self.pTime != 0 and self.port: 
             print("back to origin")
             self.ser.write('o'.encode('utf-8'))
             time.sleep(8)
@@ -134,12 +126,12 @@ class human_tracking:
             #print(self.image2)
 
 
-        cv2.imshow("image",img)
+        cv2.imshow("image",img) # Show image to users
         cv2.waitKey(1)
 
 
 
-    def Move_to_Origin(self):
+    def Move_to_Origin(self): #This is the funcion to send signal to Arduino make camera back to orgin
         self.ser.write('o'.encode('utf-8'))
         print("back to origin")
         time.sleep(5)
